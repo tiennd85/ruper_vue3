@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "Outdoor Chair",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home2_1.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "Accessories",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home2_2.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "Kitchen Sale",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home2_3.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        }
+    ]
+}

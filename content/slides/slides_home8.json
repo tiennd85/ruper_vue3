@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "The Outline Studio",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home8_1.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "Outdoor Furniture",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home8_2.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "Office Furniture",
+            "subtitle": "SALE UP TO 30% OFF",
+            "description": "",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home8_3.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        }
+    ]
+}

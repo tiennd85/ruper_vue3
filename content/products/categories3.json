@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 11,
+            "title": "Boucle",
+            "image": "product/cat-15.jpg",
+            "tab": false
+        },
+        {
+            "id": 12,
+            "title": "Rattan",
+            "image": "product/cat-16.jpg",
+            "tab": false
+        },
+        {
+            "id": 13,
+            "title": "Cue The Curves",
+            "image": "product/cat-17.jpg",
+            "tab": false
+        },
+        {
+            "id": 14,
+            "title": "Small space solutions",
+            "image": "product/cat-18.jpg",
+            "tab": false
+        }
+    ]
+}

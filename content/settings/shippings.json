@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "name": "Free shipping",
+            "cost": "0"
+        },
+        {
+            "name": "Flat rate",
+            "cost": "20.00"
+        },
+        {
+            "name": "Local pickup",
+            "cost": "25.00"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "data": {
+        "title": "SNEAK PEEK",
+        "subtitle": "Black Friday",
+        "description": "UP TO 60% OFF",
+        "image": {
+            "src": "parallax.jpg",
+            "width": "1920",
+            "height": "1080",
+            "alt": "Parallax background"
+        },
+        "button": {
+            "class": "button button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        }
+    }
+}

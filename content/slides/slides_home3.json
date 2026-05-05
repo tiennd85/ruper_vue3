@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "For the <br>Comfort-Seekers",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home3_1.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "Spring <br>Collection 2025",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home3_2.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        },
+        {
+            "title": "The <br> Great Outdoors",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-white",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home3_3.jpg",
+                "width": "1920",
+                "height": "1080"
+            }
+        }
+    ]
+}

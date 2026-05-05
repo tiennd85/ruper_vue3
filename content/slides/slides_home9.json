@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "It's Our <br>Anniversary!",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-black",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home9_1.jpg",
+                "width": "959",
+                "height": "963"
+            }
+        },
+        {
+            "title": "Made<br> for laze-ins",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-black",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home9_2.jpg",
+                "width": "959",
+                "height": "963"
+            }
+        },
+        {
+            "title": "For the <br>Comfort-Seekers",
+            "subtitle": "",
+            "description": "Soft seats that welcome you home",
+            "button": {
+                "class": "button-slider button-black",
+                "link": "/products",
+                "text": "SHOP NOW"
+            },
+            "image": {
+                "src": "slider/home9_3.jpg",
+                "width": "959",
+                "height": "963"
+            }
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "name": "Robet Smith",
+            "image": "testimonial/1.jpg",
+            "title": "Amazing piece of history",
+            "content": "Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect.",
+            "rating": "5"
+        },
+        {
+            "name": "Saitama One",
+            "image": "testimonial/2.jpg",
+            "title": "Fabulous Grounds",
+            "content": "Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect.",
+            "rating": "4"
+        },
+        {
+            "name": "Sara Colinton",
+            "image": "testimonial/3.jpg",
+            "title": "I love Almo",
+            "content": "Wonderful communication and your company even sent a generous amount of samples to me, making my decision to spend money on an internet item easy. Thank you. Product quality is perfect.",
+            "rating": "5"
+        }
+    ]
+}

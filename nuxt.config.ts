@@ -5,4 +5,8 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  devServer: {
+    // Nó sẽ lấy PORT từ file .env, nếu không có thì mới dùng 3000
+    port: parseInt(process.env.PORT || '3000')
+  }
 })

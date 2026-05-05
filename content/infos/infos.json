@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "title": "Phone",
+            "content": "810.222.5439"
+        },
+        {
+            "title": "Customer Service",
+            "content": "<p>Monday to Friday</p><p>8:00am – 4:00pm Sydney, NSW time (UTC +10)</p><p>Saturday and Sunday closed</p>"
+        },
+        {
+            "title": "Returns",
+            "content": "For information on Returns and Refunds, please click <a href='#'>here.</a>"
+        }
+    ]
+}

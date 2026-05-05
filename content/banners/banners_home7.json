@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "title": "From bottle to chair",
+            "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
+            "image": {
+                "src": "banner/banner-18.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        },
+        {
+            "title": "Fall collection from hightower",
+            "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
+            "image": {
+                "src": "banner/banner-19.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        },
+        {
+            "title": "Armchair with armrests",
+            "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
+            "image": {
+                "src": "banner/banner-20.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "data": [
+        {
+            "title": "Sofa.",
+            "description": "",
+            "image": {
+                "src": "banner/product-cat-5.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        },
+        {
+            "title": "Chair.",
+            "description": "",
+            "image": {
+                "src": "banner/product-cat-6.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        },
+        {
+            "title": "Lounge.",
+            "description": "",
+            "image": {
+                "src": "banner/product-cat-7.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        }
+    ]
+}

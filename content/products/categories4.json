@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 15,
+            "title": "SOFA SALE",
+            "image": "product/cat-19.jpg",
+            "tab": false
+        },
+        {
+            "id": 16,
+            "title": "DINING SALE",
+            "image": "product/cat-20.jpg",
+            "tab": false
+        },
+        {
+            "id": 17,
+            "title": "BED SALE",
+            "image": "product/cat-21.jpg",
+            "tab": false
+        },
+        {
+            "id": 18,
+            "title": "ACCESSORIES SALE",
+            "image": "product/cat-22.jpg",
+            "tab": false
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "title": "Office Collection",
+            "subtitle": "",
+            "description": "",
+            "button": {
+                "class": "button-slider btn-underline",
+                "link": "/products",
+                "text": "Shop Collection"
+            },
+            "image": {
+                "src": "slider/home4_1.jpg",
+                "width": "691",
+                "height": "713"
+            }
+        },
+        {
+            "title": "Best Sellers",
+            "subtitle": "",
+            "description": "",
+            "button": {
+                "class": "button-slider btn-underline",
+                "link": "/products",
+                "text": "Shop Collection"
+            },
+            "image": {
+                "src": "slider/home4_2.jpg",
+                "width": "691",
+                "height": "713"
+            }
+        },
+        {
+            "title": "New Arrivals",
+            "subtitle": "",
+            "description": "",
+            "button": {
+                "class": "button-slider btn-underline",
+                "link": "/products",
+                "text": "Shop Collection"
+            },
+            "image": {
+                "src": "slider/home4_3.jpg",
+                "width": "691",
+                "height": "713"
+            }
+        }
+    ]
+}

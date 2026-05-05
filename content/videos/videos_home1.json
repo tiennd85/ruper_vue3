@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "title": "From bottle <br>to chair",
+            "description": "In our design and production processes, we are always looking at where environmental thinking and economic improvement intersect – resulting in minimal waste in every aspect. The way we utilise PET Technology, emphasizes this vision.",
+            "button": {
+                "class": "button button-white",
+                "text": "OUR STORIES",
+                "link": "/#"
+            },
+            "image": {
+                "src": "banner/video-1.jpg",
+                "width": "565",
+                "height": "635",
+                "alt": "Image Video"
+            },
+            "video": {
+                "src": "https://www.youtube.com/embed/VQOJaYUPZR8"
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "data": [
+        {
+            "title": "Furniture Sale",
+            "description": "",
+            "image": {
+                "src": "banner/banner-29.jpg",
+                "width": "961",
+                "height": "590",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button btn-underline center",
+                "text": "Shop Collection",
+                "link": "/products"
+            },
+            "link": "/products"
+        },
+        {
+            "title": "Decoration",
+            "description": "",
+            "image": {
+                "src": "banner/banner-30.jpg",
+                "width": "961",
+                "height": "590",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button btn-underline center",
+                "text": "Shop Collection",
+                "link": "/products"
+            },
+            "link": "/products"
+        }
+    ]
+}

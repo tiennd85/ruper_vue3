@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "title": "Our Journal",
+            "description": "",
+            "image": {
+                "src": "banner/banner-bg.jpg",
+                "width": "1080",
+                "height": "584",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-outline",
+                "text": "Shop Now",
+                "link": "/products"
+            },
+            "link": "/products"
+        }
+    ]
+}

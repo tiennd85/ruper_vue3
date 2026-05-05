@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "icon": "<i class='fa fa-twitter'></i>",
+            "link": "#"
+        },
+        {
+            "icon": "<i class='fa fa-instagram'></i>",
+            "link": "#"
+        },
+        {
+            "icon": "<i class='fa fa-dribbble'></i>",
+            "link": "#"
+        },
+        {
+            "icon": "<i class='fa fa-behance'></i>",
+            "link": "#"
+        }
+    ]
+}

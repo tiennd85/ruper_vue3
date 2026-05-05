@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "title": "Right on Trend",
+            "description": "Lighting Collection",
+            "image": {
+                "src": "banner/banner-22.jpg",
+                "width": "657",
+                "height": "839",
+                "alt": "Banner Image"
+            },
+            "button": {
+                "class": "button button-white",
+                "text": "SHOP NOW",
+                "link": "/products"
+            },
+            "link": "/products"
+        }
+    ]
+}

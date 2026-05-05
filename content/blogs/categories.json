@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Dining & Kitchen"
+        },
+        {
+            "id": 2,
+            "title": "Furniture"
+        },
+        {
+            "id": 3,
+            "title": "Home Décor"
+        },
+        {
+            "id": 4,
+            "title": "Life Style"
+        },
+        {
+            "id": 5,
+            "title": "Office"
+        }
+    ]
+}

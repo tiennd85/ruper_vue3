@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "title": "",
+            "subtitle": "",
+            "description": "",
+            "button": {
+                "class": "",
+                "text": "",
+                "link": ""
+            },
+            "image": {
+                "src": "banner/lookbook-4.jpg",
+                "width": "869",
+                "height": "702",
+                "alt": "Look Book"
+            },
+            "items": [
+                {
+                    "position": {
+                        "top": "54.27%",
+                        "left": "29.55%"
+                    },
+                    "content": {
+                        "position": {
+                            "top": "auto",
+                            "bottom": "10px",
+                            "left": "33px",
+                            "right": "auto"
+                        },
+                        "title": "Pillar Dining Table Round",
+                        "price": "140.00",
+                        "salePrice": "100.00",
+                        "image": "product/4.jpg",
+                        "link": "/product/2"
+                    }
+                },
+                {
+                    "position": {
+                        "top": "79.16%",
+                        "left": "53.69%"
+                    },
+                    "content": {
+                        "position": {
+                            "top": "auto",
+                            "bottom": "10px",
+                            "left": "auto",
+                            "right": "33px"
+                        },
+                        "title": "Mags Sofa 2.5 Seater",
+                        "price": "210.00",
+                        "salePrice": "210.00",
+                        "image": "product/7.jpg",
+                        "link": "/product/3"
+                    }
+                }
+            ]
+        }
+    ]
+}

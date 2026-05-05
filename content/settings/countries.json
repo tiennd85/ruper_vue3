@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "name": "Afghanistan",
+            "code": "afg"
+        },
+        {
+            "name": "Albania",
+            "code": "alb"
+        },
+        {
+            "name": "Algeria",
+            "code": "alg"
+        },
+        {
+            "name": "Andorra",
+            "code": "and"
+        },
+        {
+            "name": "Angola",
+            "code": "ang"
+        }
+    ]
+}
