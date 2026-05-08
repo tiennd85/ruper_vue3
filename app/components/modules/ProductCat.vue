@@ -270,8 +270,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
-
 export default {
     name: 'ProductCatModule',
     props: {
@@ -437,11 +435,11 @@ export default {
         // Slick
         handleInit(event, slick) {
             // Move nav outsite
-            const $element = $(this.$refs.slick.$el);
-            if ($('.slick-arrow', $element).length > 0) {
-                if ($('.fa-angle-left', $element).length > 0) {
-                    var $prev = $('.fa-angle-left', $element).clone();
-                    $('.fa-angle-left', $element).remove();
+            const $element = window.$(this.$refs.slick.$el);
+            if (window.$('.slick-arrow', $element).length > 0) {
+                if (window.$('.fa-angle-left', $element).length > 0) {
+                    var $prev = window.$('.fa-angle-left', $element).clone();
+                    window.$('.fa-angle-left', $element).remove();
                     if ($element.parent().find('.fa-angle-left').length == 0) {
                         $prev.prependTo($element.parent());
                     }
@@ -449,9 +447,9 @@ export default {
                         $element.slick('slickPrev');
                     });
                 }
-                if ($('.fa-angle-right', $element).length > 0) {
-                    var $next = $('.fa-angle-right', $element).clone();
-                    $('.fa-angle-right', $element).remove();
+                if (window.$('.fa-angle-right', $element).length > 0) {
+                    var $next = window.$('.fa-angle-right', $element).clone();
+                    window.$('.fa-angle-right', $element).remove();
                     if ($element.parent().find('.fa-angle-right').length == 0) {
                         $next.appendTo($element.parent());
                     }
@@ -460,8 +458,8 @@ export default {
                     })
                 }
             } else {
-                $('.fa-angle-left', $element.parent()).remove();
-                $('.fa-angle-right', $element.parent()).remove();
+                window.$('.fa-angle-left', $element.parent()).remove();
+                window.$('.fa-angle-right', $element.parent()).remove();
             }
         }
     }

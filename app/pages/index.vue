@@ -44,9 +44,16 @@
   </div>
 </template>
 
-<script>
-import $ from 'jquery'
+<script setup>
+import { onMounted } from 'vue'
 
+onMounted(() => {
+  // Class of body tag
+  window.$('body').removeClass()
+  window.$('body').addClass('home')
+})
+
+/*
 export default {
   name: 'Home1',
   computed: {
@@ -68,8 +75,8 @@ export default {
   },
   mounted() {
     // Class of body tag
-    $('body').removeClass()
-    $('body').addClass('home')
+    window.$('body').removeClass()
+    window.$('body').addClass('home')
 
     // Layout of header
     this.$nuxt.$emit('headerLayout', 1)
@@ -84,4 +91,5 @@ export default {
     this.$nuxt.$emit('footerLayout', 1)
   }
 }
+*/
 </script>

@@ -22,7 +22,7 @@
                             <div class="products-list grid">
                                 <div class="row">
                                     <div :class="cols == '2' ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'" v-for="(product, productIndex) in cat.products" :key="productIndex">
-                                        <Product :product="product" :layout="layout" />
+                                        <ModulesProduct :product="product" :layout="layout" />
                                         
                                         <Quickview :product="product" />
                                     </div>
@@ -33,13 +33,13 @@
                 </div>
                 <div v-else-if="view == 'sidebar'" class="content-product-list">
                     <ul class="products-list">
-                        <Product v-for="(item, index) in items" :key="index" :product="item" view="sidebar" />
+                        <ModulesProduct v-for="(item, index) in items" :key="index" :product="item" view="sidebar" />
                     </ul>
                 </div>
                 <div v-else-if="view == 'slider'" class="content-product-list slick-wrap">
                     <slick class="slick-sliders products-list grid" ref="slick" :options="slickOptions" @init="handleInit">
                         <div class="item-product" v-for="(item, index) in items" :key="index">
-                            <Product :product="item" :layout="layout" />
+                            <ModulesProduct :product="item" :layout="layout" />
                             
                             <Quickview :product="item" />
                         </div>
@@ -53,7 +53,7 @@
                 <div v-else class="products-list grid">
                     <div class="row">
                         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6" v-for="(item, index) in items" :key="index">
-                            <Product :product="item" :layout="layout" />
+                            <ModulesProduct :product="item" :layout="layout" />
 
                             <Quickview :product="item" />
                         </div>
@@ -67,20 +67,8 @@
 </template>
 
 <script>
-import $ from 'jquery'
-import { mapGetters } from 'vuex'
-
-import Product from '~/components/Product'
-import Quickview from '~/components/Quickview'
-import Compare from '~/components/Compare'
-
 export default {
     name: 'ProductModule',
-    components: {
-        Product,
-        Quickview,
-        Compare
-    },
     props: {
         title: String,
         subTitle: String,
@@ -214,11 +202,11 @@ export default {
         // Slick
         handleInit(event, slick) {
             // Move nav outsite
-            const $element = $(this.$refs.slick.$el);
-            if ($('.slick-arrow', $element).length > 0) {
-                if ($('.fa-angle-left', $element).length > 0) {
-                    var $prev = $('.fa-angle-left', $element).clone();
-                    $('.fa-angle-left', $element).remove();
+            const $element = window.$(this.$refs.slick.$el);
+            if (window.$('.slick-arrow', $element).length > 0) {
+                if (window.$('.fa-angle-left', $element).length > 0) {
+                    var $prev = window.$('.fa-angle-left', $element).clone();
+                    window.$('.fa-angle-left', $element).remove();
                     if ($element.parent().find('.fa-angle-left').length == 0) {
                         $prev.prependTo($element.parent());
                     }
@@ -226,9 +214,9 @@ export default {
                         $element.slick('slickPrev');
                     });
                 }
-                if ($('.fa-angle-right', $element).length > 0) {
-                    var $next = $('.fa-angle-right', $element).clone();
-                    $('.fa-angle-right', $element).remove();
+                if (window.$('.fa-angle-right', $element).length > 0) {
+                    var $next = window.$('.fa-angle-right', $element).clone();
+                    window.$('.fa-angle-right', $element).remove();
                     if ($element.parent().find('.fa-angle-right').length == 0) {
                         $next.appendTo($element.parent());
                     }
@@ -237,14 +225,14 @@ export default {
                     })
                 }
             } else {
-                $('.fa-angle-left', $element.parent()).remove();
-                $('.fa-angle-right', $element.parent()).remove();
+                window.$('.fa-angle-left', $element.parent()).remove();
+                window.$('.fa-angle-right', $element.parent()).remove();
             }
         }
     },
-    mounted () {
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-            $(this).closest('.block').find('.slick-sliders').slick('refresh');
+    onMounted () {
+        window.$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            window.$(this).closest('.block').find('.slick-sliders').slick('refresh');
         });
     }
 }
