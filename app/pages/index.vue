@@ -6,40 +6,6 @@
         <ModulesSlide :slides="slides" />
       </section>
 
-      <section class="section section-padding m-b-60">
-        <div class="section-container">
-          <!-- Block Banners -->
-          <ModulesBanner :banners="banners1" :layout="1" />
-        </div>
-      </section>
-
-      <section class="section section-padding">
-        <div class="section-container">
-          <!-- Block Products -->
-          <ModulesProduct title="Best Seller" :limit="6" view="slider" :layout="2" filter="bestSeller" />
-        </div>
-      </section>
-
-      <section class="section section-padding m-b-70">
-        <div class="section-container">
-          <!-- Block Banners -->
-          <ModulesBanner :banners="banners2" :layout="2" />
-        </div>
-      </section>
-
-      <section class="section section-padding background-1 section-mb-l">
-        <div class="section-container">
-          <!-- Block Video -->
-          <ModulesVideo :videos="videos" />
-        </div>
-      </section>
-
-      <section class="section section-padding m-b-70">
-        <div class="section-container">
-          <!-- Block Feature -->
-          <ModulesFeature :features="features" />
-        </div>
-      </section>
     </div>
   </div>
 </template>
