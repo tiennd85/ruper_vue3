@@ -1,68 +1,66 @@
-{
-    "data": [
-        {
-            "title": "Furniture",
-            "description": "",
-            "image": {
-                "src": "banner/product-cat-1.jpg",
-                "width": "571",
-                "height": "622",
-                "alt": "Furniture"
-            },
-            "button": {
-                "class": "button button-white",
-                "text": "Furniture",
-                "link": "/products"
-            },
+[
+    {
+        "title": "Furniture",
+        "description": "",
+        "image": {
+            "src": "banner/product-cat-1.jpg",
+            "width": "571",
+            "height": "622",
+            "alt": "Furniture"
+        },
+        "button": {
+            "class": "button button-white",
+            "text": "Furniture",
             "link": "/products"
         },
-        {
-            "title": "Lighting",
-            "description": "",
-            "image": {
-                "src": "banner/product-cat-2.jpg",
-                "width": "406",
-                "height": "304",
-                "alt": "Lighting"
-            },
-            "button": {
-                "class": "button button-white",
-                "text": "Lighting",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Lighting",
+        "description": "",
+        "image": {
+            "src": "banner/product-cat-2.jpg",
+            "width": "406",
+            "height": "304",
+            "alt": "Lighting"
+        },
+        "button": {
+            "class": "button button-white",
+            "text": "Lighting",
             "link": "/products"
         },
-        {
-            "title": "Modern",
-            "description": "",
-            "image": {
-                "src": "banner/product-cat-3.jpg",
-                "width": "406",
-                "height": "304",
-                "alt": "Modern"
-            },
-            "button": {
-                "class": "button button-white",
-                "text": "Modern",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Modern",
+        "description": "",
+        "image": {
+            "src": "banner/product-cat-3.jpg",
+            "width": "406",
+            "height": "304",
+            "alt": "Modern"
+        },
+        "button": {
+            "class": "button button-white",
+            "text": "Modern",
             "link": "/products"
         },
-        {
-            "title": "Accessories",
-            "description": "",
-            "image": {
-                "src": "banner/product-cat-4.jpg",
-                "width": "824",
-                "height": "304",
-                "alt": "Accessories"
-            },
-            "button": {
-                "class": "button button-white",
-                "text": "Accessories",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Accessories",
+        "description": "",
+        "image": {
+            "src": "banner/product-cat-4.jpg",
+            "width": "824",
+            "height": "304",
+            "alt": "Accessories"
+        },
+        "button": {
+            "class": "button button-white",
+            "text": "Accessories",
             "link": "/products"
-        }
-    ]
-}
+        },
+        "link": "/products"
+    }
+]

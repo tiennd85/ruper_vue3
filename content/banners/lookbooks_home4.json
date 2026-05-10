@@ -1,97 +1,95 @@
-{
-    "data": [
-        {
-            "title": "",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "",
-                "text": "",
-                "link": ""
-            },
-            "image": {
-                "src": "banner/lookbook-2.jpg",
-                "width": "598",
-                "height": "594",
-                "alt": "Look Book 1"
-            },
-            "items": [
-                {
-                    "position": {
-                        "top": "48.82%",
-                        "left": "45.99%"
-                    },
-                    "content": {
-                        "position": {
-                            "top": "10px",
-                            "bottom": "auto",
-                            "left": "33px",
-                            "right": "auto"
-                        },
-                        "title": "Pillar Dining Table Round",
-                        "price": "140.00",
-                        "salePrice": "100.00",
-                        "image": "product/4.jpg",
-                        "link": "/product/2"
-                    }
-                }
-            ]
+[
+    {
+        "title": "",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "",
+            "text": "",
+            "link": ""
         },
-        {
-            "title": "Shop the look",
-            "subtitle": "Shop living room furniture, crafted by designers all over the world",
-            "description": "",
-            "button": {
-                "class": "button btn-underline center",
-                "text": "Shop Collection",
-                "link": "/products"
-            },
-            "image": {
-                "src": "banner/lookbook-3.jpg",
-                "width": "599",
-                "height": "671",
-                "alt": "Look Book 2"
-            },
-            "items": [
-                {
-                    "position": {
-                        "top": "35.77%",
-                        "left": "16.19%"
-                    },
-                    "content": {
-                        "position": {
-                            "top": "10px",
-                            "bottom": "auto",
-                            "left": "33px",
-                            "right": "auto"
-                        },
-                        "title": "Mags Sofa 2.5 Seater",
-                        "price": "210.00",
-                        "salePrice": "210.00",
-                        "image": "product/7.jpg",
-                        "link": "/product/3"
-                    }
+        "image": {
+            "src": "banner/lookbook-2.jpg",
+            "width": "598",
+            "height": "594",
+            "alt": "Look Book 1"
+        },
+        "items": [
+            {
+                "position": {
+                    "top": "48.82%",
+                    "left": "45.99%"
                 },
-                {
+                "content": {
                     "position": {
-                        "top": "71.39%",
-                        "left": "73.62%"
+                        "top": "10px",
+                        "bottom": "auto",
+                        "left": "33px",
+                        "right": "auto"
                     },
-                    "content": {
-                        "position": {
-                            "top": "auto",
-                            "bottom": "10px",
-                            "left": "auto",
-                            "right": "33px"
-                        },
-                        "title": "Bora Armchair",
-                        "price": "90.00",
-                        "salePrice": "90.00",
-                        "image": "product/9.jpg",
-                        "link": "/product/5"
-                    }
+                    "title": "Pillar Dining Table Round",
+                    "price": "140.00",
+                    "salePrice": "100.00",
+                    "image": "product/4.jpg",
+                    "link": "/product/2"
                 }
-            ]
-        }
-    ]
-}
+            }
+        ]
+    },
+    {
+        "title": "Shop the look",
+        "subtitle": "Shop living room furniture, crafted by designers all over the world",
+        "description": "",
+        "button": {
+            "class": "button btn-underline center",
+            "text": "Shop Collection",
+            "link": "/products"
+        },
+        "image": {
+            "src": "banner/lookbook-3.jpg",
+            "width": "599",
+            "height": "671",
+            "alt": "Look Book 2"
+        },
+        "items": [
+            {
+                "position": {
+                    "top": "35.77%",
+                    "left": "16.19%"
+                },
+                "content": {
+                    "position": {
+                        "top": "10px",
+                        "bottom": "auto",
+                        "left": "33px",
+                        "right": "auto"
+                    },
+                    "title": "Mags Sofa 2.5 Seater",
+                    "price": "210.00",
+                    "salePrice": "210.00",
+                    "image": "product/7.jpg",
+                    "link": "/product/3"
+                }
+            },
+            {
+                "position": {
+                    "top": "71.39%",
+                    "left": "73.62%"
+                },
+                "content": {
+                    "position": {
+                        "top": "auto",
+                        "bottom": "10px",
+                        "left": "auto",
+                        "right": "33px"
+                    },
+                    "title": "Bora Armchair",
+                    "price": "90.00",
+                    "salePrice": "90.00",
+                    "image": "product/9.jpg",
+                    "link": "/product/5"
+                }
+            }
+        ]
+    }
+]

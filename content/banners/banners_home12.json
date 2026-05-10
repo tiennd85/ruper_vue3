@@ -1,68 +1,66 @@
-{
-    "data": [
-        {
-            "title": "Furniture",
-            "description": "Style any outdoor area with some careful study and sound decisions.",
-            "image": {
-                "src": "banner/banner-25.jpg",
-                "width": "961",
-                "height": "590",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+[
+    {
+        "title": "Furniture",
+        "description": "Style any outdoor area with some careful study and sound decisions.",
+        "image": {
+            "src": "banner/banner-25.jpg",
+            "width": "961",
+            "height": "590",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "Decor",
-            "description": "Style any outdoor area with some careful study and sound decisions.",
-            "image": {
-                "src": "banner/banner-26.jpg",
-                "width": "961",
-                "height": "590",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Decor",
+        "description": "Style any outdoor area with some careful study and sound decisions.",
+        "image": {
+            "src": "banner/banner-26.jpg",
+            "width": "961",
+            "height": "590",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "Lighting",
-            "description": "Style any outdoor area with some careful study and sound decisions.",
-            "image": {
-                "src": "banner/banner-27.jpg",
-                "width": "961",
-                "height": "590",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Lighting",
+        "description": "Style any outdoor area with some careful study and sound decisions.",
+        "image": {
+            "src": "banner/banner-27.jpg",
+            "width": "961",
+            "height": "590",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "Kitchen & Bath",
-            "description": "Style any outdoor area with some careful study and sound decisions.",
-            "image": {
-                "src": "banner/banner-28.jpg",
-                "width": "961",
-                "height": "590",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Kitchen & Bath",
+        "description": "Style any outdoor area with some careful study and sound decisions.",
+        "image": {
+            "src": "banner/banner-28.jpg",
+            "width": "961",
+            "height": "590",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
-        }
-    ]
-}
+        },
+        "link": "/products"
+    }
+]

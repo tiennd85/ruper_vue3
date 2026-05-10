@@ -1,52 +1,50 @@
-{
-    "data": [
-        {
-            "title": "Sink into Luxe",
-            "description": "Statement-making, while keeping a low profile.",
-            "image": {
-                "src": "banner/banner-31.jpg",
-                "width": "409",
-                "height": "492",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "",
-                "text": "",
-                "link": ""
-            },
-            "link": "/products"
+[
+    {
+        "title": "Sink into Luxe",
+        "description": "Statement-making, while keeping a low profile.",
+        "image": {
+            "src": "banner/banner-31.jpg",
+            "width": "409",
+            "height": "492",
+            "alt": "Banner Image"
         },
-        {
-            "title": "Sitting Pretty",
-            "description": "There’s always room for one more guest.",
-            "image": {
-                "src": "banner/banner-32.jpg",
-                "width": "409",
-                "height": "492",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "",
-                "text": "",
-                "link": ""
-            },
-            "link": "/products"
+        "button": {
+            "class": "",
+            "text": "",
+            "link": ""
         },
-        {
-            "title": "Modern Curves",
-            "description": "A curvaceous approach that covers all the bases.",
-            "image": {
-                "src": "banner/banner-33.jpg",
-                "width": "409",
-                "height": "492",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "",
-                "text": "",
-                "link": ""
-            },
-            "link": "/products"
-        }
-    ]
-}
+        "link": "/products"
+    },
+    {
+        "title": "Sitting Pretty",
+        "description": "There’s always room for one more guest.",
+        "image": {
+            "src": "banner/banner-32.jpg",
+            "width": "409",
+            "height": "492",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "",
+            "text": "",
+            "link": ""
+        },
+        "link": "/products"
+    },
+    {
+        "title": "Modern Curves",
+        "description": "A curvaceous approach that covers all the bases.",
+        "image": {
+            "src": "banner/banner-33.jpg",
+            "width": "409",
+            "height": "492",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "",
+            "text": "",
+            "link": ""
+        },
+        "link": "/products"
+    }
+]

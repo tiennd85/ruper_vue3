@@ -1,20 +1,18 @@
-{
-    "data": [
-        {
-            "title": "Designs You Desire",
-            "description": "We love creating furniture you want and will love for years to come. Our designs feature a fusion of unique styles that inspire us – from mid-century modern to contemporary.",
-            "image": {
-                "src": "banner/about-us-2.jpg",
-                "width": "825",
-                "height": "475",
-                "alt": "Banner 1"
-            },
-            "button": {
-                "class": "button button-outline",
-                "text": "READ MORE",
-                "link": "/blogs"
-            },
+[
+    {
+        "title": "Designs You Desire",
+        "description": "We love creating furniture you want and will love for years to come. Our designs feature a fusion of unique styles that inspire us – from mid-century modern to contemporary.",
+        "image": {
+            "src": "banner/about-us-2.jpg",
+            "width": "825",
+            "height": "475",
+            "alt": "Banner 1"
+        },
+        "button": {
+            "class": "button button-outline",
+            "text": "READ MORE",
             "link": "/blogs"
-        }
-    ]
-}
+        },
+        "link": "/blogs"
+    }
+]

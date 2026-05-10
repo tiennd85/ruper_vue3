@@ -1,36 +1,34 @@
-{
-    "data": [
-        {
-            "title": "Let the adventure<br> begin.",
-            "description": "Sed lectus. Aliquam lorem ante, <br>dapibus in, viverra quis, feugiat a, tellus",
-            "image": {
-                "src": "banner/banner-1.jpg",
-                "width": "825",
-                "height": "475",
-                "alt": "Banner 1"
-            },
-            "button": {
-                "class": "button button-outline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+[
+    {
+        "title": "Let the adventure<br> begin.",
+        "description": "Sed lectus. Aliquam lorem ante, <br>dapibus in, viverra quis, feugiat a, tellus",
+        "image": {
+            "src": "banner/banner-1.jpg",
+            "width": "825",
+            "height": "475",
+            "alt": "Banner 1"
+        },
+        "button": {
+            "class": "button button-outline",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "UP TO <span>20% OFF",
-            "description": "Don't miss savings on bedroom, living,",
-            "image": {
-                "src": "banner/banner-2.jpg",
-                "width": "571",
-                "height": "475",
-                "alt": "Banner 2"
-            },
-            "button": {
-                "class": "",
-                "text": "",
-                "link": ""
-            },
-            "link": "/products"
-        }
-    ]
-}
+        "link": "/products"
+    },
+    {
+        "title": "UP TO <span>20% OFF",
+        "description": "Don't miss savings on bedroom, living,",
+        "image": {
+            "src": "banner/banner-2.jpg",
+            "width": "571",
+            "height": "475",
+            "alt": "Banner 2"
+        },
+        "button": {
+            "class": "",
+            "text": "",
+            "link": ""
+        },
+        "link": "/products"
+    }
+]

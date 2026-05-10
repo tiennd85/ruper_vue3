@@ -1,60 +1,58 @@
-{
-    "data": [
-        {
-            "title": "Like lounging on<br> a cloud",
-            "subtitle": "Discover the new Koti Sofa",
-            "description": "",
-            "button": {
-                "class": "button button-white",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
-            "image": {
-                "src": "banner/lookbook-1.jpg",
-                "width": "869",
-                "height": "702",
-                "alt": "Look Book 1"
-            },
-            "items": [
-                {
-                    "position": {
-                        "top": "50%",
-                        "left": "78.37%"
-                    },
-                    "content": {
-                        "position": {
-                            "top": "10px",
-                            "bottom": "auto",
-                            "left": "auto",
-                            "right": "33px"
-                        },
-                        "title": "Pillar Dining Table Round",
-                        "price": "140.00",
-                        "salePrice": "100.00",
-                        "image": "product/4.jpg",
-                        "link": "/product/2"
-                    }
+[
+    {
+        "title": "Like lounging on<br> a cloud",
+        "subtitle": "Discover the new Koti Sofa",
+        "description": "",
+        "button": {
+            "class": "button button-white",
+            "text": "SHOP NOW",
+            "link": "/products"
+        },
+        "image": {
+            "src": "banner/lookbook-1.jpg",
+            "width": "869",
+            "height": "702",
+            "alt": "Look Book 1"
+        },
+        "items": [
+            {
+                "position": {
+                    "top": "50%",
+                    "left": "78.37%"
                 },
-                {
+                "content": {
                     "position": {
-                        "top": "74.22%",
-                        "left": "34.06%"
+                        "top": "10px",
+                        "bottom": "auto",
+                        "left": "auto",
+                        "right": "33px"
                     },
-                    "content": {
-                        "position": {
-                            "top": "auto",
-                            "bottom": "10px",
-                            "left": "33px",
-                            "right": "auto"
-                        },
-                        "title": "Mags Sofa 2.5 Seater",
-                        "price": "210.00",
-                        "salePrice": "210.00",
-                        "image": "product/7.jpg",
-                        "link": "/product/3"
-                    }
+                    "title": "Pillar Dining Table Round",
+                    "price": "140.00",
+                    "salePrice": "100.00",
+                    "image": "product/4.jpg",
+                    "link": "/product/2"
                 }
-            ]
-        }
-    ]
-}
+            },
+            {
+                "position": {
+                    "top": "74.22%",
+                    "left": "34.06%"
+                },
+                "content": {
+                    "position": {
+                        "top": "auto",
+                        "bottom": "10px",
+                        "left": "33px",
+                        "right": "auto"
+                    },
+                    "title": "Mags Sofa 2.5 Seater",
+                    "price": "210.00",
+                    "salePrice": "210.00",
+                    "image": "product/7.jpg",
+                    "link": "/product/3"
+                }
+            }
+        ]
+    }
+]

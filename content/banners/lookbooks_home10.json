@@ -1,60 +1,58 @@
-{
-    "data": [
-        {
-            "title": "Exclusive to Online Prints<br> &amp; Rugs Range",
-            "subtitle": "",
-            "description": "Shop from the comfort of home and order with the click of a button. Our brand-new exclusive to online print and rug collection showcases so much more than we have in-store.",
-            "button": {
-                "class": "button button-black",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
-            "image": {
-                "src": "banner/lookbook-5.jpg",
-                "width": "961",
-                "height": "668",
-                "alt": "Look Book"
-            },
-            "items": [
-                {
-                    "position": {
-                        "top": "72.01%",
-                        "left": "43.91%"
-                    },
-                    "content": {
-                        "position": {
-                            "top": "auto",
-                            "bottom": "10px",
-                            "left": "33px",
-                            "right": "auto"
-                        },
-                        "title": "Pillar Dining Table Round",
-                        "price": "140.00",
-                        "salePrice": "100.00",
-                        "image": "product/4.jpg",
-                        "link": "/product/2"
-                    }
+[
+    {
+        "title": "Exclusive to Online Prints<br> &amp; Rugs Range",
+        "subtitle": "",
+        "description": "Shop from the comfort of home and order with the click of a button. Our brand-new exclusive to online print and rug collection showcases so much more than we have in-store.",
+        "button": {
+            "class": "button button-black",
+            "text": "SHOP NOW",
+            "link": "/products"
+        },
+        "image": {
+            "src": "banner/lookbook-5.jpg",
+            "width": "961",
+            "height": "668",
+            "alt": "Look Book"
+        },
+        "items": [
+            {
+                "position": {
+                    "top": "72.01%",
+                    "left": "43.91%"
                 },
-                {
+                "content": {
                     "position": {
-                        "top": "29.34%",
-                        "left": "68.68%"
+                        "top": "auto",
+                        "bottom": "10px",
+                        "left": "33px",
+                        "right": "auto"
                     },
-                    "content": {
-                        "position": {
-                            "top": "10px",
-                            "bottom": "auto",
-                            "left": "auto",
-                            "right": "33px"
-                        },
-                        "title": "Mags Sofa 2.5 Seater",
-                        "price": "210.00",
-                        "salePrice": "210.00",
-                        "image": "product/7.jpg",
-                        "link": "/product/3"
-                    }
+                    "title": "Pillar Dining Table Round",
+                    "price": "140.00",
+                    "salePrice": "100.00",
+                    "image": "product/4.jpg",
+                    "link": "/product/2"
                 }
-            ]
-        }
-    ]
-}
+            },
+            {
+                "position": {
+                    "top": "29.34%",
+                    "left": "68.68%"
+                },
+                "content": {
+                    "position": {
+                        "top": "10px",
+                        "bottom": "auto",
+                        "left": "auto",
+                        "right": "33px"
+                    },
+                    "title": "Mags Sofa 2.5 Seater",
+                    "price": "210.00",
+                    "salePrice": "210.00",
+                    "image": "product/7.jpg",
+                    "link": "/product/3"
+                }
+            }
+        ]
+    }
+]

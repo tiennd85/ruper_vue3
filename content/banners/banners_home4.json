@@ -1,36 +1,34 @@
-{
-    "data": [
-        {
-            "title": "Storage",
-            "description": "Crisp, Clean Dining Room Designs <br>for Every Taste",
-            "image": {
-                "src": "banner/banner-9.jpg",
-                "width": "707",
-                "height": "349",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+[
+    {
+        "title": "Storage",
+        "description": "Crisp, Clean Dining Room Designs <br>for Every Taste",
+        "image": {
+            "src": "banner/banner-9.jpg",
+            "width": "707",
+            "height": "349",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "Lighting",
-            "description": "Bring some light to your life with our<br> lighting designs",
-            "image": {
-                "src": "banner/banner-10.jpg",
-                "width": "707",
-                "height": "349",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Lighting",
+        "description": "Bring some light to your life with our<br> lighting designs",
+        "image": {
+            "src": "banner/banner-10.jpg",
+            "width": "707",
+            "height": "349",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "SHOP NOW",
             "link": "/products"
-        }
-    ]
-}
+        },
+        "link": "/products"
+    }
+]

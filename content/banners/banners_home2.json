@@ -1,52 +1,50 @@
-{
-    "data": [
-        {
-            "title": "new arivals.",
-            "description": "",
-            "image": {
-                "src": "banner/banner-3.jpg",
-                "width": "568",
-                "height": "607",
-                "alt": "new arivals."
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "shop now",
-                "link": "/products"
-            },
+[
+    {
+        "title": "new arivals.",
+        "description": "",
+        "image": {
+            "src": "banner/banner-3.jpg",
+            "width": "568",
+            "height": "607",
+            "alt": "new arivals."
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "shop now",
             "link": "/products"
         },
-        {
-            "title": "trending.",
-            "description": "",
-            "image": {
-                "src": "banner/banner-4.jpg",
-                "width": "568",
-                "height": "607",
-                "alt": "trending."
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "shop now",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "trending.",
+        "description": "",
+        "image": {
+            "src": "banner/banner-4.jpg",
+            "width": "568",
+            "height": "607",
+            "alt": "trending."
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "shop now",
             "link": "/products"
         },
-        {
-            "title": "staffpick.",
-            "description": "",
-            "image": {
-                "src": "banner/banner-5.jpg",
-                "width": "568",
-                "height": "607",
-                "alt": "staffpick."
-            },
-            "button": {
-                "class": "button btn-underline",
-                "text": "shop now",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "staffpick.",
+        "description": "",
+        "image": {
+            "src": "banner/banner-5.jpg",
+            "width": "568",
+            "height": "607",
+            "alt": "staffpick."
+        },
+        "button": {
+            "class": "button btn-underline",
+            "text": "shop now",
             "link": "/products"
-        }
-    ]
-}
+        },
+        "link": "/products"
+    }
+]

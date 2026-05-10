@@ -1,36 +1,34 @@
-{
-    "data": [
-        {
-            "title": "For your personal <br>collection",
-            "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
-            "image": {
-                "src": "banner/banner-23.jpg",
-                "width": "691",
-                "height": "400",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button button-outline white",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+[
+    {
+        "title": "For your personal <br>collection",
+        "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
+        "image": {
+            "src": "banner/banner-23.jpg",
+            "width": "691",
+            "height": "400",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button button-outline white",
+            "text": "SHOP NOW",
             "link": "/products"
         },
-        {
-            "title": "Furniture for<br> the whole family",
-            "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
-            "image": {
-                "src": "banner/banner-24.jpg",
-                "width": "691",
-                "height": "400",
-                "alt": "Banner Image"
-            },
-            "button": {
-                "class": "button button-outline white",
-                "text": "SHOP NOW",
-                "link": "/products"
-            },
+        "link": "/products"
+    },
+    {
+        "title": "Furniture for<br> the whole family",
+        "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
+        "image": {
+            "src": "banner/banner-24.jpg",
+            "width": "691",
+            "height": "400",
+            "alt": "Banner Image"
+        },
+        "button": {
+            "class": "button button-outline white",
+            "text": "SHOP NOW",
             "link": "/products"
-        }
-    ]
-}
+        },
+        "link": "/products"
+    }
+]
