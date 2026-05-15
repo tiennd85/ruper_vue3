@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Chair Collection",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "Save up to $500 on outdoor packages",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home1_1.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    },
+    {
+        "title": "Interior Lighting",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "Save up to $500 on outdoor packages",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home1_2.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    },
+    {
+        "title": "Home Office",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "Save up to $500 on outdoor packages",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home1_3.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    }
+]

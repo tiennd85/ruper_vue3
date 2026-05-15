@@ -5,11 +5,11 @@
             <div v-if="subTitle" class="sub-title">{{ subTitle }}</div>
         </div>
         <div class="block-content">
-            <slick class="slick-sliders" ref="slick" :options="slickOptions">
-                <div class="item slick-slide" v-for="(slide, index) in slides" :key="index">
+            <div class="slick-sliders" ref="sliderElement">
+                <div class="item" v-for="(slide, index) in slides" :key="index">
                     <div v-if="layout == '1'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="section-padding">
                             <div class="section-container">
@@ -28,7 +28,7 @@
                     </div>
                     <div v-else-if="layout == '2'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-start vertical-middle">
                             <div class="content">
@@ -43,7 +43,7 @@
                     </div>
                     <div v-else-if="layout == '3'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="section-padding">
                             <div class="section-container">
@@ -62,7 +62,7 @@
                     </div>
                     <div v-else-if="layout == '4'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-start vertical-bottom">
                             <div class="content">
@@ -85,12 +85,12 @@
                             </div>
                         </div>
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                     </div>
                     <div v-else-if="layout == '6'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-center vertical-bottom text-center">
                             <div class="content">
@@ -104,7 +104,7 @@
                     </div>
                     <div v-else-if="layout == '7'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-end vertical-middle">
                             <div class="content">
@@ -118,7 +118,7 @@
                     </div>
                     <div v-else-if="layout == '8'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-start vertical-middle">
                             <div class="content">
@@ -133,7 +133,7 @@
                     <div v-else-if="layout == '9'">
                         <div v-if="index % 2 && twoSide" class="item-content">
                             <div class="content-image">
-                                <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                                <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                             </div>
                             <div class="item-info">
                                 <div :class="['content', 'background-' + slide.background]">
@@ -160,13 +160,13 @@
                                 </div>
                             </div>
                             <div class="content-image">
-                                <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                                <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                             </div>
                         </div>
                     </div>
                     <div v-else-if="layout == '10'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-center vertical-middle">
                             <div class="content text-center">
@@ -180,7 +180,7 @@
                     </div>
                     <div v-else-if="layout == '11'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-center vertical-middle">
                             <div class="content text-center">
@@ -194,7 +194,7 @@
                     </div>
                     <div v-else-if="layout == '12'" class="item-content">
                         <div class="content-image">
-                            <img :width="slide.image.width" :height="slide.image.height" :src="require('@/assets/img/' + slide.image.src)" :alt="slide.title">
+                            <img :width="slide.image.width" :height="slide.image.height" :src="slide.image.src" :alt="slide.title">
                         </div>
                         <div class="item-info horizontal-center vertical-middle">
                             <div class="content text-center">
@@ -206,7 +206,7 @@
                         </div>
                     </div>
                 </div>
-            </slick>
+            </div>
             <div v-if="bgImageRound || bgImageCenter" class="slider-bg-image">
                 <img v-if="bgImageRound" class="animation-round" width="105" height="105" :src="require('@/assets/img/' + bgImageRound)" alt="">
                 <img v-if="bgImageCenter" class="image-center" width="17" height="20" :src="require('@/assets/img/' + bgImageCenter)" alt="">
@@ -215,55 +215,55 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'SlideModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        slides: Array,
-        layout: {
-            type: Number,
-            default: 1
-        },
-        navLeft: {
-            type: Boolean,
-            default: false
-        },
-        navCenter: {
-            type: Boolean,
-            default: false
-        },
-        navVertical: {
-            type: Boolean,
-            default: false
-        },
-        autoHeight: {
-            type: Boolean,
-            default: false
-        },
-        twoSide: {
-            type: Boolean,
-            default: false
-        },
-        bgImageRound: String,
-        bgImageCenter: String
-    },
-    data() {
-        return {
-            slickOptions: {
-                slidesToShow: 1,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                infinite: true,
-                arrows: false,
-                dots: true,
-                draggable: true,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-            }
-        }
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const sliderElement = ref(null)
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    slides: Array,
+    layout: { type: Number, default: 1 },
+    navLeft: { type: Boolean, default: false },
+    navCenter: { type: Boolean, default: false },
+    navVertical: { type: Boolean, default: false },
+    autoHeight: { type: Boolean, default: false },
+    twoSide: { type: Boolean, default: false },
+    bgImageRound: String,
+    bgImageCenter: String
+})
+
+onMounted(async () => {
+    await nextTick()
+
+    if (process.client && typeof window !== 'undefined') {
+    const $ = (await import('jquery')).default
+    await import('slick-carousel')
+
+    const slider = $('.slick-sliders')
+    if (slider.length > 0) {
+        slider.slick({
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            infinite: true,
+            arrows: false,
+            dots: true,
+            draggable: true,
+            pauseOnHover: false,
+            pauseOnFocus: false
+        })
     }
-}
+  }
+})
+
+onBeforeUnmount(() => {
+  if (process.client) {
+    const slider = $('.slick-sliders')
+    if (slider.hasClass('slick-initialized')) {
+      slider.slick('unslick')
+    }
+  }
+})
 </script>

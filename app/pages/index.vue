@@ -13,12 +13,12 @@
 <script setup>
 import { onMounted } from 'vue'
 
-// Data Slides
 const { data: slidesData } = await useAsyncData('home-slides', () => 
   queryContent('slides', 'slides_home1').findOne()
 )
 const slides = computed(() => slidesData.value?.body || [])
 
+/*
 // Data Banners1
 const { data: banners1Data } = await useAsyncData('home-banners-1', () => 
   queryContent('banners', 'banners_home1_1').findOne()
@@ -42,6 +42,7 @@ const { data: featuresData } = await useAsyncData('home-features', () =>
   queryContent('features', 'features').findOne()
 )
 const features = computed(() => featuresData.value?.body || [])
+*/
 
 useHead({
   bodyAttrs: {
