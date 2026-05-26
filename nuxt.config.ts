@@ -13,6 +13,8 @@ export default defineNuxtConfig({
   },
   css: [
     'slick-carousel/slick/slick.css',
-    'slick-carousel/slick/slick-theme.css'
+    'slick-carousel/slick/slick-theme.css',
+    '~/assets/css/style.css',
+    '~/assets/css/responsive.css'
   ],
 })
