@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "image": {
-                "src": "banner/instagram-1.jpg",
-                "width": "690",
-                "height": "690",
-                "alt": "Instagram 1"
-            },
-            "link": "https://www.instagram.com"
+[
+    {
+        "image": {
+            "src": "/img/banner/instagram-1.jpg",
+            "width": "690",
+            "height": "690",
+            "alt": "Instagram 1"
         },
-        {
-            "image": {
-                "src": "banner/instagram-2.jpg",
-                "width": "690",
-                "height": "690",
-                "alt": "Instagram 2"
-            },
-            "link": "https://www.instagram.com"
+        "link": "https://www.instagram.com"
+    },
+    {
+        "image": {
+            "src": "/img/banner/instagram-2.jpg",
+            "width": "690",
+            "height": "690",
+            "alt": "Instagram 2"
         },
-        {
-            "image": {
-                "src": "banner/instagram-3.jpg",
-                "width": "690",
-                "height": "690",
-                "alt": "Instagram 3"
-            },
-            "link": "https://www.instagram.com"
+        "link": "https://www.instagram.com"
+    },
+    {
+        "image": {
+            "src": "/img/banner/instagram-3.jpg",
+            "width": "690",
+            "height": "690",
+            "alt": "Instagram 3"
         },
-        {
-            "image": {
-                "src": "banner/instagram-4.jpg",
-                "width": "690",
-                "height": "690",
-                "alt": "Instagram 4"
-            },
-            "link": "https://www.instagram.com"
+        "link": "https://www.instagram.com"
+    },
+    {
+        "image": {
+            "src": "/img/banner/instagram-4.jpg",
+            "width": "690",
+            "height": "690",
+            "alt": "Instagram 4"
         },
-        {
-            "image": {
-                "src": "banner/instagram-5.jpg",
-                "width": "690",
-                "height": "690",
-                "alt": "Instagram 5"
-            },
-            "link": "https://www.instagram.com"
-        }
-    ]
-}
+        "link": "https://www.instagram.com"
+    },
+    {
+        "image": {
+            "src": "/img/banner/instagram-5.jpg",
+            "width": "690",
+            "height": "690",
+            "alt": "Instagram 5"
+        },
+        "link": "https://www.instagram.com"
+    }
+]

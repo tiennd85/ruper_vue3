@@ -3,7 +3,7 @@
         "title": "For your personal <br>collection",
         "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
         "image": {
-            "src": "banner/banner-23.jpg",
+            "src": "/img/banner/banner-23.jpg",
             "width": "691",
             "height": "400",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Furniture for<br> the whole family",
         "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis ",
         "image": {
-            "src": "banner/banner-24.jpg",
+            "src": "/img/banner/banner-24.jpg",
             "width": "691",
             "height": "400",
             "alt": "Banner Image"

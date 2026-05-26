@@ -1,32 +1,29 @@
-{
-    "data": [
-        {
-            "title": "Facebook",
-            "link": "#"
-        },
-        {
-            "title": "Instagram",
-            "link": "#"
-        },
-        {
-            "title": "Pinterest",
-            "link": "#"
-        },
-        {
-            "title": "Brosa Blog",
-            "link": "#"
-        },
-        {
-            "title": "Careers",
-            "link": "#"
-        },
-        {
-            "title": "Media Enquiries",
-            "link": "#"
-        }
-    ]
-}
-
+[
+    {
+        "title": "Facebook",
+        "link": "#"
+    },
+    {
+        "title": "Instagram",
+        "link": "#"
+    },
+    {
+        "title": "Pinterest",
+        "link": "#"
+    },
+    {
+        "title": "Brosa Blog",
+        "link": "#"
+    },
+    {
+        "title": "Careers",
+        "link": "#"
+    },
+    {
+        "title": "Media Enquiries",
+        "link": "#"
+    }
+]
 
 
 

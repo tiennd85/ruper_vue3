@@ -9,7 +9,7 @@
             "link": "/products"
         },
         "image": {
-            "src": "banner/lookbook-7.jpg",
+            "src": "/img/banner/lookbook-7.jpg",
             "width": "703",
             "height": "702",
             "alt": "Look Book"

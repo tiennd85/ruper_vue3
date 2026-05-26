@@ -3,7 +3,7 @@
         "title": "Living Room",
         "description": "NEW COLLECTION",
         "image": {
-            "src": "banner/banner-11.jpg",
+            "src": "/img/banner/banner-11.jpg",
             "width": "959",
             "height": "837",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Dining & Kitchen",
         "description": "FAVOURITE",
         "image": {
-            "src": "banner/banner-12.jpg",
+            "src": "/img/banner/banner-12.jpg",
             "width": "961",
             "height": "419",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Home Decor",
         "description": "FREE SHIPPING",
         "image": {
-            "src": "banner/banner-13.jpg",
+            "src": "/img/banner/banner-13.jpg",
             "width": "481",
             "height": "419",
             "alt": "Banner Image"
@@ -51,7 +51,7 @@
         "title": "Interior lighting",
         "description": "30% OFF",
         "image": {
-            "src": "banner/banner-14.jpg",
+            "src": "/img/banner/banner-14.jpg",
             "width": "481",
             "height": "419",
             "alt": "Banner Image"

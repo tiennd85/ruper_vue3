@@ -3,7 +3,7 @@
         "title": "Storage",
         "description": "Crisp, Clean Dining Room Designs <br>for Every Taste",
         "image": {
-            "src": "banner/banner-9.jpg",
+            "src": "/img/banner/banner-9.jpg",
             "width": "707",
             "height": "349",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Lighting",
         "description": "Bring some light to your life with our<br> lighting designs",
         "image": {
-            "src": "banner/banner-10.jpg",
+            "src": "/img/banner/banner-10.jpg",
             "width": "707",
             "height": "349",
             "alt": "Banner Image"

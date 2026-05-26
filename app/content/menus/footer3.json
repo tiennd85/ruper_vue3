@@ -1,28 +1,26 @@
-{
-    "data": [
-        {
-            "title": "Our Story",
-            "link": "#"
-        },
-        {
-            "title": "Visit Melbourne Studio",
-            "link": "#"
-        },
-        {
-            "title": "Visit Sydney Studio",
-            "link": "#"
-        },
-        {
-            "title": "Visit Brisbane Studio [Closed]",
-            "link": "#"
-        },
-        {
-            "title": "Design",
-            "link": "#"
-        },
-        {
-            "title": "How Ruper Works",
-            "link": "#"
-        }
-    ]
-}
+[
+    {
+        "title": "Our Story",
+        "link": "#"
+    },
+    {
+        "title": "Visit Melbourne Studio",
+        "link": "#"
+    },
+    {
+        "title": "Visit Sydney Studio",
+        "link": "#"
+    },
+    {
+        "title": "Visit Brisbane Studio [Closed]",
+        "link": "#"
+    },
+    {
+        "title": "Design",
+        "link": "#"
+    },
+    {
+        "title": "How Ruper Works",
+        "link": "#"
+    }
+]

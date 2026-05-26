@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "title": "Designed for Life<br> Made for you.",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home5_1.jpg",
-                "width": "700",
-                "height": "785"
-            }
+[
+    {
+        "title": "Designed for Life<br> Made for you.",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Best Sellers",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home5_2.jpg",
-                "width": "700",
-                "height": "785"
-            }
-        },
-        {
-            "title": "New Arrivals",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home5_3.jpg",
-                "width": "700",
-                "height": "785"
-            }
+        "image": {
+            "src": "/img/slider/home5_1.jpg",
+            "width": "700",
+            "height": "785"
         }
-    ]
-}
+    },
+    {
+        "title": "Best Sellers",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home5_2.jpg",
+            "width": "700",
+            "height": "785"
+        }
+    },
+    {
+        "title": "New Arrivals",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home5_3.jpg",
+            "width": "700",
+            "height": "785"
+        }
+    }
+]

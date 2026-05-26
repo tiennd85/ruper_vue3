@@ -11,12 +11,13 @@
   },
   "dependencies": {
     "@nuxt/content": "^2.13.1",
+    "@pinia/nuxt": "^0.11.3",
+    "jquery": "^3.7.1",
     "nuxt": "^3.11.2",
+    "slick-carousel": "^1.8.1",
     "vue": "^3.4.0",
     "vue-router": "^4.3.0",
-    "vuex": "^4.1.0",
-    "jquery": "^3.7.1",
-    "slick-carousel": "^1.8.1"
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.29"

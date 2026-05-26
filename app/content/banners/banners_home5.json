@@ -3,7 +3,7 @@
         "title": "For your personal<br> collection",
         "description": "Sed lectus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus",
         "image": {
-            "src": "banner/banner-6.jpg",
+            "src": "/img/banner/banner-6.jpg",
             "width": "496",
             "height": "577",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Always by your side",
         "description": "Make you bedroom your inner sanctuary.",
         "image": {
-            "src": "banner/banner-7.jpg",
+            "src": "/img/banner/banner-7.jpg",
             "width": "496",
             "height": "577",
             "alt": "Banner Image"

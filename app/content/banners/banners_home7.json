@@ -3,7 +3,7 @@
         "title": "From bottle to chair",
         "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
         "image": {
-            "src": "banner/banner-18.jpg",
+            "src": "/img/banner/banner-18.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Fall collection from hightower",
         "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
         "image": {
-            "src": "banner/banner-19.jpg",
+            "src": "/img/banner/banner-19.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Armchair with armrests",
         "description": "In our design and production processes, we are always looking at where environmental thinking and economic",
         "image": {
-            "src": "banner/banner-20.jpg",
+            "src": "/img/banner/banner-20.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"

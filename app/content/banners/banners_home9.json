@@ -3,7 +3,7 @@
         "title": "Our Journal",
         "description": "",
         "image": {
-            "src": "banner/banner-bg.jpg",
+            "src": "/img/banner/banner-bg.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"

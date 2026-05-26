@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   srcDir: 'app/',
-  modules: ['@nuxt/content'],
+  modules: [
+    '@nuxt/content',
+    '@pinia/nuxt'
+  ],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   vite: {

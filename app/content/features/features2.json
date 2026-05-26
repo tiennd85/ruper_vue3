@@ -1,19 +1,17 @@
-{
-    "data": [
-        {
-            "title": "Free full-service delivery",
-            "description": "Sit back and relax! We put your new furniture into place and take all rubbish with us.",
-            "icon": "icon/feature-1.svg"
-        },
-        {
-            "title": "Worry-free purchasing",
-            "description": "Your new FEST piece comes with a 3-Year Warranty, including at-home repair service.",
-            "icon": "icon/feature-2.svg"
-        },
-        {
-            "title": "Choose from over 100 fabrics",
-            "description": "Mix and match. Create your one-of-a-kind piece of furniture and take all rubbish.",
-            "icon": "icon/feature-3.svg"
-        }
-    ]
-}
+[
+    {
+        "title": "Free full-service delivery",
+        "description": "Sit back and relax! We put your new furniture into place and take all rubbish with us.",
+        "icon": "/img/icon/feature-1.svg"
+    },
+    {
+        "title": "Worry-free purchasing",
+        "description": "Your new FEST piece comes with a 3-Year Warranty, including at-home repair service.",
+        "icon": "/img/icon/feature-2.svg"
+    },
+    {
+        "title": "Choose from over 100 fabrics",
+        "description": "Mix and match. Create your one-of-a-kind piece of furniture and take all rubbish.",
+        "icon": "/img/icon/feature-3.svg"
+    }
+]

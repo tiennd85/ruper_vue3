@@ -3,7 +3,7 @@
         "title": "Made for laze-ins",
         "description": "Summer Collection",
         "image": {
-            "src": "banner/banner-21.jpg",
+            "src": "/img/banner/banner-21.jpg",
             "width": "657",
             "height": "839",
             "alt": "Banner Image"

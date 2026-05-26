@@ -1,24 +1,22 @@
-{
-    "data": [
-        {
-            "title": "Free Shipping",
-            "description": "You will love at great low prices",
-            "icon": "icon/shipping.svg"
-        },
-        {
-            "title": "Flexible Payment",
-            "description": "Pay with Multiple Credit Cards",
-            "icon": "icon/payment.svg"
-        },
-        {
-            "title": "14 Day Returns",
-            "description": "Within 30 days for an exchange.",
-            "icon": "icon/return.svg"
-        },
-        {
-            "title": "Online Support",
-            "description": "24 hours a day, 7 days a week",
-            "icon": "icon/support.svg"
-        }
-    ]
-}
+[
+    {
+        "title": "Free Shipping",
+        "description": "You will love at great low prices",
+        "icon": "/img/icon/shipping.svg"
+    },
+    {
+        "title": "Flexible Payment",
+        "description": "Pay with Multiple Credit Cards",
+        "icon": "/img/icon/payment.svg"
+    },
+    {
+        "title": "14 Day Returns",
+        "description": "Within 30 days for an exchange.",
+        "icon": "/img/icon/return.svg"
+    },
+    {
+        "title": "Online Support",
+        "description": "24 hours a day, 7 days a week",
+        "icon": "/img/icon/support.svg"
+    }
+]

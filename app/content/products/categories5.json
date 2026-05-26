@@ -1,28 +1,26 @@
-{
-    "data": [
-        {
-            "id": 19,
-            "title": "Accessories",
-            "image": "product/cat-23.jpg",
-            "tab": false
-        },
-        {
-            "id": 20,
-            "title": "Industrial",
-            "image": "product/cat-24.jpg",
-            "tab": false
-        },
-        {
-            "id": 21,
-            "title": "Modern",
-            "image": "product/cat-25.jpg",
-            "tab": false
-        },
-        {
-            "id": 22,
-            "title": "Scandinavian",
-            "image": "product/cat-26.jpg",
-            "tab": false
-        }
-    ]
-}
+[
+    {
+        "id": 19,
+        "title": "Accessories",
+        "image": "/img/product/cat-23.jpg",
+        "tab": false
+    },
+    {
+        "id": 20,
+        "title": "Industrial",
+        "image": "/img/product/cat-24.jpg",
+        "tab": false
+    },
+    {
+        "id": 21,
+        "title": "Modern",
+        "image": "/img/product/cat-25.jpg",
+        "tab": false
+    },
+    {
+        "id": 22,
+        "title": "Scandinavian",
+        "image": "/img/product/cat-26.jpg",
+        "tab": false
+    }
+]

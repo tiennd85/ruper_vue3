@@ -3,7 +3,7 @@
         "title": "Quality At Every Step",
         "description": "Rest easy. From choice materials and expert hands, to precision tools and tests, we ensure your product is made of hardy stuff",
         "image": {
-            "src": "banner/about-us-3.jpg",
+            "src": "/img/banner/about-us-3.jpg",
             "width": "825",
             "height": "475",
             "alt": "Banner 2"

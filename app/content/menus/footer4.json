@@ -1,27 +1,25 @@
-{
-    "data": [
-        {
-            "title": "Contact & FAQ",
-            "link": "#"
-        },
-        {
-            "title": "Track Your Order",
-            "link": "#"
-        },
-        {
-            "title": "Returns & Refunds",
-            "link": "#"
-        },
-        {
-            "title": "Shipping & Delivery",
-            "link": "#"
-        },
-        {
-            "title": "Lead Times",
-            "link": "#"
-        }
-    ]
-}
+[
+    {
+        "title": "Contact & FAQ",
+        "link": "#"
+    },
+    {
+        "title": "Track Your Order",
+        "link": "#"
+    },
+    {
+        "title": "Returns & Refunds",
+        "link": "#"
+    },
+    {
+        "title": "Shipping & Delivery",
+        "link": "#"
+    },
+    {
+        "title": "Lead Times",
+        "link": "#"
+    }
+]
 
 
 

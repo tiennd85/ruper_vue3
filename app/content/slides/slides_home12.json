@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "title": "Outdoor Dining<br> Chair Sale",
-            "subtitle": "Spring Collection",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home12_1.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+[
+    {
+        "title": "Outdoor Dining<br> Chair Sale",
+        "subtitle": "Spring Collection",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Summer <br>Collection 2022",
-            "subtitle": "Spring Collection",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home12_2.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
-        },
-        {
-            "title": "Spring <br> Collection 2022",
-            "subtitle": "Spring Collection",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home12_3.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+        "image": {
+            "src": "/img/slider/home12_1.jpg",
+            "width": "1920",
+            "height": "1080"
         }
-    ]
-}
+    },
+    {
+        "title": "Summer <br>Collection 2022",
+        "subtitle": "Spring Collection",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home12_2.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    },
+    {
+        "title": "Spring <br> Collection 2022",
+        "subtitle": "Spring Collection",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home12_3.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    }
+]

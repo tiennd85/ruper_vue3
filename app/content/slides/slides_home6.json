@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "title": "Outline Studio Sofa",
-            "subtitle": "20%OFF.END MONDAY",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home6_1.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+[
+    {
+        "title": "Outline Studio Sofa",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Black Friday",
-            "subtitle": "20%OFF.END MONDAY",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home6_2.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
-        },
-        {
-            "title": "Spring Collection",
-            "subtitle": "20%OFF.END MONDAY",
-            "description": "",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home6_3.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+        "image": {
+            "src": "/img/slider/home6_1.jpg",
+            "width": "1920",
+            "height": "1080"
         }
-    ]
-}
+    },
+    {
+        "title": "Black Friday",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home6_2.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    },
+    {
+        "title": "Spring Collection",
+        "subtitle": "20%OFF.END MONDAY",
+        "description": "",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home6_3.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    }
+]

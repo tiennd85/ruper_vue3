@@ -3,7 +3,7 @@
         "title": "Furniture",
         "description": "",
         "image": {
-            "src": "banner/product-cat-1.jpg",
+            "src": "/img/banner/product-cat-1.jpg",
             "width": "571",
             "height": "622",
             "alt": "Furniture"
@@ -19,7 +19,7 @@
         "title": "Lighting",
         "description": "",
         "image": {
-            "src": "banner/product-cat-2.jpg",
+            "src": "/img/banner/product-cat-2.jpg",
             "width": "406",
             "height": "304",
             "alt": "Lighting"
@@ -35,7 +35,7 @@
         "title": "Modern",
         "description": "",
         "image": {
-            "src": "banner/product-cat-3.jpg",
+            "src": "/img/banner/product-cat-3.jpg",
             "width": "406",
             "height": "304",
             "alt": "Modern"
@@ -51,7 +51,7 @@
         "title": "Accessories",
         "description": "",
         "image": {
-            "src": "banner/product-cat-4.jpg",
+            "src": "/img/banner/product-cat-4.jpg",
             "width": "824",
             "height": "304",
             "alt": "Accessories"

@@ -3,7 +3,7 @@
         "title": "new arivals.",
         "description": "",
         "image": {
-            "src": "banner/banner-3.jpg",
+            "src": "/img/banner/banner-3.jpg",
             "width": "568",
             "height": "607",
             "alt": "new arivals."
@@ -19,7 +19,7 @@
         "title": "trending.",
         "description": "",
         "image": {
-            "src": "banner/banner-4.jpg",
+            "src": "/img/banner/banner-4.jpg",
             "width": "568",
             "height": "607",
             "alt": "trending."
@@ -35,7 +35,7 @@
         "title": "staffpick.",
         "description": "",
         "image": {
-            "src": "banner/banner-5.jpg",
+            "src": "/img/banner/banner-5.jpg",
             "width": "568",
             "height": "607",
             "alt": "staffpick."

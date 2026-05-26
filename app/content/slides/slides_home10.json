@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "title": "Easy Living",
-            "subtitle": "",
-            "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home10_1.jpg",
-                "width": "959",
-                "height": "963"
-            }
+[
+    {
+        "title": "Easy Living",
+        "subtitle": "",
+        "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Home Furniture",
-            "subtitle": "",
-            "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home10_2.jpg",
-                "width": "959",
-                "height": "963"
-            }
-        },
-        {
-            "title": "Chair Collection",
-            "subtitle": "",
-            "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home10_3.jpg",
-                "width": "959",
-                "height": "963"
-            }
+        "image": {
+            "src": "/img/slider/home10_1.jpg",
+            "width": "959",
+            "height": "963"
         }
-    ]
-}
+    },
+    {
+        "title": "Home Furniture",
+        "subtitle": "",
+        "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home10_2.jpg",
+            "width": "959",
+            "height": "963"
+        }
+    },
+    {
+        "title": "Chair Collection",
+        "subtitle": "",
+        "description": "Hot stuff, new stuff, fun stuff, soon to be your stuff?",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home10_3.jpg",
+            "width": "959",
+            "height": "963"
+        }
+    }
+]

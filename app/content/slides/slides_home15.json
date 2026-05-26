@@ -1,52 +1,50 @@
-{
-    "data": [
-        {
-            "title": "Spring Collection",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider btn-underline center",
-                "link": "/products",
-                "text": "Shop Collection"
-            },
-            "image": {
-                "src": "slider/home15_1.jpg",
-                "width": "1920",
-                "height": "729"
-            },
-            "background": ""
+[
+    {
+        "title": "Spring Collection",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider btn-underline center",
+            "link": "/products",
+            "text": "Shop Collection"
         },
-        {
-            "title": "Office<br> Furniture",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider btn-underline center",
-                "link": "/products",
-                "text": "Shop Collection"
-            },
-            "image": {
-                "src": "slider/home15_2.jpg",
-                "width": "1920",
-                "height": "729"
-            },
-            "background": ""
+        "image": {
+            "src": "/img/slider/home15_1.jpg",
+            "width": "1920",
+            "height": "729"
         },
-        {
-            "title": "Outdoor <br>Sale",
-            "subtitle": "",
-            "description": "",
-            "button": {
-                "class": "button-slider btn-underline center",
-                "link": "/products",
-                "text": "Shop Collection"
-            },
-            "image": {
-                "src": "slider/home15_3.jpg",
-                "width": "1920",
-                "height": "729"
-            },
-            "background": ""
-        }
-    ]
-}
+        "background": ""
+    },
+    {
+        "title": "Office<br> Furniture",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider btn-underline center",
+            "link": "/products",
+            "text": "Shop Collection"
+        },
+        "image": {
+            "src": "/img/slider/home15_2.jpg",
+            "width": "1920",
+            "height": "729"
+        },
+        "background": ""
+    },
+    {
+        "title": "Outdoor <br>Sale",
+        "subtitle": "",
+        "description": "",
+        "button": {
+            "class": "button-slider btn-underline center",
+            "link": "/products",
+            "text": "Shop Collection"
+        },
+        "image": {
+            "src": "/img/slider/home15_3.jpg",
+            "width": "1920",
+            "height": "729"
+        },
+        "background": ""
+    }
+]

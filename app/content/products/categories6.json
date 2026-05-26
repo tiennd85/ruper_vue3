@@ -1,28 +1,26 @@
-{
-    "data": [
-        {
-            "id": 23,
-            "title": "Furniture",
-            "image": "product/cat-27.jpg",
-            "tab": false
-        },
-        {
-            "id": 24,
-            "title": "Lighting",
-            "image": "product/cat-28.jpg",
-            "tab": false
-        },
-        {
-            "id": 25,
-            "title": "Modern",
-            "image": "product/cat-29.jpg",
-            "tab": false
-        },
-        {
-            "id": 26,
-            "title": "Bed & Bath",
-            "image": "product/cat-30.jpg",
-            "tab": false
-        }
-    ]
-}
+[
+    {
+        "id": 23,
+        "title": "Furniture",
+        "image": "/img/product/cat-27.jpg",
+        "tab": false
+    },
+    {
+        "id": 24,
+        "title": "Lighting",
+        "image": "/img/product/cat-28.jpg",
+        "tab": false
+    },
+    {
+        "id": 25,
+        "title": "Modern",
+        "image": "/img/product/cat-29.jpg",
+        "tab": false
+    },
+    {
+        "id": 26,
+        "title": "Bed & Bath",
+        "image": "/img/product/cat-30.jpg",
+        "tab": false
+    }
+]

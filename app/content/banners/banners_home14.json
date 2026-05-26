@@ -3,7 +3,7 @@
         "title": "Furniture Sale",
         "description": "",
         "image": {
-            "src": "banner/banner-29.jpg",
+            "src": "/img/banner/banner-29.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Decoration",
         "description": "",
         "image": {
-            "src": "banner/banner-30.jpg",
+            "src": "/img/banner/banner-30.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"

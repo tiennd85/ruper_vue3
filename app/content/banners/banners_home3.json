@@ -3,7 +3,7 @@
         "title": "Outdoor With a Touch of Class",
         "description": "Style any outdoor area with some careful study and sound decisions.",
         "image": {
-            "src": "banner/banner-6.jpg",
+            "src": "/img/banner/banner-6.jpg",
             "width": "496",
             "height": "577",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "A Beautiful, Restful Bedroom",
         "description": "Make you bedroom your inner sanctuary.",
         "image": {
-            "src": "banner/banner-7.jpg",
+            "src": "/img/banner/banner-7.jpg",
             "width": "496",
             "height": "577",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Beautiful Boho Dining",
         "description": "Make your meal times experience an event by styling with a boho look.",
         "image": {
-            "src": "banner/banner-8.jpg",
+            "src": "/img/banner/banner-8.jpg",
             "width": "496",
             "height": "577",
             "alt": "Banner Image"

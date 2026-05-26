@@ -1,24 +1,22 @@
-{
-    "data": [
-        {
-            "id": 1,
-            "title": "Mid Century Modern",
-            "image": "product/cat-7.jpg"
-        },
-        {
-            "id": 2,
-            "title": "French Provincial",
-            "image": "product/cat-8.jpg"
-        },
-        {
-            "id": 3,
-            "title": "Classic Traditional",
-            "image": "product/cat-9.jpg"
-        },
-        {
-            "id": 4,
-            "title": "Scandinavian",
-            "image": "product/cat-10.jpg"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Mid Century Modern",
+        "image": "/img/product/cat-7.jpg"
+    },
+    {
+        "id": 2,
+        "title": "French Provincial",
+        "image": "/img/product/cat-8.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Classic Traditional",
+        "image": "/img/product/cat-9.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Scandinavian",
+        "image": "/img/product/cat-10.jpg"
+    }
+]

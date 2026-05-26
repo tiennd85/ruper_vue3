@@ -15,93 +15,108 @@
             </div>
             <div v-else class="posts-wrap block-widget-wrap">
                 <div class="slick-wrap">
-                    <slick class="slick-sliders products-list grid" ref="slick" :options="slickOptions">
+                    <div class="slick-sliders products-list grid" ref="sliderElement">
                         <Blog v-for="(item, index) in items" :key="index" :blog="item" :layout="3" />
-                    </slick>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'BlogModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        limit: Number,
-        view: {
-            type: String,
-            default: 'list'
-        },
-        layout: {
-            type: Number,
-            default: 1
-        },
-        limit: Number
-    },
-    computed: {
-        items() {
-            let blogs = this.$store.state.blogs.items
-            return this.limit ? blogs.slice(0, this.limit) : blogs
-        }
-    },
-    data() {
-        return {
-            slickOptions: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                autoplay: false,
-                autoplaySpeed: 5000,
-                infinite: true,
-                arrows: true,
-                dots: false,
-                draggable: true,
-                touchMove: false,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                cssEase: 'linear',
-                prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-                nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [{
-                    breakpoint: 1441,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }]
-            }
-        }
-    },
-}
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const sliderElement = ref(null)
+
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    limit: Number,
+    view: { type: String, default: 'list' },
+    layout: { type: Number, default: 1 }
+})
+
+const { data: blogsData } = await useAsyncData('blogs', () => 
+  queryContent('blogs', 'blogs').findOne()
+)
+const blogs = computed(() => blogsData.value?.body || [])
+const items = computed(() => {
+    const blogList = blogs.value;
+    return props.limit ? blogList.slice(0, props.limit) : blogList;
+});
+
+onMounted(async () => {
+    await nextTick()
+
+    if (process.client && typeof window !== 'undefined') {
+    const $ = (await import('jquery')).default
+    await import('slick-carousel')
+
+    const slider = $('.slick-sliders')
+    if (slider.length > 0) {
+        slider.slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            infinite: true,
+            arrows: true,
+            dots: false,
+            draggable: true,
+            touchMove: false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            cssEase: 'linear',
+            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+            responsive: [{
+                breakpoint: 1441,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    vertical: !1,
+                    verticalSwiping: !1,
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    vertical: !1,
+                    verticalSwiping: !1,
+                }
+            }]
+        })
+    }
+  }
+})
+
+onBeforeUnmount(() => {
+  if (process.client) {
+    const slider = $('.slick-sliders')
+    if (slider.hasClass('slick-initialized')) {
+      slider.slick('unslick')
+    }
+  }
+})
 </script>

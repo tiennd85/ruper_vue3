@@ -1,52 +1,50 @@
-{
-    "data": [
-        {
-            "title": "Nook <br>Lounge Chair",
-            "subtitle": "",
-            "description": "Soft seats that welcome you home",
-            "button": {
-                "class": "button-slider button-black",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home13_1.jpg",
-                "width": "959",
-                "height": "963"
-            },
-            "background": 1
+[
+    {
+        "title": "Nook <br>Lounge Chair",
+        "subtitle": "",
+        "description": "Soft seats that welcome you home",
+        "button": {
+            "class": "button-slider button-black",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Office<br> Furniture",
-            "subtitle": "",
-            "description": "Soft seats that welcome you home",
-            "button": {
-                "class": "button-slider button-black",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home13_2.jpg",
-                "width": "959",
-                "height": "963"
-            },
-            "background": 2
+        "image": {
+            "src": "/img/slider/home13_1.jpg",
+            "width": "959",
+            "height": "963"
         },
-        {
-            "title": "Outdoor <br>Sale",
-            "subtitle": "",
-            "description": "Soft seats that welcome you home",
-            "button": {
-                "class": "button-slider button-black",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home13_3.jpg",
-                "width": "959",
-                "height": "963"
-            },
-            "background": 3
-        }
-    ]
-}
+        "background": 1
+    },
+    {
+        "title": "Office<br> Furniture",
+        "subtitle": "",
+        "description": "Soft seats that welcome you home",
+        "button": {
+            "class": "button-slider button-black",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home13_2.jpg",
+            "width": "959",
+            "height": "963"
+        },
+        "background": 2
+    },
+    {
+        "title": "Outdoor <br>Sale",
+        "subtitle": "",
+        "description": "Soft seats that welcome you home",
+        "button": {
+            "class": "button-slider button-black",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home13_3.jpg",
+            "width": "959",
+            "height": "963"
+        },
+        "background": 3
+    }
+]

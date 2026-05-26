@@ -1,28 +1,26 @@
-{
-    "data": [
-        {
-            "id": 27,
-            "title": "Chair",
-            "image": "product/cat-31.jpg",
-            "tab": false
-        },
-        {
-            "id": 28,
-            "title": "Storage",
-            "image": "product/cat-32.jpg",
-            "tab": false
-        },
-        {
-            "id": 29,
-            "title": "Lighting",
-            "image": "product/cat-33.jpg",
-            "tab": false
-        },
-        {
-            "id": 30,
-            "title": "Home Office",
-            "image": "product/cat-34.jpg",
-            "tab": false
-        }
-    ]
-}
+[
+    {
+        "id": 27,
+        "title": "Chair",
+        "image": "/img/product/cat-31.jpg",
+        "tab": false
+    },
+    {
+        "id": 28,
+        "title": "Storage",
+        "image": "/img/product/cat-32.jpg",
+        "tab": false
+    },
+    {
+        "id": 29,
+        "title": "Lighting",
+        "image": "/img/product/cat-33.jpg",
+        "tab": false
+    },
+    {
+        "id": 30,
+        "title": "Home Office",
+        "image": "/img/product/cat-34.jpg",
+        "tab": false
+    }
+]

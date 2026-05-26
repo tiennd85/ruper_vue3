@@ -44,6 +44,13 @@ const { data: featuresData } = await useAsyncData('home-features', () =>
 const features = computed(() => featuresData.value?.body || [])
 */
 
+definePageMeta({
+  headerLayout: 1,
+  currentMenu: 'home',
+  positionMenu: 'center',
+  footerLayout: 1
+})
+
 useHead({
   bodyAttrs: {
     class: 'home'

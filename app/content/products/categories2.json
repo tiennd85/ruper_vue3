@@ -1,28 +1,26 @@
-{
-    "data": [
-        {
-            "id": 7,
-            "title": "Chair",
-            "image": "product/cat-11.jpg",
-            "tab": false
-        },
-        {
-            "id": 8,
-            "title": "Lighting",
-            "image": "product/cat-12.jpg",
-            "tab": false
-        },
-        {
-            "id": 9,
-            "title": "Storage",
-            "image": "product/cat-13.jpg",
-            "tab": false
-        },
-        {
-            "id": 10,
-            "title": "Lighting",
-            "image": "product/cat-14.jpg",
-            "tab": false
-        }
-    ]
-}
+[
+    {
+        "id": 7,
+        "title": "Chair",
+        "image": "/img/product/cat-11.jpg",
+        "tab": false
+    },
+    {
+        "id": 8,
+        "title": "Lighting",
+        "image": "/img/product/cat-12.jpg",
+        "tab": false
+    },
+    {
+        "id": 9,
+        "title": "Storage",
+        "image": "/img/product/cat-13.jpg",
+        "tab": false
+    },
+    {
+        "id": 10,
+        "title": "Lighting",
+        "image": "/img/product/cat-14.jpg",
+        "tab": false
+    }
+]

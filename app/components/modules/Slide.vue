@@ -219,7 +219,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const sliderElement = ref(null)
-const props = defineProps({
+
+defineProps({
     title: String,
     subTitle: String,
     modClass: String,

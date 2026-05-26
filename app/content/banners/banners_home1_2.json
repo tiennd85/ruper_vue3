@@ -3,7 +3,7 @@
         "title": "Let the adventure<br> begin.",
         "description": "Sed lectus. Aliquam lorem ante, <br>dapibus in, viverra quis, feugiat a, tellus",
         "image": {
-            "src": "banner/banner-1.jpg",
+            "src": "/img/banner/banner-1.jpg",
             "width": "825",
             "height": "475",
             "alt": "Banner 1"
@@ -19,7 +19,7 @@
         "title": "UP TO <span>20% OFF",
         "description": "Don't miss savings on bedroom, living,",
         "image": {
-            "src": "banner/banner-2.jpg",
+            "src": "/img/banner/banner-2.jpg",
             "width": "571",
             "height": "475",
             "alt": "Banner 2"

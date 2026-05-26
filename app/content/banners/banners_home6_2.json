@@ -3,7 +3,7 @@
         "title": "Sink into Luxe",
         "description": "Statement-making, while keeping a low profile.",
         "image": {
-            "src": "banner/banner-15.jpg",
+            "src": "/img/banner/banner-15.jpg",
             "width": "409",
             "height": "492",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Sitting Pretty",
         "description": "There’s always room for one more guest.",
         "image": {
-            "src": "banner/banner-16.jpg",
+            "src": "/img/banner/banner-16.jpg",
             "width": "409",
             "height": "492",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Modern Curves",
         "description": "A curvaceous approach that covers all the bases.",
         "image": {
-            "src": "banner/banner-17.jpg",
+            "src": "/img/banner/banner-17.jpg",
             "width": "409",
             "height": "492",
             "alt": "Banner Image"

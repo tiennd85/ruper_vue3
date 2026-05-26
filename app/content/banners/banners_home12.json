@@ -3,7 +3,7 @@
         "title": "Furniture",
         "description": "Style any outdoor area with some careful study and sound decisions.",
         "image": {
-            "src": "banner/banner-25.jpg",
+            "src": "/img/banner/banner-25.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Decor",
         "description": "Style any outdoor area with some careful study and sound decisions.",
         "image": {
-            "src": "banner/banner-26.jpg",
+            "src": "/img/banner/banner-26.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Lighting",
         "description": "Style any outdoor area with some careful study and sound decisions.",
         "image": {
-            "src": "banner/banner-27.jpg",
+            "src": "/img/banner/banner-27.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"
@@ -51,7 +51,7 @@
         "title": "Kitchen & Bath",
         "description": "Style any outdoor area with some careful study and sound decisions.",
         "image": {
-            "src": "banner/banner-28.jpg",
+            "src": "/img/banner/banner-28.jpg",
             "width": "961",
             "height": "590",
             "alt": "Banner Image"

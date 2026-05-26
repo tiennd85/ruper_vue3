@@ -1,49 +1,47 @@
-{
-    "data": [
-        {
-            "title": "Light Collection",
-            "subtitle": "",
-            "description": "Save up to $500 on outdoor packages",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home7_1.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+[
+    {
+        "title": "Light Collection",
+        "subtitle": "",
+        "description": "Save up to $500 on outdoor packages",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
         },
-        {
-            "title": "Chair Collection",
-            "subtitle": "",
-            "description": "Save up to $500 on outdoor packages",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home7_2.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
-        },
-        {
-            "title": "Spring Sale",
-            "subtitle": "",
-            "description": "Soft seats that welcome you home",
-            "button": {
-                "class": "button-slider button-white",
-                "link": "/products",
-                "text": "SHOP NOW"
-            },
-            "image": {
-                "src": "slider/home7_3.jpg",
-                "width": "1920",
-                "height": "1080"
-            }
+        "image": {
+            "src": "/img/slider/home7_1.jpg",
+            "width": "1920",
+            "height": "1080"
         }
-    ]
-}
+    },
+    {
+        "title": "Chair Collection",
+        "subtitle": "",
+        "description": "Save up to $500 on outdoor packages",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home7_2.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    },
+    {
+        "title": "Spring Sale",
+        "subtitle": "",
+        "description": "Soft seats that welcome you home",
+        "button": {
+            "class": "button-slider button-white",
+            "link": "/products",
+            "text": "SHOP NOW"
+        },
+        "image": {
+            "src": "/img/slider/home7_3.jpg",
+            "width": "1920",
+            "height": "1080"
+        }
+    }
+]

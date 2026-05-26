@@ -3,7 +3,7 @@
         "title": "Sofa.",
         "description": "",
         "image": {
-            "src": "banner/product-cat-5.jpg",
+            "src": "/img/banner/product-cat-5.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"
@@ -19,7 +19,7 @@
         "title": "Chair.",
         "description": "",
         "image": {
-            "src": "banner/product-cat-6.jpg",
+            "src": "/img/banner/product-cat-6.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"
@@ -35,7 +35,7 @@
         "title": "Lounge.",
         "description": "",
         "image": {
-            "src": "banner/product-cat-7.jpg",
+            "src": "/img/banner/product-cat-7.jpg",
             "width": "1080",
             "height": "584",
             "alt": "Banner Image"

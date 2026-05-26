@@ -1,40 +1,38 @@
-{
-    "data": [
-        {
-            "id": 1,
-            "title": "Brand 1",
-            "image": "brand/1.jpg",
-            "link": "#"
-        },
-        {
-            "id": 2,
-            "title": "Brand 2",
-            "image": "brand/2.jpg",
-            "link": "#"
-        },
-        {
-            "id": 3,
-            "title": "Brand 3",
-            "image": "brand/3.jpg",
-            "link": "#"
-        },
-        {
-            "id": 4,
-            "title": "Brand 4",
-            "image": "brand/4.jpg",
-            "link": "#"
-        },
-        {
-            "id": 5,
-            "title": "Brand 5",
-            "image": "brand/5.jpg",
-            "link": "#"
-        },
-        {
-            "id": 6,
-            "title": "Brand 6",
-            "image": "brand/6.jpg",
-            "link": "#"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "title": "Brand 1",
+        "image": "/img/brand/1.jpg",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "title": "Brand 2",
+        "image": "/img/brand/2.jpg",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "title": "Brand 3",
+        "image": "/img/brand/3.jpg",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "title": "Brand 4",
+        "image": "/img/brand/4.jpg",
+        "link": "#"
+    },
+    {
+        "id": 5,
+        "title": "Brand 5",
+        "image": "/img/brand/5.jpg",
+        "link": "#"
+    },
+    {
+        "id": 6,
+        "title": "Brand 6",
+        "image": "/img/brand/6.jpg",
+        "link": "#"
+    }
+]
