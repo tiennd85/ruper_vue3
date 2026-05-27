@@ -273,17 +273,20 @@ defineProps({
   }
 })
 
-// Khai báo dữ liệu mẫu cho menu Topbar (Nếu có)
 const menuTopBar = ref([
   { id: 1, name: 'My Account', link: '/account' },
   { id: 2, name: 'Order Tracking', link: '/tracking' }
 ])
 
-// Hàm xử lý khi nhấn nút mở Menu trên Mobile
-const handleShowMenu = () => {
+const handleShowMenu = async () => {
   if (process.client) {
-    // Kích hoạt class mở menu mobile bằng cách tương tác với body hoặc thông qua một State toàn cục
-    document.body.classList.toggle('mobile-menu-active')
+    const $ = window.$ || (await import('jquery')).default;
+    
+    if ($('.site-mobile-navigation').hasClass('active')) { 
+      $('.site-mobile-navigation').removeClass('active');
+    } else { 
+      $('.site-mobile-navigation').addClass('active');
+    }
   }
 }
 </script>

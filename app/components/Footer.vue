@@ -671,8 +671,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
-
 import MenuModule from '~/components/modules/MenuModule'
 import NewsletterModule from '~/components/modules/NewsletterModule'
 import ImageModule from '~/components/modules/ImageModule'

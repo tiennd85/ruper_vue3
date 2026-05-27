@@ -142,9 +142,6 @@
 </template>
 
 <script>
-import $ from 'jquery'
-import { mapGetters } from 'vuex'
-
 import Rating from '~/components/Rating'
 
 export default {

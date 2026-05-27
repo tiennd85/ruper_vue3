@@ -8,7 +8,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   vite: {
     plugins: [
-      // Nếu dùng Vite (mặc định của Nuxt 3)
     ],
     optimizeDeps: {
       include: ['jquery']

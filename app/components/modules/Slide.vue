@@ -235,36 +235,36 @@ defineProps({
     bgImageCenter: String
 })
 
-onMounted(async () => {
+onMounted(async() => {
     await nextTick()
 
-    if (process.client && typeof window !== 'undefined') {
-    const $ = (await import('jquery')).default
-    await import('slick-carousel')
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+        await import('slick-carousel')
 
-    const slider = $('.slick-sliders')
-    if (slider.length > 0) {
-        slider.slick({
-            slidesToShow: 1,
-            autoplay: true,
-            autoplaySpeed: 5000,
-            infinite: true,
-            arrows: false,
-            dots: true,
-            draggable: true,
-            pauseOnHover: false,
-            pauseOnFocus: false
-        })
+        const slider = $('.slick-sliders')
+        if (slider.length > 0) {
+            slider.slick({
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                infinite: true,
+                arrows: false,
+                dots: true,
+                draggable: true,
+                pauseOnHover: false,
+                pauseOnFocus: false
+            })
+        }
     }
-  }
 })
 
 onBeforeUnmount(() => {
-  if (process.client) {
-    const slider = $('.slick-sliders')
-    if (slider.hasClass('slick-initialized')) {
-      slider.slick('unslick')
+    if (process.client) {
+        const slider = $('.slick-sliders')
+        if (slider.hasClass('slick-initialized')) {
+            slider.slick('unslick')
+        }
     }
-  }
 })
 </script>

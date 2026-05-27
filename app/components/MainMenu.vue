@@ -192,7 +192,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onBeforeUnmount } from 'vue';
 
 defineProps({
     currentMenu: {
@@ -205,41 +205,51 @@ defineProps({
     }
 })
 
-onMounted(() => {
-    function mobileMenu() {
-        var wd_width = $(window).width();
-        var $main_menu = $('.menu', '#main-navigation');
+onMounted(async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
 
-        if (wd_width <= 991) {
-            // Load mobile menu
-            if ($('#mobile-main-menu').length < 1 && $main_menu.length > 0) {
-                var $menu = $main_menu.parent().clone();
-                $menu.attr('id', 'mobile-main-menu');
-                $($menu).find('.menu').removeAttr('id');
-                $('#page').append('<div class="site-mobile-navigation"><span id="remove-megamenu" class="remove-megamenu icon-remove">Close</span></div>');
-                $('.site-mobile-navigation').append($menu);
+        function mobileMenu() {
+            var wd_width = $(window).width();
+            var $main_menu = $('.menu', '#main-navigation');
+
+            if (wd_width <= 991) {
+                // Load mobile menu
+                if ($('#mobile-main-menu').length < 1 && $main_menu.length > 0) {
+                    var $menu = $main_menu.parent().clone();
+                    $menu.attr('id', 'mobile-main-menu');
+                    $($menu).find('.menu').removeAttr('id');
+                    $('#page').append('<div class="site-mobile-navigation"><span id="remove-megamenu" class="remove-megamenu icon-remove">Close</span></div>');
+                    $('.site-mobile-navigation').append($menu);
+                }
+            } else {
+                $('.site-mobile-navigation').remove();
             }
-        } else {
-            $('.site-mobile-navigation').remove();
+
+            // Close mobile menu
+            $('#remove-megamenu').on('click', function() {
+                $('.site-mobile-navigation').removeClass('active');
+                
+                return !1
+            });
+
+            // Toggle submenu
+            $('.toggle-submenu').off('click').on('click', function() {
+                $(this).toggleClass('open');
+                $(this).closest('.menu-item').find('.sub-menu').slideToggle();
+
+                return !1
+            });
         }
 
-        // Close mobile menu
-        $('#remove-megamenu').on('click', function() {
-            $('.site-mobile-navigation').removeClass('active');
-            
-            return !1
-        });
-
-        // Toggle submenu
-        $('.toggle-submenu').off('click').on('click', function() { 
-            $(this).toggleClass('open');
-            $(this).closest('.menu-item').find('.sub-menu').slideToggle();
-
-            return !1
-        });
+        mobileMenu();
+        $(window).resize(mobileMenu);
     }
+});
 
-    mobileMenu();
-    $(window).resize(mobileMenu);
-})
+onBeforeUnmount(() => {
+    if (process.client) {
+        $(window).off('resize');
+    }
+});
 </script>
