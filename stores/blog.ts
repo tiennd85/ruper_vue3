@@ -3,37 +3,43 @@ import { defineStore } from 'pinia';
 import blogsData from '../app/content/blogs/blogs.json';
 import categoriesData from '../app/content/blogs/categories.json';
 
+interface Blog {
+  id: number;
+  title: string;
+  category: number | string;
+  tags: string[];
+  [key: string]: any;
+}
+
 export const useBlogStore = defineStore('blog', {
-  // State
   state: () => ({
-    allItems: blogsData.data,
-    items: blogsData.data,
-    categories: categoriesData.data
+    allItems: blogsData.data as Blog[],
+    items: blogsData.data as Blog[],
+    categories: categoriesData.data as any[]
   }),
   
-  // Getters
   getters: {
-    getBlogById: (state) => (id) => {
+    getBlogById: (state) => (id: number | string) => {
       return state.allItems.find((blog) => blog.id === +id);
     },
-    getCategoryById: (state) => (id) => {
+    getCategoryById: (state) => (id: number | string) => {
       return state.categories.find((category) => category.id === +id);
     }
   },
 
-  // Actions
   actions: {
-    filterItemsBySearch(keyword) {
+    filterItemsBySearch(keyword: string) {
       if (keyword) {
+        const lowerKeyword = keyword.toLowerCase();
         this.items = this.allItems.filter(item => 
-          item.title.toLowerCase().includes(keyword.toLowerCase())
+          item.title.toLowerCase().includes(lowerKeyword)
         );
       } else {
         this.items = this.allItems;
       }
     },
 
-    filterItemsByCategory(category) {
+    filterItemsByCategory(category: number | string) {
       if (category) {
         this.items = this.allItems.filter(item => item.category == category);
       } else {
@@ -41,10 +47,11 @@ export const useBlogStore = defineStore('blog', {
       }
     },
 
-    filterItemsByTag(tag) {
+    filterItemsByTag(tag: string) {
       if (tag) {
+        const lowerTag = tag.toLowerCase();
         this.items = this.allItems.filter(item => 
-          item.tags.map(a => a.toLowerCase()).includes(tag.toLowerCase())
+          item.tags.some(t => t.toLowerCase() === lowerTag)
         );
       } else {
         this.items = this.allItems;

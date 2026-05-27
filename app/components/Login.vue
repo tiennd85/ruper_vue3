@@ -13,11 +13,11 @@
                             <div class="content">
                                 <div class="username">
                                     <input type="text" name="login_username" v-model="formLogin.username" placeholder="Username" :class="['input-text', { 'is-invalid': checkFormLogin && $v.formLogin.username.$error }]" />
-                                    <div v-if="checkFormLogin && !$v.formLogin.username.required" class="invalid-feedback">Username is required</div>
+                                    <div v-if="checkFormLogin && $v.formLogin.username.$error" class="invalid-feedback">Username is required</div>
                                 </div>
                                 <div class="password">
                                     <input type="password" name="login_password" v-model="formLogin.password" placeholder="Password" :class="['input-text', { 'is-invalid': checkFormLogin && $v.formLogin.password.$error }]" />
-                                    <div v-if="checkFormLogin && !$v.formLogin.password.required" class="invalid-feedback">Password is required</div>
+                                    <div v-if="checkFormLogin && $v.formLogin.password.$error" class="invalid-feedback">Password is required</div>
                                 </div>
                                 <div class="rememberme-lost">
                                     <div class="rememberme">
@@ -25,7 +25,7 @@
                                         <label for="rememberme" class="inline">Remember me</label>
                                     </div>
                                     <div class="lost_password">
-                                        <nuxt-link to="/forgot-password">Lost your password?</nuxt-link>
+                                        <NuxtLink to="/forgot-password">Lost your password?</NuxtLink>
                                     </div>
                                 </div>
                                 <div class="button-login">
@@ -41,11 +41,11 @@
                             <div class="content">
                                 <div class="username">
                                     <input type="text" name="register_username" v-model="formRegister.username" placeholder="Username" :class="['input-text', { 'is-invalid': checkFormRegister && $v.formRegister.username.$error }]" />
-                                    <div v-if="checkFormRegister && !$v.formRegister.username.required" class="invalid-feedback">Username is required</div>
+                                    <div v-if="checkFormRegister && $v.formRegister.username.$error" class="invalid-feedback">Username is required</div>
                                 </div>
                                 <div class="password">
                                     <input type="password" name="register_password" v-model="formRegister.password" placeholder="Password" :class="['input-text', { 'is-invalid': checkFormRegister && $v.formRegister.password.$error }]" />
-                                    <div v-if="checkFormRegister && !$v.formRegister.password.required" class="invalid-feedback">Password is required</div>
+                                    <div v-if="checkFormRegister && $v.formRegister.password.$error" class="invalid-feedback">Password is required</div>
                                 </div>                                                          
                                 <div class="button-register">
                                     <input type="submit" class="button" name="register" value="Register"/>
@@ -60,105 +60,84 @@
     </div>
 </template>
 
-<script>
-import { required, email } from 'vuelidate/lib/validators'
+<script setup>
+import { reactive, ref, onMounted } from 'vue';
+import { useVuelidate } from '@vuelidate/core';
+import { required } from '@vuelidate/validators';
 
-export default {
-    name: 'Login',
-    props: {
-        black: {
-          type: Boolean,
-          default: false
-        },
-        icon: {
-          type: Boolean,
-          default: false
-        }
-    },
-    data() {
-        return {
-            formLogin: {
-                username: '',
-                password: ''
-            },
-            checkFormLogin: false,
-            formRegister: {
-                username: '',
-                password: ''
-            },
-            checkFormRegister: false
-        }
-    },
-    validations() {
-        return {
-            formLogin: {
-                username: { required },
-                password: { required }
-            },
-            formRegister: {
-                username: { required },
-                password: { required }
-            }
-        }
-    },
-    mounted() {
-        // Form Login
-        $('.active-login').on('click', function(e) {
+const checkFormLogin = ref(false);
+const checkFormRegister = ref(false);
+
+const formLogin = reactive({ username: '', password: '' });
+const formRegister = reactive({ username: '', password: '' });
+
+const rules = {
+    formLogin: { username: { required }, password: { required } },
+    formRegister: { username: { required }, password: { required } }
+};
+
+const $v = useVuelidate(rules, { formLogin, formRegister });
+
+onMounted(async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+        
+        $('.active-login').on('click', (e) => {
             e.preventDefault();
-
-            if ($('.form-login-register').hasClass('active')) {
-                $('.form-login-register').removeClass('active')
-            } else {
-                $('.form-login-register').addClass('active')
-            }
+            $('.form-login-register').toggleClass('active');
         });
-        $('.remove-form-login-register').on('click', function() {
-            if ($('.form-login-register').hasClass('active')) {
-                $('.form-login-register').removeClass('active')
-            }
-        })
-        $('.button-next-reregister').on('click', function() {
-            if ($('.form-login').hasClass('active')) {
-                $('.form-login').removeClass('active');
-                $('.form-register').addClass('active')
-            }
+
+        $('.remove-form-login-register').on('click', () => {
+            $('.form-login-register').removeClass('active');
         });
-        $('.button-next-login').on('click', function() {
-            if ($('.form-register').hasClass('active')) {
-                $('.form-register').removeClass('active');
-                $('.form-login').addClass('active')
-            }
-        })
-    },
-    methods: {
-        // Handle submit form login
-        handleSubmitLogin(e) {
-            this.checkFormLogin = true
-            
-            // Stop if form is invalid
-            this.$v.$touch();
-            if (this.$v.formLogin.$invalid) {
-                return
-            }
 
-            $('.form-login-register').removeClass('active')
-            this.$router.push('/my-account')
-        },
-        // Handle submit form register
-        handleSubmitRegister(e) {
-            this.checkFormRegister = true
+        $('.button-next-reregister').on('click', () => {
+            $('.form-login').removeClass('active');
+            $('.form-register').addClass('active');
+        });
 
-            // Stop if form is invalid
-            this.$v.$touch();
-            if (this.$v.formRegister.$invalid) {
-                return
-            }
-
-            $('.form-login-register').removeClass('active')
-
-            // Notify if form is valid
-            alert('Register successfully! You can login now.')
-        }
+        $('.button-next-login').on('click', () => {
+            $('.form-register').removeClass('active');
+            $('.form-login').addClass('active');
+        });
     }
-}
+});
+
+const handleSubmitLogin = async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+
+        $v.value.formLogin.$touch(); 
+        
+        checkFormLogin.value = true; 
+        
+        const isFormCorrect = await $v.value.formLogin.$validate();
+        if (!isFormCorrect) {
+            console.log("Form invalid:", $v.value.formLogin.$errors);
+            return;
+        }
+
+        $('.form-login-register').removeClass('active');
+        navigateTo('/my-account');
+    }
+};
+
+const handleSubmitRegister = async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+        
+        $v.value.formRegister.$touch(); 
+
+        checkFormRegister.value = true;
+
+        const isFormCorrect = await $v.value.formRegister.$validate();
+        if (!isFormCorrect) {
+            console.log("Form invalid:", $v.value.formRegister.$errors);
+            return;
+        }
+
+        $('.form-login-register').removeClass('active');
+        alert('Register successfully! You can login now.');
+    }
+};
 </script>

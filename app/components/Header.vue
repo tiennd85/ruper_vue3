@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3 header-right">
-              <!-- <Cart /> -->
+              <Cart />
             </div>
           </div>
         </div>
@@ -46,10 +46,10 @@
               </div>
               <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12 header-right">
                 <div class="header-page-link">
-                  <!-- <Login /> -->
+                  <Login />
                   <!-- <Search /> -->
                   <!-- <Wishlist /> -->
-                  <!-- <Cart /> -->
+                  <Cart />
                 </div>
               </div>
             </div>
@@ -281,7 +281,7 @@ const menuTopBar = ref([
 const handleShowMenu = async () => {
   if (process.client) {
     const $ = window.$ || (await import('jquery')).default;
-    
+
     if ($('.site-mobile-navigation').hasClass('active')) { 
       $('.site-mobile-navigation').removeClass('active');
     } else { 
