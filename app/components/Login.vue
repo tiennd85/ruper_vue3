@@ -65,6 +65,11 @@ import { reactive, ref, onMounted } from 'vue';
 import { useVuelidate } from '@vuelidate/core';
 import { required } from '@vuelidate/validators';
 
+const props = defineProps({
+    black: {  type: Boolean, default: false },
+    icon: { type: Boolean, default: false }
+});
+
 const checkFormLogin = ref(false);
 const checkFormRegister = ref(false);
 

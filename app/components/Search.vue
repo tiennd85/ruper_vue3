@@ -17,12 +17,12 @@
                         <div v-if="searchItems.length" class="search-result">
                             <ul class="items">
                                 <li class="item" v-for="(item, index) in searchItems" :key="index">
-                                    <nuxt-link :to="'/product/' + item.id" class="product-image">
-                                        <img v-if="item.images[0]" width="600" height="600" :src="require('@/assets/img/' + item.images[0])" :alt="item.title">
-                                    </nuxt-link>
-                                    <nuxt-link :to="'/product/' + item.id" class="product-name">
+                                    <NuxtLink :to="'/product/' + item.id" class="product-image">
+                                        <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
+                                    </NuxtLink>
+                                    <NuxtLink :to="'/product/' + item.id" class="product-name">
                                         {{ item.title }}
-                                    </nuxt-link>
+                                    </NuxtLink>
                                     <div v-if="item.price > item.salePrice" class="price">
                                         <del aria-hidden="true"><span>{{ $helpers.productPrice(item.price) }}</span></del> 
                                         <ins><span>{{ $helpers.productPrice(item.salePrice) }}</span></ins>
@@ -36,10 +36,10 @@
                         <div v-else class="search-suggestion">
                             <label>Suggested</label>
                             <ul class="menu">
-                                <li><nuxt-link to="#">Furniture</nuxt-link></li>
-                                <li><nuxt-link to="#">Home Décor</nuxt-link></li>
-                                <li><nuxt-link to="#">Industrial</nuxt-link></li>
-                                <li><nuxt-link to="#">Kitchen</nuxt-link></li>
+                                <li><NuxtLink to="#">Furniture</NuxtLink></li>
+                                <li><NuxtLink to="#">Home Décor</NuxtLink></li>
+                                <li><NuxtLink to="#">Industrial</NuxtLink></li>
+                                <li><NuxtLink to="#">Kitchen</NuxtLink></li>
                             </ul>           
                         </div>
                     </div>
@@ -54,12 +54,12 @@
                 <div v-if="searchItems.length" class="search-result">
                     <ul class="items">
                         <li class="item" v-for="(item, index) in searchItems" :key="index">
-                            <nuxt-link :to="'/product/' + item.id" class="product-image">
-                                <img v-if="item.images[0]" width="600" height="600" :src="require('@/assets/img/' + item.images[0])" :alt="item.title">
-                            </nuxt-link>
-                            <nuxt-link :to="'/product/' + item.id" class="product-name">
+                            <NuxtLink :to="'/product/' + item.id" class="product-image">
+                                <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
+                            </NuxtLink>
+                            <NuxtLink :to="'/product/' + item.id" class="product-name">
                                 {{ item.title }}
-                            </nuxt-link>
+                            </NuxtLink>
                             <div v-if="item.price > item.salePrice" class="price">
                                 <del aria-hidden="true"><span>{{ $helpers.productPrice(item.price) }}</span></del> 
                                 <ins><span>{{ $helpers.productPrice(item.salePrice) }}</span></ins>
@@ -81,41 +81,42 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Search',
-    props: {
-        toggle: {
-          type: Boolean,
-          default: true
-        },
-        hiddenLg: {
-          type: Boolean,
-          default: false
-        }
-    },
-    data() {
-        return {
-            keyword: '',
-        }
-    },
-    computed: {
-        ...mapGetters({
-            searchItems: 'search/searchItems',
-        })
-    },
-    methods: {
-        openSearch() {
-            $('.page-wrapper').addClass('opacity-style')
-            $('.search-overlay').addClass('search-visible')
-        },
-        closeSearch() {
-            $('.page-wrapper').removeClass('opacity-style')
-            $('.search-overlay').removeClass('search-visible')
-        },
-        searchProduct() {
-            this.$store.dispatch('search/searchProducts', this.keyword);
-        }
+<script setup>
+import { ref } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useSearchStore } from '../../stores/search';
+
+const { $helpers } = useNuxtApp();
+
+const props = defineProps({
+    toggle: { type: Boolean, default: true },
+    hiddenLg: { type: Boolean, default: false }
+});
+
+const keyword = ref('');
+const searchStore = useSearchStore();
+
+const { searchItems } = storeToRefs(searchStore);
+
+const openSearch = async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+
+        $('.page-wrapper').addClass('opacity-style');
+        $('.search-overlay').addClass('search-visible');
     }
-}
+};
+
+const closeSearch = async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+
+        $('.page-wrapper').removeClass('opacity-style');
+        $('.search-overlay').removeClass('search-visible');
+    }
+};
+
+const searchProduct = async () => {
+    searchStore.searchProducts(keyword.value);
+};
 </script>

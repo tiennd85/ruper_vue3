@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <!-- <HeaderMobileFixed /> -->
+      <HeaderMobileFixed />
     </div>
 
     <div class="header-desktop">

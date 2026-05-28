@@ -2,17 +2,17 @@
   <div class="header-mobile-fixed">
     <!-- Shop -->
     <div class="shop-page">
-      <nuxt-link to="/products">
+      <NuxtLink to="/products">
         <i class="wpb-icon-shop"></i>
-      </nuxt-link>
+      </NuxtLink>
     </div>
 
     <!-- Login -->
     <div class="my-account">
       <div class="login-header">
-        <nuxt-link to="/my-account">
+        <NuxtLink to="/my-account">
           <i class="wpb-icon-user"></i>
-        </nuxt-link>
+        </NuxtLink>
       </div>
     </div>
 
@@ -23,9 +23,3 @@
     <Wishlist :dropdown="false" />
   </div>
 </template>
-
-<script>
-export default {
-  name: 'HeaderMobileFixed'
-}
-</script>

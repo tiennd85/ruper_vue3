@@ -11,15 +11,15 @@
                 <div v-if="wishlistItems.length" class="cart-list-wrap">
                     <ul class="cart-list ">
                         <li class="mini-cart-item" v-for="(item, index) in wishlistItems" :key="index">
-                            <nuxt-link event="" to="#" @click.native="removeWishlistItem(item)" class="remove">
+                            <NuxtLink event="" to="#" @click.native="removeWishlistItem(item)" class="remove">
                                 <i class="icon_close"></i>
-                            </nuxt-link>
-                            <nuxt-link :to="'/product/' + item.id" class="product-image">
-                                <img v-if="item.images[0]" width="600" height="600" :src="require('@/assets/img/' + item.images[0])" :alt="item.title">
-                            </nuxt-link>
-                            <nuxt-link :to="'/product/' + item.id" class="product-name">
+                            </NuxtLink>
+                            <NuxtLink :to="'/product/' + item.id" class="product-image">
+                                <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
+                            </NuxtLink>
+                            <NuxtLink :to="'/product/' + item.id" class="product-name">
                                 {{ item.title }}
-                            </nuxt-link>
+                            </NuxtLink>
                             <div v-if="item.price > item.salePrice" class="price">
                                 <del aria-hidden="true"><span>{{ $helpers.productPrice(item.price) }}</span></del> 
                                 <ins><span>{{ $helpers.productPrice(item.salePrice) }}</span></ins>
@@ -30,14 +30,14 @@
                         </li>
                     </ul>
                     <div class="buttons">
-                        <nuxt-link to="/wishlist" class="button btn view-cart btn-primary">View Wishlist</nuxt-link>
+                        <NuxtLink to="/wishlist" class="button btn view-cart btn-primary">View Wishlist</NuxtLink>
                     </div>
                 </div>
                 <div v-else class="cart-empty-wrap">
                     <ul class="cart-list">
                         <li class="empty">
                             <span>No products in your wishlist.</span>
-                            <nuxt-link to="/products" class="go-shop">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></nuxt-link>
+                            <NuxtLink to="/products" class="go-shop">GO TO SHOP<i aria-hidden="true" class="arrow_right"></i></NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -45,34 +45,27 @@
         </div>
     </div>
     <div v-else class="wishlist-box">
-        <nuxt-link to="/wishlist"><i class="wpb-icon-heart"></i></nuxt-link>
+        <NuxtLink to="/wishlist"><i class="wpb-icon-heart"></i></NuxtLink>
     </div>
 </template>
 
-<script>
-import { mapGetters } from 'vuex'
+<script setup>
+import { storeToRefs } from 'pinia';
+import { useWishlistStore } from '../../stores/wishlist';
 
-export default {
-    name: 'Wishlist',
-    props: {
-        dropdown: {
-            type: Boolean,
-            default: true
-        }
-    },
-    computed: { 
-        ...mapGetters({
-            wishlistItems: 'wishlist/wishlistItems',
-            totalItems: 'wishlist/totalItems',
-        })
-    },
-    methods: {
-        preventClosePopup: function(e) {
-            e.stopPropagation();
-        },
-        removeWishlistItem: function(product) {
-            this.$store.dispatch('wishlist/removeWishlistItem', product);
-        }
-    }
-}
+const props = defineProps({
+    dropdown: { type: Boolean, default: true }
+});
+
+const wishlistStore = useWishlistStore();
+
+const { wishlistItems, totalItems } = storeToRefs(wishlistStore);
+
+const preventClosePopup = (e) => {
+    e.stopPropagation();
+};
+
+const removeWishlistItem = (product) => {
+    wishlistStore.removeWishlistItem(product);
+};
 </script>
