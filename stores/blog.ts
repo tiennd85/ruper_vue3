@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
-import blogsData from '../app/content/blogs/blogs.json';
-import categoriesData from '../app/content/blogs/categories.json';
+import blogsData from '~/content/blogs/blogs.json';
+import categoriesData from '~/content/blogs/categories.json';
 
 interface Blog {
   id: number;

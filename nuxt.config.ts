@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  srcDir: 'app/',
   modules: ['@nuxt/content', '@pinia/nuxt'],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -10,7 +9,7 @@ export default defineNuxtConfig({
       include: ['jquery']
     }
   },
-  plugins: ['../plugins/helpers.ts'],
+  plugins: ['~/plugins/helpers.ts'],
   css: [
     'bootstrap/dist/css/bootstrap.min.css',
     'slick-carousel/slick/slick.css',
