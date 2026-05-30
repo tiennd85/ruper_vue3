@@ -77,8 +77,8 @@
 <script setup>
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useCartStore } from '../../stores/cart'
-import { useWishlistStore } from '../../stores/wishlist'
+import { useCartStore } from '~/stores/cart'
+import { useWishlistStore } from '~/stores/wishlist'
 
 const title = 'Wishlist'
 const breadcrumbItems = [
