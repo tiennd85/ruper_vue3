@@ -7,27 +7,21 @@
         <div class="block-content">
             <ul :class="[{ 'topbar-menu' : topBar }]">
                 <li v-for="(menu, index) in menus" :key="index">
-                    <nuxt-link v-if="menu.link" :to="menu.link">
+                    <NuxtLink v-if="menu.link" :to="menu.link">
                         {{ menu.title }}
-                    </nuxt-link>
+                    </NuxtLink>
                 </li>
             </ul>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    name: 'MenuModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        menus: Array,
-        topBar: {
-            type: Boolean,
-            default: false
-        }
-    }
-}
+<script setup>
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    menus: Array,
+    topBar: { type: Boolean, default: false }
+})
 </script>

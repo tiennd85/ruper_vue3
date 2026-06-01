@@ -21,7 +21,7 @@
               <div class="products-list grid">
                 <div class="row">
                   <div :class="cols == 2 ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'" v-for="(product, pIdx) in cat.products" :key="pIdx">
-                    <ModulesProduct :product="product" :layout="layout" />
+                    <ModuleProduct :product="product" :layout="layout" />
                     <Quickview :product="product" />
                   </div>
                 </div>
@@ -32,14 +32,14 @@
 
         <div v-else-if="view == 'sidebar'" class="content-product-list">
           <ul class="products-list">
-            <ModulesProduct v-for="(item, index) in items" :key="index" :product="item" view="sidebar" />
+            <ModuleProduct v-for="(item, index) in items" :key="index" :product="item" view="sidebar" />
           </ul>
         </div>
 
         <div v-else-if="view == 'slider'" class="content-product-list slick-wrap">
           <div class="slick-sliders products-list grid" ref="slickElement">
             <div class="item-product" v-for="(item, index) in items" :key="index">
-              <ModulesProduct :product="item" :layout="layout" />
+              <ModuleProduct :product="item" :layout="layout" />
               <Quickview :product="item" />
             </div>
           </div>
@@ -51,7 +51,7 @@
         <div v-else class="products-list grid">
           <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6" v-for="(item, index) in items" :key="index">
-              <ModulesProduct :product="item" :layout="layout" />
+              <ModuleProduct :product="item" :layout="layout" />
               <Quickview :product="item" />
             </div>
           </div>

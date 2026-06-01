@@ -47,8 +47,8 @@
               <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12 header-right">
                 <div class="header-page-link">
                   <Login />
-                  <!-- <Search /> -->
-                  <!-- <Wishlist /> -->
+                  <Search />
+                  <Wishlist />
                   <Cart />
                 </div>
               </div>
@@ -59,17 +59,17 @@
     </div>
   </header>
 
-  <!-- <header v-else-if="headerLayout == 2" id="site-header" class="site-header header-v2">
+  <header v-else-if="headerLayout == 2" id="site-header" class="site-header header-v2">
     <div id="header-topbar" class="topbar-v1 hidden-sm hidden-xs">
       <div class="topbar-inner">
         <div class="section-padding">
           <div class="section-container large p-l-r">
             <div class="row">
               <div class="col-md-6 topbar-left">
-                <TextModule content="<div class='address hidden-xs'><a href='#'><i class='icon-pin'></i>Find Store</a></div><div class='email hidden-xs'><i class='icon-envelope'></i><a href='mailto:support@ruper.com'>support@ruper.com</a>" />
+                <ModuleText content="<div class='address hidden-xs'><a href='#'><i class='icon-pin'></i>Find Store</a></div><div class='email hidden-xs'><i class='icon-envelope'></i><a href='mailto:support@ruper.com'>support@ruper.com</a>" />
               </div>
               <div class="col-md-6 topbar-right">
-                <MenuModule :top-bar="true" :menus="menuTopBar" />                     
+                <ModuleMenu :top-bar="true" :menus="menuTopBar" />                     
               </div>
             </div>
           </div>
@@ -252,25 +252,16 @@
         </div>
       </div>
     </div>
-  </header> -->
+  </header>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
-  headerLayout: {
-    type: [String, Number],
-    default: 1
-  },
-  currentMenu: {
-    type: String,
-    default: ''
-  },
-  positionMenu: {
-    type: String,
-    default: 'center'
-  }
+const props = defineProps({
+  headerLayout: { type: Number, default: 1 },
+  currentMenu: { type: String, default: '' },
+  positionMenu: { type: String, default: 'center' }
 })
 
 const menuTopBar = ref([

@@ -9,14 +9,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'TextModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        content: String
-    }
-}
+<script setup>
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    content: String
+})
 </script>

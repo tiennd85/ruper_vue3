@@ -149,7 +149,7 @@
                     <div class="col-md-7">
                         <div class="menu-section">
                             <h2 class="sub-menu-title">Recent Posts</h2>
-                            <ModulesBlog :limit="3" />
+                            <ModuleBlog :limit="3" />
                         </div>
                     </div>
                 </div>
@@ -194,15 +194,9 @@
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue';
 
-defineProps({
-    currentMenu: {
-        type: String,
-        default: 'home'
-    },
-    positionMenu: {
-        type: String,
-        default: 'center'
-    }
+const props = defineProps({
+    currentMenu: { type: String, default: 'home' },
+    positionMenu: { type: String, default: 'center' }
 })
 
 onMounted(async () => {
