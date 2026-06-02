@@ -152,6 +152,8 @@ const props = defineProps({
     layout: { type: Number, default: 1 }
 })
 
+const { $helpers } = useNuxtApp();
+
 const cartStore = useCartStore()
 const wishlistStore = useWishlistStore()
 const compareStore = useCompareStore()

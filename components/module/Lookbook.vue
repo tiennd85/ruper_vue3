@@ -232,7 +232,9 @@
     </div>
 </template>
 
-<script>
+<script setup>
+const { $helpers } = useNuxtApp();
+
 export default {
     name: 'LookbookModule',
     props: {

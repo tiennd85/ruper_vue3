@@ -58,7 +58,8 @@
     </b-modal>
 </template>
 
-<script>
+<script setup>
+const { $helpers } = useNuxtApp();
 /*
 export default {
     name: 'Quickview',

@@ -54,6 +54,8 @@
 import { storeToRefs } from 'pinia'
 import { useCartStore } from '~/stores/cart';
 
+const { $helpers } = useNuxtApp();
+
 const cartStore = useCartStore();
 
 const { cartItems, totalItems, totalPrice } = storeToRefs(cartStore)

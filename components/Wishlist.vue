@@ -57,6 +57,8 @@ const props = defineProps({
     dropdown: { type: Boolean, default: true }
 });
 
+const { $helpers } = useNuxtApp();
+
 const wishlistStore = useWishlistStore();
 
 const { wishlistItems, totalItems } = storeToRefs(wishlistStore);

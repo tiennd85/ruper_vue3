@@ -80,6 +80,8 @@ import { storeToRefs } from 'pinia'
 import { useCartStore } from '~/stores/cart'
 import { useWishlistStore } from '~/stores/wishlist'
 
+const { $helpers } = useNuxtApp();
+
 const title = 'Wishlist'
 const breadcrumbItems = [
   { text: 'Home', to: '/' },
