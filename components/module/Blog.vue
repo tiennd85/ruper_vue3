@@ -47,80 +47,74 @@ const items = computed(() => {
     return props.limit ? blogList.slice(0, props.limit) : blogList;
 });
 
-onMounted(async () => {
-    /*
+onMounted(async() => {
     await nextTick()
 
-    if (process.client && typeof window !== 'undefined') {
-        const $ = (await import('jquery')).default
+    if (process.client && sliderElement.value) {
+        const $ = window.$ || (await import('jquery')).default;
         await import('slick-carousel')
-
-        const slider = $('.slick-sliders')
-        if (slider.length > 0) {
-            slider.slick({
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                autoplay: false,
-                autoplaySpeed: 5000,
-                infinite: true,
-                arrows: true,
-                dots: false,
-                draggable: true,
-                touchMove: false,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                cssEase: 'linear',
-                prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-                nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [{
-                    breakpoint: 1441,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }]
-            })
-        }
+        
+        $(sliderElement.value).slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: false,
+            autoplaySpeed: 5000,
+            infinite: true,
+            arrows: true,
+            dots: false,
+            draggable: true,
+            touchMove: false,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            cssEase: 'linear',
+            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+            responsive: [{
+                breakpoint: 1441,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            }, {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            }, {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    vertical: !1,
+                    verticalSwiping: !1,
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    vertical: !1,
+                    verticalSwiping: !1,
+                }
+            }]
+        })
     }
-    */
 })
 
 onBeforeUnmount(() => {
-    /*
-    if (process.client) {
-        const slider = $('.slick-sliders')
-        if (slider.hasClass('slick-initialized')) {
-            slider.slick('unslick')
+    if (process.client && sliderElement.value) {
+        const $slider = $(sliderElement.value);
+    
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
         }
     }
-    */
 })
 </script>

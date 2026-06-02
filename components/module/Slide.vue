@@ -238,32 +238,30 @@ const props = defineProps({
 onMounted(async() => {
     await nextTick()
 
-    if (process.client) {
+    if (process.client && sliderElement.value) {
         const $ = window.$ || (await import('jquery')).default;
         await import('slick-carousel')
-
-        const slider = $('.slick-sliders')
-        if (slider.length > 0) {
-            slider.slick({
-                slidesToShow: 1,
-                autoplay: true,
-                autoplaySpeed: 5000,
-                infinite: true,
-                arrows: false,
-                dots: true,
-                draggable: true,
-                pauseOnHover: false,
-                pauseOnFocus: false
-            })
-        }
+        
+        $(sliderElement.value).slick({
+            slidesToShow: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            infinite: true,
+            arrows: false,
+            dots: true,
+            draggable: true,
+            pauseOnHover: false,
+            pauseOnFocus: false
+        })
     }
 })
 
 onBeforeUnmount(() => {
-    if (process.client) {
-        const slider = $('.slick-sliders')
-        if (slider.hasClass('slick-initialized')) {
-            slider.slick('unslick')
+    if (process.client && sliderElement.value) {
+        const $slider = $(sliderElement.value);
+    
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
         }
     }
 })

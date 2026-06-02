@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from '#app'
 
 const route = useRoute()
@@ -37,10 +37,4 @@ const backTop = () => {
     })
   }
 }
-
-onMounted(() => {
-  if (process.client) {
-    console.log('Layout initialized')
-  }
-})
 </script>

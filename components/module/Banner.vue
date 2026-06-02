@@ -1057,36 +1057,32 @@ const props = defineProps({
 onMounted(async() => {
     await nextTick()
 
-    if (process.client) {
+    if (process.client && sliderElement.value) {
         const $ = window.$ || (await import('jquery')).default;
         await import('slick-carousel')
-
-        const slider = $('.slick-sliders')
-        /*
-        if (slider.length > 0) {
-            slider.slick({
-                slidesToShow: 1,
-                autoplay: false,
-                infinite: true,
-                arrows: true,
-                dots: false,
-                center: true,
-                draggable: true,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-                nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
-            })
-        }
-        */
+        
+        $(sliderElement.value).slick({
+            slidesToShow: 1,
+            autoplay: false,
+            infinite: true,
+            arrows: true,
+            dots: false,
+            center: true,
+            draggable: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
+        })
     }
 })
 
 onBeforeUnmount(() => {
-    if (process.client) {
-        const slider = $('.slick-sliders')
-        if (slider.hasClass('slick-initialized')) {
-            slider.slick('unslick')
+    if (process.client && sliderElement.value) {
+        const $slider = $(sliderElement.value);
+    
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
         }
     }
 })
