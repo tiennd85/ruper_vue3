@@ -1,5 +1,5 @@
 <template>
-  <div :class="['block', 'block-products', { 'slider': view == 'slider' }, modClass]">
+  <div :class="['block', 'block-products', { 'slider': view == 'slider' }, modClass]">{{ items }}
     <div class="block-widget-wrap">
       <div v-if="title || subTitle" :class="['block-title', { 'title-underline': titleUnderline }]">
         <h2>{{ title }}</h2>
