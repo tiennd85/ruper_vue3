@@ -91,41 +91,37 @@
     </b-modal>
 </template>
 
-<script>
-/*
-export default {
-    name: 'Compare',
-    computed: { 
-        ...mapGetters({
-            cartItems: 'cart/cartItems',
-            compareItems: 'compare/compareItems'
-        })
-    },
-    methods: {
-        // Add product to cart
-        addCartItem: function(product, event) {
-            const t = this
-            const btn_atc = $(event.target)
-            btn_atc.addClass('loading')
-            setTimeout(function() {
-                // Add item to cart
-                t.$store.dispatch('cart/addCartItem', product)
+<script setup lang="ts">
+import { useCartStore } from '~/stores/cart'
+import { useCompareStore } from '~/stores/compare'
 
-                btn_atc.removeClass('loading')
-                
-                // Display message
-                $('body').append('<div class="cart-product-added"><div class="added-message">Product was added to cart successfully!</div>')
-                setTimeout(function() {
-                    $('.cart-product-added').remove()
-                }, 1000)
-            }, 1000)
-        },
+// Init stores
+const cartStore = useCartStore()
+const compareStore = useCompareStore()
 
-        // Remove product from compare
-        removeCompareItem: function(product) {
-            this.$store.dispatch('compare/removeCompareItem', product)
-        }
-    }
+// Show notification
+const showNotification = (message: string) => {
+    const toast = document.createElement('div')
+    toast.className = 'cart-product-added'
+    toast.innerHTML = `<div class="added-message">${message}</div>`
+    document.body.appendChild(toast)
+    setTimeout(() => toast.remove(), 1000)
 }
-*/
+
+// Add to Cart
+const addCartItem = (product: any, event: Event) => {
+    const btn = event.target as HTMLElement
+    btn.classList.add('loading')
+
+    setTimeout(() => {
+        cartStore.addCartItem(product)
+        btn.classList.remove('loading')
+        showNotification('Product was added to cart successfully!')
+    }, 1000)
+}
+
+// Remove from Compare
+const removeCompareItem = (product: any) => {
+    compareStore.removeCompareItem(product)
+}
 </script>

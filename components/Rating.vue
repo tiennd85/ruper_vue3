@@ -7,35 +7,24 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'Rating',
-    props: {
-        product: Object,
-        showCount: {
-            type: Boolean,
-            default: false
-        },
-        size: {
-            type: String,
-            default: 'normal'
-        }
-    },
-    computed: {
-        rating() {
-            let rating = 0
-            let reviewSum = 0
-            
-            if (this.product.reviews.length) { 
-                this.product.reviews.forEach((review) => reviewSum += parseInt(review.rating))
-                rating = Math.round(reviewSum / this.product.reviews.length)
-            }
-            
-            return rating
-        },
-        reviewsCount() {
-            return this.product.reviews.length
-        }
-    }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+
+const props = defineProps({
+    product: { type: Object, required: true },
+    showCount: { type: Boolean, default: false },
+    size: { type: String, default: 'normal' }
+})
+
+const rating = computed(() => {
+    const reviews = props.product?.reviews || []
+    if (reviews.length === 0) return 0
+
+    const reviewSum = reviews.reduce((sum: number, review: any) => sum + parseInt(review.rating), 0)
+    return Math.round(reviewSum / reviews.length)
+})
+
+const reviewsCount = computed(() => {
+    return props.product?.reviews?.length || 0
+})
 </script>

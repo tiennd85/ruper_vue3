@@ -12,6 +12,13 @@
           <ModuleBanner :banners="banners1" :layout="1" />
         </div>
       </section>
+
+      <section class="section section-padding">
+        <div class="section-container">
+          <!-- Block Products -->
+          <ModuleProduct title="Best Seller" :limit="6" view="slider" :layout="2" filter="bestSeller" />
+        </div>
+      </section>
     </div>
   </div>
 </template>
