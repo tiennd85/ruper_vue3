@@ -2779,7 +2779,8 @@ ul.slick-dots li.slick-active button {
 .mini-cart .cart-popup .mini-cart-item:last-child {
   margin-bottom: 0;
 }
-.mini-cart .cart-popup .mini-cart-item a.remove {
+.mini-cart .cart-popup .mini-cart-item span.remove {
+  cursor: pointer;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -2793,7 +2794,7 @@ ul.slick-dots li.slick-active button {
   color: #000;
   text-indent: -1px;
 }
-.mini-cart .cart-popup .mini-cart-item a.remove:hover {
+.mini-cart .cart-popup .mini-cart-item span.remove:hover {
   color: #fff;
   background: #000;
   border-color: #000;
@@ -7194,7 +7195,7 @@ ul.slick-dots li.slick-active button {
   width: 55%;
 }
 .quickview-popup .quickview-container .img-quickview .slick-arrow {
-  top: calc(50% - 10px);
+  top: calc(50% - 10px) !important;
   font-size: 20px;
 }
 .quickview-popup .quickview-container .img-quickview .slick-arrow.fa-angle-left {
@@ -7923,12 +7924,13 @@ ul.slick-dots li.slick-active button {
   display: block;
   white-space: nowrap;
 }
-.products-list.grid .product-wapper .products-thumb .product-button .product-quickview:hover > a {
+.products-list.grid .product-wapper .products-thumb .product-button .product-quickview:hover > span {
   background: #000;
   border-color: #000;
 }
-.products-list.grid .product-wapper .products-thumb .product-button .product-quickview > a {
+.products-list.grid .product-wapper .products-thumb .product-button .product-quickview > span {
   color: #000;
+  cursor: pointer;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -7938,12 +7940,15 @@ ul.slick-dots li.slick-active button {
   outline: unset;
   box-shadow: 0 5px 15px rgba(0,0,0,.05);
 }
-.products-list.grid .product-wapper .products-thumb .product-button .product-quickview > a > i {
+.products-list.grid .product-wapper .products-thumb .product-button .product-quickview > span > i {
   font-size: 16px;
   color: #000;
   line-height: 40px;
   -webkit-transition: all .1s ease;
   transition: all .1s ease;
+}
+.products-list.grid .product-wapper .products-thumb .product-button .product-quickview:hover > span > i {
+  color: #fff;
 }
 .products-list.grid .product-wapper .products-thumb .product-button .product-quickview .loading:before {
   position: relative;

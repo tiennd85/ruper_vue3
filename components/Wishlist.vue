@@ -11,9 +11,9 @@
                 <div v-if="wishlistItems.length" class="cart-list-wrap">
                     <ul class="cart-list ">
                         <li class="mini-cart-item" v-for="(item, index) in wishlistItems" :key="index">
-                            <NuxtLink event="" to="#" @click.native="removeWishlistItem(item)" class="remove">
+                            <span @click="removeWishlistItem(item)" class="remove">
                                 <i class="icon_close"></i>
-                            </NuxtLink>
+                            </span>
                             <NuxtLink :to="'/product/' + item.id" class="product-image">
                                 <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
                             </NuxtLink>
@@ -49,7 +49,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useWishlistStore } from '~/stores/wishlist';
 

@@ -9,9 +9,9 @@
                 <div v-if="view == 'sidebar'" class="product-cats-list">
                     <ul>
                         <li v-for="(item, index) in items" :key="index" :class="item.id == currentCat ? 'current' : ''">
-                            <nuxt-link :to="{ path: '/products', query: { cat: item.id } }">
+                            <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                 {{ item.title }} <span class="count">{{ item.count }}</span>
-                            </nuxt-link>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>
@@ -19,24 +19,24 @@
                     <slick class="slick-sliders content-category" ref="slick" :options="slickOptions">
                         <div v-for="(item, index) in items" :key="index" class="item item-product-cat">
                             <div class="item-product-cat-content">
-                                <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                     <div class="item-image">
                                         <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
                                     </div>
-                                </nuxt-link>
-                                <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">  
+                                </NuxtLink>
+                                <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">  
                                     <div class="item-image">
                                         <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
                                     </div>
-                                </nuxt-link>
+                                </NuxtLink>
                                 <div class="product-cat-content-info">
                                     <h2 class="item-title">
-                                        <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                        <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                             {{ item.title }}
-                                        </nuxt-link>
-                                        <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">
+                                        </NuxtLink>
+                                        <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">
                                             {{ item.title }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </h2>
                                 </div>
                             </div>
@@ -48,54 +48,54 @@
                         <div class="col-md-4 sm-m-b-50">
                             <div class="cat-item">
                                 <div class="cat-image">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[0].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
                                         <img width="407" height="553" :src="require('@/assets/img/' + items[0].image)" :alt="items[0].title">
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                                 <div class="cat-title">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[0].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
                                         <h3>{{ items[0].title }}</h3>
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 center sm-m-b-50">
                             <div class="cat-item">
                                 <div class="cat-image">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[1].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
                                         <img width="407" height="249" :src="require('@/assets/img/' + items[1].image)" :alt="items[1].title">
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                                 <div class="cat-title">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[1].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
                                         <h3>{{ items[1].title }}</h3>
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                             <div class="cat-item">
                                 <div class="cat-image">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[2].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
                                         <img width="407" height="249" :src="require('@/assets/img/' + items[2].image)" :alt="items[2].title">
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                                 <div class="cat-title">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[2].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
                                         <h3>{{ items[2].title }}</h3>
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="cat-item">
                                 <div class="cat-image">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[3].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
                                         <img width="407" height="553" :src="require('@/assets/img/' + items[3].image)" :alt="items[3].title">
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                                 <div class="cat-title">
-                                    <nuxt-link :to="{ path: '/products', query: { cat: items[3].id } }">
+                                    <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
                                         <h3>{{ items[3].title }}</h3>
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>
@@ -103,16 +103,16 @@
                     <div v-else-if="layout == '4'" class="row">
                         <div v-for="(item, index) in items" :key="index" class="col-md-3 col-sm-6 sm-m-b-30">
                             <div class="item-product-cat-content">
-                                <nuxt-link :to="{ path: '/products', query: { cat: item.id } }">
+                                <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                     <div class="item-image">
                                         <img width="330" height="300" :src="require('@/assets/img/' + item.image)" alt="item.title">
                                     </div>
-                                </nuxt-link>        
+                                </NuxtLink>        
                                 <div class="product-cat-content-info">
                                     <h2 class="item-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: item.id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                             {{ item.title }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </h2>
                                 </div>
                             </div>
@@ -126,9 +126,9 @@
                                         <h2 class="title" v-html="introTitle"></h2>
                                         <div class="description" v-html="introDesc"></div>
                                         <div class="link">
-                                            <nuxt-link :to="introBtnLink">
+                                            <NuxtLink :to="introBtnLink">
                                                 {{ introBtnTitle }}
-                                            </nuxt-link>
+                                            </NuxtLink>
                                         </div>
                                     </div>
                                 </div>
@@ -138,24 +138,24 @@
                                     <slick class="slick-sliders content-category" ref="slick" :options="slickOptions2" @init="handleInit">
                                         <div v-for="(item, index) in items" :key="index" class="item item-product-cat">
                                             <div class="item-product-cat-content">
-                                                <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                                <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                                     <div class="item-image">
                                                         <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
                                                     </div>
-                                                </nuxt-link>
-                                                <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">  
+                                                </NuxtLink>
+                                                <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">  
                                                     <div class="item-image">
                                                         <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
                                                     </div>
-                                                </nuxt-link>
+                                                </NuxtLink>
                                                 <div class="product-cat-content-info">
                                                     <h2 class="item-title">
-                                                        <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                                        <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                                             {{ item.title }}
-                                                        </nuxt-link>
-                                                        <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">
+                                                        </NuxtLink>
+                                                        <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">
                                                             {{ item.title }}
-                                                        </nuxt-link>
+                                                        </NuxtLink>
                                                     </h2>
                                                 </div>
                                             </div>
@@ -170,14 +170,14 @@
                             <div v-for="(item, index) in items" :key="index" class="col-lg-3 col-md-6 md-b-10">
                                 <div class="cat-item">
                                     <div class="cat-image">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: item.id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                             <img width="469" height="475" :src="require('@/assets/img/' + item.image)" :alt="item.title">
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                     <div class="cat-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: item.id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                             {{ item.title }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -188,54 +188,54 @@
                             <div class="col-md-4 sm-m-b-15">
                                 <div class="cat-item">
                                     <div class="cat-image">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[0].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
                                             <img width="407" height="553" :src="require('@/assets/img/' + items[0].image)" :alt="items[0].title">
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                     <div class="cat-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[0].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
                                             <h3>{{ items[0].title }}</h3>
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4 center sm-m-b-15">
                                 <div class="cat-item">
                                     <div class="cat-image">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[1].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
                                             <img width="407" height="249" :src="require('@/assets/img/' + items[1].image)" :alt="items[1].title">
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                     <div class="cat-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[1].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
                                             <h3>{{ items[1].title }}</h3>
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                                 <div class="cat-item">
                                     <div class="cat-image">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[2].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
                                             <img width="407" height="249" :src="require('@/assets/img/' + items[2].image)" :alt="items[2].title">
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                     <div class="cat-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[2].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
                                             <h3>{{ items[2].title }}</h3>
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="cat-item">
                                     <div class="cat-image">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[3].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
                                             <img width="407" height="553" :src="require('@/assets/img/' + items[3].image)" :alt="items[3].title">
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                     <div class="cat-title">
-                                        <nuxt-link :to="{ path: '/products', query: { cat: items[3].id } }">
+                                        <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
                                             <h3>{{ items[3].title }}</h3>
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -245,20 +245,20 @@
                         <div v-for="(item, index) in items" :key="index" class="col-md-3 sm-m-b-30">
                             <div class="cat-item">
                                 <div class="cat-image">
-                                    <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                    <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                         <img width="303" height="366" :src="require('@/assets/img/' + item.image)" :alt="item.title">
-                                    </nuxt-link>
-                                    <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">
+                                    </NuxtLink>
+                                    <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">
                                         <img width="303" height="366" :src="require('@/assets/img/' + item.image)" :alt="item.title">
-                                    </nuxt-link>  
+                                    </NuxtLink>  
                                 </div>
                                 <div class="cat-title">
-                                    <nuxt-link v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
+                                    <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                         <h3>{{ item.title }}</h3>
-                                    </nuxt-link>
-                                    <nuxt-link v-else :to="{ path: '/products', query: { cat: item.id } }">
+                                    </NuxtLink>
+                                    <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">
                                         <h3>{{ item.title }}</h3>
-                                    </nuxt-link>  
+                                    </NuxtLink>  
                                 </div>
                             </div>
                         </div>
@@ -316,37 +316,13 @@ export default {
                 pauseOnFocus: false,
                 prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
                 nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [{
-                    breakpoint: 1441,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
-                    }
-                }, {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                    }
-                }, {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                }]
+                responsive: [
+                    { breakpoint: 1441, settings: { slidesToShow: 5, slidesToScroll: 5 } }, 
+                    { breakpoint: 1200, settings: { slidesToShow: 4, slidesToScroll: 4 } }, 
+                    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                    { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } }, 
+                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+                ]
             },
             slickOptions2: {
                 slidesToShow: 3,
@@ -359,37 +335,13 @@ export default {
                 pauseOnFocus: false,
                 prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
                 nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [{
-                    breakpoint: 1441,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                }]
+                responsive: [
+                    { breakpoint: 1441, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                    { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                    { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } }, 
+                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+                ]
             }
         }
     },

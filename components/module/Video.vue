@@ -43,9 +43,9 @@
                                 <div class="video-text">
                                     <h2 v-html="videos[0].title" class="title"></h2>
                                     <div v-html="videos[0].description" class="description"></div>
-                                    <nuxt-link v-if="videos[0].button.link" :to="videos[0].button.link" :class="videos[0].button.class">
+                                    <NuxtLink v-if="videos[0].button.link" :to="videos[0].button.link" :class="videos[0].button.class">
                                         {{ videos[0].button.text }}
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>

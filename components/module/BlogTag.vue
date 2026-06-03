@@ -9,9 +9,9 @@
                 <div class="post-tags-list">
                     <ul>
                         <li v-for="(tag, index) in tags" :key="index">
-                            <nuxt-link :to="{ path: '/blogs', query: { tag: tag.toLowerCase() } }">
+                            <NuxtLink :to="{ path: '/blogs', query: { tag: tag.toLowerCase() } }">
                                 {{ tag }}
-                            </nuxt-link>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>

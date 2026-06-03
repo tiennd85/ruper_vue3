@@ -11,7 +11,7 @@
                         <h2 class="countdown-title">{{ countdownTitle }}</h2>
                         <div class="countdown-content-wrap">
                             <h2 class="product-title">
-                                <nuxt-link :to="'/product/' + productId">{{ productTitle }}</nuxt-link>
+                                <NuxtLink :to="'/product/' + productId">{{ productTitle }}</NuxtLink>
                             </h2>
                             <div class="product-price">
                                 {{ productPrice }}
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="countdown-button">
-                                <nuxt-link :to="'/product/' + productId">View Details</nuxt-link>
+                                <NuxtLink :to="'/product/' + productId">View Details</NuxtLink>
                             </div>
                         </div>
                     </div>

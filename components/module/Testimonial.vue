@@ -88,41 +88,13 @@ export default {
                 pauseOnFocus: false,
                 prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
                 nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [{
-                    breakpoint: 1441,
-                    settings: {
-                        slidesToShow: (this.itemsShow > 1) ? this.itemsShow : 1,
-                        slidesToScroll: (this.itemsShow > 1) ? this.itemsShow : 1,
-                    }
-                }, {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: (this.itemsShow > 1) ? 2 : 1,
-                        slidesToScroll: (this.itemsShow > 1) ? 2 : 1,
-                    }
-                }, {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: (this.itemsShow > 1) ? 2 : 1,
-                        slidesToScroll: (this.itemsShow > 1) ? 2 : 1,
-                    }
-                }, {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        vertical: !1,
-                        verticalSwiping: !1,
-                    }
-                }]
+                responsive: [
+                    { breakpoint: 1441, settings: { slidesToShow: (this.itemsShow > 1) ? this.itemsShow : 1, slidesToScroll: (this.itemsShow > 1) ? this.itemsShow : 1 } }, 
+                    { breakpoint: 1200, settings: { slidesToShow: (this.itemsShow > 1) ? 2 : 1, slidesToScroll: (this.itemsShow > 1) ? 2 : 1 } }, 
+                    { breakpoint: 1024, settings: { slidesToShow: (this.itemsShow > 1) ? 2 : 1, slidesToScroll: (this.itemsShow > 1) ? 2 : 1 } }, 
+                    { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 } }, 
+                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 } }
+                ]
             }
         }
     }

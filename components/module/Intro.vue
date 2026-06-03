@@ -13,9 +13,9 @@
                     {{ intro.description }}
                 </div>
                 <div class="intro-button">
-                    <nuxt-link :to="intro.button.link" :class="intro.button.class">
+                    <NuxtLink :to="intro.button.link" :class="intro.button.class">
                         {{ intro.button.text }}
-                    </nuxt-link>
+                    </NuxtLink>
                 </div>
             </div>
         </div>

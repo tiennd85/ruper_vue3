@@ -1,5 +1,5 @@
 <template>
-  <div :class="['block', 'block-products', { 'slider': view == 'slider' }, modClass]">{{ items }}
+  <div :class="['block', 'block-products', { 'slider': view == 'slider' }, modClass]">
     <div class="block-widget-wrap">
       <div v-if="title || subTitle" :class="['block-title', { 'title-underline': titleUnderline }]">
         <h2>{{ title }}</h2>
@@ -40,8 +40,10 @@
           <div class="slick-sliders products-list grid" ref="sliderElement">
             <div class="item-product" v-for="(item, index) in items" :key="index">
               <Product :product="item" :layout="layout" />
-              <Quickview :product="item" />
             </div>
+          </div>
+          <div class="item-product" v-for="(item, index) in items" :key="index">
+            <Quickview :product="item" />
           </div>
           <div v-if="viewAll" class="btn-all">
             <NuxtLink class="button-outline" to="/products">VIEW ALL</NuxtLink>
@@ -63,7 +65,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 
 const props = defineProps({
@@ -89,16 +91,16 @@ const props = defineProps({
 const sliderElement = ref(null)
 
 const { data: allProductsData } = await useAsyncData('all-products', () => 
-  queryContent('products').findOne()
+  queryContent('products', 'products').findOne()
 )
-const allItems = computed(() => allProductsData.value?.body?.data || [])
+const allItems = computed(() => allProductsData.value?.body || [])
 
 const { data: catsData } = await useAsyncData('categories', () => 
-  queryContent('categories').findOne()
+  queryContent('products', 'categories').findOne()
 )
 
 const cats = computed(() => {
-  const categories = catsData.value?.body?.data?.filter(cat => cat.tab === true) || []
+  const categories = catsData.value?.body?.filter(cat => cat.tab === true) || []
   if (categories.length) {
     categories.forEach(cat => {
       const catProducts = allItems.value.filter(p => p.category == cat.id)
@@ -118,26 +120,26 @@ const items = computed(() => {
 })
 
 onMounted(async() => {
-    await nextTick()
+  await nextTick()
 
-    if (process.client && sliderElement.value) {
-      const $ = window.$ || (await import('jquery')).default;
-      await import('slick-carousel')
-      
-      $(sliderElement.value).slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        infinite: true,
-        arrows: true,
-        prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-        nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-        responsive: [
-          { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-          { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-          { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
-        ]
-      })
-    }
+  if (process.client && sliderElement.value) {
+    const $ = window.$ || (await import('jquery')).default;
+    await import('slick-carousel')
+    
+    $(sliderElement.value).slick({
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      infinite: true,
+      arrows: true,
+      prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+      nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+      responsive: [
+        { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } },
+        { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+      ]
+    })
+  }
 })
 
 onBeforeUnmount(() => {

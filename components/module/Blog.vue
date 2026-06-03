@@ -24,7 +24,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const sliderElement = ref(null)
@@ -39,7 +39,7 @@ const props = defineProps({
 })
 
 const { data: blogsData } = await useAsyncData('blogs', () => 
-  queryContent('blogs', 'blogs').findOne()
+    queryContent('blogs', 'blogs').findOne()
 )
 const blogs = computed(() => blogsData.value?.body || [])
 const items = computed(() => {
@@ -70,12 +70,12 @@ onMounted(async() => {
             prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
             nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
             responsive: [
-                { breakpoint: 1441, settings: { slidesToShow: 3, slidesToScroll: 3 }}, 
-                { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 }}, 
-                { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 }}, 
-                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2, vertical: !1, verticalSwiping: !1 }}, 
-                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 }
-            }]
+                { breakpoint: 1441, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
+                { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } }, 
+                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2, vertical: !1, verticalSwiping: !1 } }, 
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 } }
+            ]
         })
     }
 })

@@ -19,15 +19,15 @@
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
-                                                    <nuxt-link :to="item.content.link">
+                                                    <NuxtLink :to="item.content.link">
                                                         <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
-                                                    </nuxt-link>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
                                                     <div class="item-title">
-                                                        <nuxt-link :to="item.content.link">
+                                                        <NuxtLink :to="item.content.link">
                                                             {{ item.content.title }}
-                                                        </nuxt-link>
+                                                        </NuxtLink>
                                                     </div>
                                                     <div v-if="item.content.price > item.content.salePrice" class="price">
                                                         <del aria-hidden="true"><span>{{ $helpers.productPrice(item.content.price) }}</span></del> 
@@ -49,9 +49,9 @@
                             <div class="lookbook-intro">
                                 <h4 class="sub-title">{{ lookbooks[0].subtitle }}</h4>
                                 <h2 v-html="lookbooks[0].title" class="title"></h2>
-                                <nuxt-link v-if="lookbooks[0].button.link" :to="lookbooks[0].button.link" :class="lookbooks[0].button.class">
+                                <NuxtLink v-if="lookbooks[0].button.link" :to="lookbooks[0].button.link" :class="lookbooks[0].button.class">
                                     {{ lookbooks[0].button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -69,15 +69,15 @@
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
-                                                    <nuxt-link :to="item.content.link">
+                                                    <NuxtLink :to="item.content.link">
                                                         <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
-                                                    </nuxt-link>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
                                                     <div class="item-title">
-                                                        <nuxt-link :to="item.content.link">
+                                                        <NuxtLink :to="item.content.link">
                                                             {{ item.content.title }}
-                                                        </nuxt-link>
+                                                        </NuxtLink>
                                                     </div>
                                                     <div v-if="item.content.price > item.content.salePrice" class="price">
                                                         <del aria-hidden="true"><span>{{ $helpers.productPrice(item.content.price) }}</span></del> 
@@ -101,9 +101,9 @@
                                     <div class="lookbook-intro">
                                         <h2 class="title">{{ lookbooks[1].title }}</h2>
                                         <h4 class="sub-title">{{ lookbooks[1].subtitle }}</h4>
-                                        <nuxt-link v-if="lookbooks[1].button.link" :to="lookbooks[1].button.link" :class="lookbooks[1].button.class">
+                                        <NuxtLink v-if="lookbooks[1].button.link" :to="lookbooks[1].button.link" :class="lookbooks[1].button.class">
                                             {{ lookbooks[1].button.text }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                                 <div class="lookbook-content">
@@ -113,15 +113,15 @@
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
-                                                    <nuxt-link :to="item.content.link">
+                                                    <NuxtLink :to="item.content.link">
                                                         <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
-                                                    </nuxt-link>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
                                                     <div class="item-title">
-                                                        <nuxt-link :to="item.content.link">
+                                                        <NuxtLink :to="item.content.link">
                                                             {{ item.content.title }}
-                                                        </nuxt-link>
+                                                        </NuxtLink>
                                                     </div>
                                                     <div v-if="item.content.price > item.content.salePrice" class="price">
                                                         <del aria-hidden="true"><span>{{ $helpers.productPrice(item.content.price) }}</span></del> 
@@ -151,15 +151,15 @@
                                         <span class="number-lookbook">{{ index + 1 }}</span>
                                         <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                             <div class="item-thumb">
-                                                <nuxt-link :to="item.content.link">
+                                                <NuxtLink :to="item.content.link">
                                                     <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
-                                                </nuxt-link>
+                                                </NuxtLink>
                                             </div>
                                             <div class="content-lookbook-bottom">
                                                 <div class="item-title">
-                                                    <nuxt-link :to="item.content.link">
+                                                    <NuxtLink :to="item.content.link">
                                                         {{ item.content.title }}
-                                                    </nuxt-link>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div v-if="item.content.price > item.content.salePrice" class="price">
                                                     <del aria-hidden="true"><span>{{ $helpers.productPrice(item.content.price) }}</span></del> 
@@ -185,9 +185,9 @@
                             <div class="lookbook-intro">
                                 <h2 v-html="lookbooks[0].title" class="title"></h2>
                                 <div class="description">{{ lookbooks[0].description }}</div>
-                                <nuxt-link v-if="lookbooks[0].button.link" :to="lookbooks[0].button.link" :class="lookbooks[0].button.class">
+                                <NuxtLink v-if="lookbooks[0].button.link" :to="lookbooks[0].button.link" :class="lookbooks[0].button.class">
                                     {{ lookbooks[0].button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -201,15 +201,15 @@
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
-                                                    <nuxt-link :to="item.content.link">
+                                                    <NuxtLink :to="item.content.link">
                                                         <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
-                                                    </nuxt-link>
+                                                    </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
                                                     <div class="item-title">
-                                                        <nuxt-link :to="item.content.link">
+                                                        <NuxtLink :to="item.content.link">
                                                             {{ item.content.title }}
-                                                        </nuxt-link>
+                                                        </NuxtLink>
                                                     </div>
                                                     <div v-if="item.content.price > item.content.salePrice" class="price">
                                                         <del aria-hidden="true"><span>{{ $helpers.productPrice(item.content.price) }}</span></del> 
@@ -232,7 +232,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { $helpers } = useNuxtApp();
 
 export default {

@@ -32,8 +32,8 @@
                 </NuxtLink>
             </div>
             <div class="product-button">
-                <div v-if="layout == 1" class="btn-add-to-cart" :data-title="!cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <NuxtLink v-if="!cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
+                <div v-if="layout == 1" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
+                    <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
                         Add to cart
                     </NuxtLink>
                     <NuxtLink  v-else to="/cart" class="added-to-cart product-btn button">
@@ -41,16 +41,16 @@
                     </NuxtLink>
                 </div>
                 <div class="btn-wishlist" data-title="Wishlist">
-                    <button v-if="!wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
+                    <button v-if="!wishlistStore.wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
                     <button v-else class="product-btn added">Wishlist added</button>
                 </div>
                 <div class="btn-compare" data-title="Compare">
                     <button @click="addCompareItem(product, $event)" class="product-btn">Compare</button>
                 </div>
                 <div class="product-quickview" data-title="Quick View">
-                    <NuxtLink event="" to="#" @click.native="$bvModal.show('product-modal-' + product.id)" class="quickview quickview-button">
+                    <span @click="showModal(product.id)" class="quickview quickview-button">
                         Quick View <i class="icon-search"></i>
-                    </NuxtLink>
+                    </span>
                 </div>
             </div>
         </div>
@@ -68,8 +68,8 @@
                 <div v-else class="price">
                     {{ $helpers.productPrice(product.salePrice) }}
                 </div>
-                <div v-if="layout == 2" class="btn-add-to-cart" :data-title="!cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <NuxtLink v-if="!cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="button">
+                <div v-if="layout == 2" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
+                    <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="button">
                         Add to cart
                     </NuxtLink>
                     <NuxtLink  v-else to="/cart" class="added-to-cart product-btn">
@@ -94,9 +94,9 @@
                         </NuxtLink>
                     </div>
                     <span class="product-quickview" data-title="Quick View">
-                        <NuxtLink event="" to="#" @click.native="$bvModal.show('product-modal-' + product.id)" class="quickview quickview-button">
+                        <span @click="showModal(product.id)" class="quickview quickview-button">
                             Quick View <i class="icon-search"></i>
-                        </NuxtLink>
+                        </span>
                     </span>
                 </div>
             </div>
@@ -116,8 +116,8 @@
                         {{ $helpers.productPrice(product.salePrice) }}
                     </div>
                     <div class="product-button">
-                        <div class="btn-add-to-cart" :data-title="!cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                            <NuxtLink v-if="!cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
+                        <div class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
+                            <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
                                 Add to cart
                             </NuxtLink>
                             <NuxtLink v-else to="/cart" class="added-to-cart product-btn button">
@@ -125,7 +125,7 @@
                             </NuxtLink>
                         </div>
                         <div class="btn-wishlist" data-title="Wishlist">
-                            <button v-if="!wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
+                            <button v-if="!wishlistStore.wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
                             <button v-else class="product-btn added">Wishlist added</button>
                         </div>
                         <div class="btn-compare" data-title="Compare">
@@ -141,7 +141,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useCartStore } from '~/stores/cart'
 import { useWishlistStore } from '~/stores/wishlist'
 import { useCompareStore } from '~/stores/compare'
@@ -158,7 +158,12 @@ const cartStore = useCartStore()
 const wishlistStore = useWishlistStore()
 const compareStore = useCompareStore()
 
-/*
+const showModal = (productId) => {
+    if (process.client) {
+        $('#product-modal-' + productId).modal('show')
+    }
+}
+
 // Show notification
 const showNotification = (message: string) => {
     const toast = document.createElement('div')
@@ -196,5 +201,4 @@ const addWishlistItem = (product: any, event: Event) => {
 const addCompareItem = (product: any) => {
     compareStore.addCompareItem(product)
 }
-*/
 </script>

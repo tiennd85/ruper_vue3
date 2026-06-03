@@ -7,8 +7,8 @@
         <div class="block-content">
             <ul class="social-link">
                 <li v-for="(social, index) in socials" :key="index">
-                    <nuxt-link v-if="social.link" :to="social.link" v-html="social.icon">
-                    </nuxt-link>
+                    <NuxtLink v-if="social.link" :to="social.link" v-html="social.icon">
+                    </NuxtLink>
                 </li>
             </ul>
         </div>

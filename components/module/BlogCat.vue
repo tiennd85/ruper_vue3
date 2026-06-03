@@ -9,9 +9,9 @@
                 <div class="post-cats-list">
                     <ul>
                         <li v-for="(item, index) in items" :key="index" :class="item.id == currentCat ? 'current' : ''">
-                            <nuxt-link :to="{ path: '/blogs', query: { cat: item.id } }">
+                            <NuxtLink :to="{ path: '/blogs', query: { cat: item.id } }">
                                 {{ item.title }} <span class="count">{{ item.count }}</span>
-                            </nuxt-link>
+                            </NuxtLink>
                         </li>
                     </ul>
                 </div>

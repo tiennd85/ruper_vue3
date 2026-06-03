@@ -11,11 +11,11 @@
                 <div v-if="cartItems.length" class="cart-list-wrap">
                     <ul class="cart-list ">
                         <li class="mini-cart-item" v-for="(item, index) in cartItems" :key="index">
-                            <NuxtLink event="" to="#" @click.native="removeCartItem(item)" class="remove">
+                            <span @click="removeCartItem(item)" class="remove">
                                 <i class="icon_close"></i>
-                            </NuxtLink>
+                            </span>
                             <NuxtLink :to="'/product/' + item.id" class="product-image">
-                                <img v-if="item.images[0]" width="600" height="600" :src="require('@/assets/img/' + item.images[0])" :alt="item.title">
+                                <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
                             </NuxtLink>
                             <NuxtLink :to="'/product/' + item.id" class="product-name">
                                 {{ item.title }}
@@ -50,7 +50,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { useCartStore } from '~/stores/cart';
 

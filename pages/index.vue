@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { data: slidesData } = await useAsyncData('home-slides', () => 
   queryContent('slides', 'slides_home1').findOne()
 )

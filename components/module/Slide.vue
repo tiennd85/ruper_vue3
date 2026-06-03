@@ -18,9 +18,9 @@
                                         <div v-if="slide.subtitle" v-html="slide.subtitle" class="subtitle-slider"></div>
                                         <h2 v-if="slide.title" v-html="slide.title" class="title-slider"></h2>
                                         <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                        <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                        <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                             {{ slide.button.text }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -35,9 +35,9 @@
                                 <div v-if="slide.subtitle" v-html="slide.subtitle" class="subtitle-slider"></div>
                                 <h2 v-if="slide.title" v-html="slide.title" class="title-slider"></h2>
                                 <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,9 @@
                                         <div v-if="slide.subtitle" v-html="slide.subtitle" class="subtitle-slider"></div>
                                         <h2 v-if="slide.title" v-html="slide.title" class="title-slider"></h2>
                                         <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                        <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                        <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                             {{ slide.button.text }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -67,9 +67,9 @@
                         <div class="item-info horizontal-start vertical-bottom">
                             <div class="content">
                                 <h2 v-if="slide.title" class="title-slider" v-html="slide.title"></h2>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -78,9 +78,9 @@
                             <div class="content">
                                 <div class="content-wrap">
                                     <h2 class="title-slider" v-html="slide.title"></h2>
-                                    <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                    <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                         {{ slide.button.text }}
-                                    </nuxt-link>
+                                    </NuxtLink>
                                 </div>
                             </div>
                         </div>
@@ -96,9 +96,9 @@
                             <div class="content">
                                 <div class="subtitle-slider" v-html="slide.subtitle"></div>
                                 <h2 class="title-slider" v-html="slide.title"></h2>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -110,9 +110,9 @@
                             <div class="content">
                                 <h2 class="title-slider" v-html="slide.title"></h2>
                                 <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -124,9 +124,9 @@
                             <div class="content">
                                 <div class="subtitle-slider" v-html="slide.subtitle"></div>
                                 <h2 class="title-slider" v-html="slide.title"></h2>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -140,9 +140,9 @@
                                     <div class="content-wrap">
                                         <h2 class="title-slider" v-html="slide.title"></h2>
                                         <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                        <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                        <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                             {{ slide.button.text }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -153,9 +153,9 @@
                                     <div class="content-wrap">
                                         <h2 class="title-slider" v-html="slide.title"></h2>
                                         <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                        <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                        <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                             {{ slide.button.text }}
-                                        </nuxt-link>
+                                        </NuxtLink>
                                     </div>
                                 </div>
                             </div>
@@ -172,9 +172,9 @@
                             <div class="content text-center">
                                 <h2 class="title-slider" v-html="slide.title"></h2>
                                 <div v-if="slide.description" v-html="slide.description" class="description-slider"></div>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -186,9 +186,9 @@
                             <div class="content text-center">
                                 <div v-if="slide.subtitle" v-html="slide.subtitle" class="subtitle-slider"></div>
                                 <h2 class="title-slider" v-html="slide.title"></h2>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -199,9 +199,9 @@
                         <div class="item-info horizontal-center vertical-middle">
                             <div class="content text-center">
                                 <h2 class="title-slider" v-html="slide.title"></h2>
-                                <nuxt-link v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
+                                <NuxtLink v-if="slide.button" :to="slide.button.link" :class="slide.button.class">
                                     {{ slide.button.text }}
-                                </nuxt-link>
+                                </NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -215,10 +215,8 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const sliderElement = ref(null)
 
 const props = defineProps({
     title: String,
@@ -234,6 +232,8 @@ const props = defineProps({
     bgImageRound: String,
     bgImageCenter: String
 })
+
+const sliderElement = ref(null)
 
 onMounted(async() => {
     await nextTick()
