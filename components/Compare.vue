@@ -61,10 +61,10 @@
                                                 <tr class="tr-add-to-cart">
                                                     <td class="td-label">Add to cart</td>
                                                     <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <div v-if="!cartItems.includes(item)" data-title="Add to cart">
-                                                            <NuxtLink event="" to="#" @click="addCartItem(item, $event)" class="button">
+                                                        <div v-if="!cartStore.cartItems.includes(item)" data-title="Add to cart">
+                                                            <button @click="addCartItem(item, $event)" class="button">
                                                                 Add to cart
-                                                            </NuxtLink>
+                                                            </button>
                                                         </div>
                                                         <div v-else data-title="View cart">
                                                             <NuxtLink to="/cart" class="button">

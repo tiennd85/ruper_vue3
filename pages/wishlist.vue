@@ -45,9 +45,9 @@
                   <td class="wishlist-item-actions">
                     <div class="wishlist-item-add">
                       <div class="btn-add-to-cart" data-title="Add to cart">
-                        <NuxtLink v-if="!cartItems.includes(item)" event="" to="#" @click.native="addCartItem(item, $event)" class="product-btn button">
+                        <button v-if="!cartItems.includes(item)" @click="addCartItem(item, $event)" class="product-btn button">
                           Add to cart
-                        </NuxtLink>
+                        </button>
                         <NuxtLink v-else to="/cart" class="added-to-cart product-btn">
                           View cart
                         </NuxtLink>

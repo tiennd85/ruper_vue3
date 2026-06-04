@@ -37,11 +37,13 @@
         </div>
 
         <div v-else-if="view == 'slider'" class="content-product-list slick-wrap">
+          <i @click="slickPrev" class="slick-arrow fa fa-angle-left"></i>
           <div class="slick-sliders products-list grid" ref="sliderElement">
             <div class="item-product" v-for="(item, index) in items" :key="index">
               <Product :product="item" :layout="layout" />
             </div>
           </div>
+          <i @click="slickNext" class="slick-arrow fa fa-angle-right"></i>
           <div class="item-product" v-for="(item, index) in items" :key="index">
             <Quickview :product="item" />
           </div>
@@ -88,8 +90,6 @@ const props = defineProps({
   titleRightLink: { type: String, default: '/products' }
 })
 
-const sliderElement = ref(null)
-
 const { data: allProductsData } = await useAsyncData('all-products', () => 
   queryContent('products', 'products').findOne()
 )
@@ -119,6 +119,14 @@ const items = computed(() => {
   return props.limit ? products.slice(0, props.limit) : products
 })
 
+const sliderElement = ref(null)
+const slickPrev = () => {
+  $(sliderElement.value).slick('slickPrev')
+}
+const slickNext = () => {
+  $(sliderElement.value).slick('slickNext')
+}
+
 onMounted(async() => {
   await nextTick()
 
@@ -128,15 +136,22 @@ onMounted(async() => {
     
     $(sliderElement.value).slick({
       slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToScroll: 1,
+      autoplay: false,
+      autoplaySpeed: 5000,
       infinite: true,
-      arrows: true,
-      prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-      nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+      arrows: false,
+      dots: false,
+      draggable: true,
+      touchMove: false,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      cssEase: 'linear',
       responsive: [
-        { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-        { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+        { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 1 } }, 
+        { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }, 
+        { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 } }, 
+        { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1, vertical: !1, verticalSwiping: !1 } }
       ]
     })
   }

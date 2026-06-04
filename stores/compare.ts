@@ -14,13 +14,12 @@ export const useCompareStore = defineStore('compare', {
   // Actions
   actions: {
     addCompareItem(product: any) {
-      const productOnCompare = this.compareItems.find(item => item.id === product.id)
+      const exists = this.compareItems.find(item => item.id === product.id)
       
-      if (!productOnCompare) {
+      if (!exists) {
         if (this.compareItems.length >= 3) {
           this.compareItems.shift()
         }
-        
         this.compareItems.push(product)
       }
     },

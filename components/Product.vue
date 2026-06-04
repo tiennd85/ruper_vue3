@@ -33,9 +33,9 @@
             </div>
             <div class="product-button">
                 <div v-if="layout == 1" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
+                    <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="product-btn button">
                         Add to cart
-                    </NuxtLink>
+                    </button>
                     <NuxtLink  v-else to="/cart" class="added-to-cart product-btn button">
                         View cart
                     </NuxtLink>
@@ -48,9 +48,9 @@
                     <button @click="addCompareItem(product, $event)" class="product-btn">Compare</button>
                 </div>
                 <div class="product-quickview" data-title="Quick View">
-                    <span @click="showModal(product.id)" class="quickview quickview-button">
+                    <button @click="showModal(product.id)" class="quickview-btn">
                         Quick View <i class="icon-search"></i>
-                    </span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -69,9 +69,9 @@
                     {{ $helpers.productPrice(product.salePrice) }}
                 </div>
                 <div v-if="layout == 2" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="button">
+                    <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="button">
                         Add to cart
-                    </NuxtLink>
+                    </button>
                     <NuxtLink  v-else to="/cart" class="added-to-cart product-btn">
                         View cart
                     </NuxtLink>
@@ -94,9 +94,9 @@
                         </NuxtLink>
                     </div>
                     <span class="product-quickview" data-title="Quick View">
-                        <span @click="showModal(product.id)" class="quickview quickview-button">
+                        <button @click="showModal(product.id)" class="quickview-btn">
                             Quick View <i class="icon-search"></i>
-                        </span>
+                        </button>
                     </span>
                 </div>
             </div>
@@ -117,9 +117,9 @@
                     </div>
                     <div class="product-button">
                         <div class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                            <NuxtLink v-if="!cartStore.cartItems.includes(product)" event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
+                            <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="product-btn button">
                                 Add to cart
-                            </NuxtLink>
+                            </button>
                             <NuxtLink v-else to="/cart" class="added-to-cart product-btn button">
                                 View cart
                             </NuxtLink>
@@ -198,7 +198,19 @@ const addWishlistItem = (product: any, event: Event) => {
 }
 
 // Add to Compare
-const addCompareItem = (product: any) => {
-    compareStore.addCompareItem(product)
+const addCompareItem = (product: any, event: Event) => {
+    const btn = event.target as HTMLElement
+
+    btn.classList.add('adding')
+
+    setTimeout(() => {
+        compareStore.addCompareItem(product)
+
+        btn.classList.remove('adding')
+
+        if (process.client) {
+            $('#products-compare').modal('show')
+        }
+    }, 1000)
 }
 </script>

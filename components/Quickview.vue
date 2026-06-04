@@ -80,23 +80,32 @@ const cartStore = useCartStore()
 const addCartNum = ref(1)
 
 onMounted(async() => {
-    await nextTick()
-
-    if (process.client && sliderElement.value) {
+    if (process.client) {
         const $ = window.$ || (await import('jquery')).default;
-        await import('slick-carousel')
-        
-        $(sliderElement.value).slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: false,
-            infinite: true,
-            arrows: true,
-            dots: true,
-            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
-        })
+        await import('slick-carousel');
+
+        const modalId = `#product-modal-${props.product.id}`;
+
+        $(modalId).on('shown.bs.modal', () => {
+            const $slider = $(sliderElement.value);
+
+            if ($slider.hasClass('slick-initialized')) {
+                $slider.slick('setPosition');
+            } else {
+                $slider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: false,
+                    infinite: true,
+                    arrows: true,
+                    dots: true,
+                    prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+                    nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
+                });
+            }
+        });
     }
+
 })
 
 onBeforeUnmount(() => {

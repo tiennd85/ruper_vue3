@@ -22,4 +22,12 @@ export default defineNuxtConfig({
     '~/assets/css/style.css',
     '~/assets/css/responsive.css'
   ],
+  app: {
+    head: {
+      title: 'Ruper - Furniture VueJs Template',
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      ]
+    }
+  }
 })
