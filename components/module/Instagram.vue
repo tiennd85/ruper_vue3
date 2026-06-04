@@ -9,7 +9,7 @@
                 <slick class="slick-sliders" ref="slick" :options="slickOptions">
                     <div class="item" v-for="(instagram, index) in instagrams" :key="index">
                         <NuxtLink :to="instagram.link" class="instagram">
-                            <img :width="instagram.image.width" :height="instagram.image.height" :src="require('@/assets/img/' + instagram.image.src)" :alt="instagram.image.alt">
+                            <img :width="instagram.image.width" :height="instagram.image.height" :src="instagram.image.src" :alt="instagram.image.alt">
                         </NuxtLink>
                     </div>
                 </slick>
@@ -18,31 +18,31 @@
                 <div class="row">
                     <div class="col-md-6 left sm-m-b">
                         <NuxtLink :to="instagrams[0].link" class="instagram">
-                            <img :width="instagrams[0].image.width" :height="instagrams[0].image.height" :src="require('@/assets/img/' + instagrams[0].image.src)" :alt="instagrams[0].image.alt">
+                            <img :width="instagrams[0].image.width" :height="instagrams[0].image.height" :src="instagrams[0].image.src" :alt="instagrams[0].image.alt">
                         </NuxtLink>
                     </div>
                     <div class="col-md-6 right">
                         <div class="row">
                             <div class="col-md-6 sm-m-b">
                                 <NuxtLink :to="instagrams[1].link" class="instagram">
-                                    <img :width="instagrams[1].image.width" :height="instagrams[1].image.height" :src="require('@/assets/img/' + instagrams[1].image.src)" :alt="instagrams[1].image.alt">
+                                    <img :width="instagrams[1].image.width" :height="instagrams[1].image.height" :src="instagrams[1].image.src" :alt="instagrams[1].image.alt">
                                 </NuxtLink>
                             </div>
                             <div class="col-md-6">
                                 <NuxtLink :to="instagrams[2].link" class="instagram">
-                                    <img :width="instagrams[2].image.width" :height="instagrams[2].image.height" :src="require('@/assets/img/' + instagrams[2].image.src)" :alt="instagrams[2].image.alt">
+                                    <img :width="instagrams[2].image.width" :height="instagrams[2].image.height" :src="instagrams[2].image.src" :alt="instagrams[2].image.alt">
                                 </NuxtLink>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 sm-m-b">
                                 <NuxtLink :to="instagrams[3].link" class="instagram">
-                                    <img :width="instagrams[3].image.width" :height="instagrams[3].image.height" :src="require('@/assets/img/' + instagrams[3].image.src)" :alt="instagrams[3].image.alt">
+                                    <img :width="instagrams[3].image.width" :height="instagrams[3].image.height" :src="instagrams[3].image.src" :alt="instagrams[3].image.alt">
                                 </NuxtLink>
                             </div>
                             <div class="col-md-6">
                                 <NuxtLink :to="instagrams[4].link" class="instagram">
-                                    <img :width="instagrams[4].image.width" :height="instagrams[4].image.height" :src="require('@/assets/img/' + instagrams[4].image.src)" :alt="instagrams[4].image.alt">
+                                    <img :width="instagrams[4].image.width" :height="instagrams[4].image.height" :src="instagrams[4].image.src" :alt="instagrams[4].image.alt">
                                 </NuxtLink>
                             </div>
                         </div>

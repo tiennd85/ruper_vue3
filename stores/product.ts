@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+
 import products from '~/content/products/products'
 import categories from '~/content/products/categories'
 import categories2 from '~/content/products/categories2'

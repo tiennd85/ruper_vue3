@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="testimonial-image image-position-top">
                                     <div class="thumbnail">
-                                        <img width="62" height="62" :src="require('@/assets/img/' + testimonial.image)" :alt="testimonial.name">
+                                        <img width="62" height="62" :src="testimonial.image" :alt="testimonial.name">
                                     </div>
                                     <div class="testimonial-info">
                                         <h2 class="testimonial-customer-name">{{ testimonial.name }}</h2>
@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="testimonial-image image-position-top">
                                     <div class="thumbnail">
-                                        <img width="62" height="62" :src="require('@/assets/img/' + testimonial.image)" :alt="testimonial.name">                         
+                                        <img width="62" height="62" :src="testimonial.image" :alt="testimonial.name">                         
                                     </div>
                                     <div class="testimonial-info">
                                         <h2 class="testimonial-customer-name">{{ testimonial.name }}</h2>

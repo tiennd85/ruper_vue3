@@ -30,14 +30,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'InfoModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        infos: Array
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    infos: Array
+})
 </script>

@@ -654,7 +654,7 @@
             </div>
 
             <!-- Layout 10 -->
-            <div v-else-if="layout === 10" class="block-widget-banner layout-11 full-height" :style="'background-image: url(' + require('@/assets/img/' + banners[0].image.src) + ');' + 'background-position: center left; background-repeat: no-repeat; background-size: cover'">
+            <div v-else-if="layout === 10" class="block-widget-banner layout-11 full-height" :style="'background-image: url(' + banners[0].image.src + '); ' + 'background-position: center left; background-repeat: no-repeat; background-size: cover'">
                 <div class="bg-banner">
                     <div class="banner-wrapper banners">
                         <div class="banner-wrapper-infor">

@@ -17,14 +17,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'ParallaxModule',
-    props: {
-        title: String,
-        subTitle: String,
-        parallax: Object,
-        modClass: String
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    parallax: Object,
+    modClass: String
+})
 </script>

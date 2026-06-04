@@ -208,8 +208,8 @@
                 </div>
             </div>
             <div v-if="bgImageRound || bgImageCenter" class="slider-bg-image">
-                <img v-if="bgImageRound" class="animation-round" width="105" height="105" :src="require('@/assets/img/' + bgImageRound)" alt="">
-                <img v-if="bgImageCenter" class="image-center" width="17" height="20" :src="require('@/assets/img/' + bgImageCenter)" alt="">
+                <img v-if="bgImageRound" class="animation-round" width="105" height="105" :src="bgImageRound" alt="">
+                <img v-if="bgImageCenter" class="image-center" width="17" height="20" :src="bgImageCenter" alt="">
             </div>
         </div>
     </div>

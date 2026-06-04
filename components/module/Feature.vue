@@ -11,7 +11,7 @@
                         <div class="box">
                             <div class="box-icon">
                                 <span>
-                                    <img :src="require('@/assets/img/' + feature.icon)" :alt="feature.title" />
+                                    <img :src="feature.icon" :alt="feature.title" />
                                 </span>
                             </div>
                             <div class="box-title-wrap">
@@ -30,35 +30,19 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'FeatureModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        features: Array,
-        layout: {
-            type: Number,
-            default: 1
-        },
-        limit: {
-            type: Number,
-            default: 4
-        },
-        noBorder: {
-            type: Boolean,
-            default: false
-        },
-        noDesc: {
-            type: Boolean,
-            default: false
-        }
-    },
-    computed: {
-        items() {
-            return this.limit ? this.features.slice(0, this.limit) : this.features
-        }
-    },
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    features: Array,
+    layout: { type: Number, default: 1 },
+    limit: { type: Number, default: 4 },
+    noBorder: { type: Boolean, default: false },
+    noDesc: { type: Boolean, default: false }
+})
+
+const items = computed(() => {
+    return props.limit ? props.features.slice(0, props.limit) : props.features;
+});
 </script>

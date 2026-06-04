@@ -7,7 +7,7 @@
         <div class="block-content">
             <div class="block-widget-wrap">
                 <div class="intro-image">
-                    <img :width="intro.image.width" :height="intro.image.height" class="animation-round" :src="require('@/assets/img/' + intro.image.src)" :alt="intro.image.alt">
+                    <img :width="intro.image.width" :height="intro.image.height" class="animation-round" :src="intro.image.src" :alt="intro.image.alt">
                 </div>
                 <div class="intro-text">
                     {{ intro.description }}

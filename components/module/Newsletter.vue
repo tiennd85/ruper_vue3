@@ -13,8 +13,8 @@
                 </span>
             </form>
             <div v-if="checkForm && $v.form.nEmail.$error" class="invalid-feedback">
-                <span v-if="!$v.form.nEmail.required">Email is required</span>
-                <span v-if="!$v.form.nEmail.email">Email is invalid</span>
+                <span v-if="$v.form.nEmail.required.$invalid">Email is required</span>
+                <span v-if="$v.form.nEmail.email.$invalid">Email is invalid</span>
             </div>
         </div>
         <div v-else-if="layout == '2'" class="block-content">
@@ -26,7 +26,7 @@
                                 <div class="banner-wrapper banners">
                                     <div v-if="image" class="banner-image">
                                         <a href="#">
-                                            <img width="961" height="452" :src="require('@/assets/img/' + image)" alt="Banner Image">
+                                            <img width="961" height="452" :src="image" alt="Banner Image">
                                         </a>
                                     </div>
                                 </div>
@@ -49,8 +49,8 @@
                                     </span>
                                 </form>
                                 <div v-if="checkForm && $v.form.nEmail.$error" class="invalid-feedback">
-                                    <span v-if="!$v.form.nEmail.required">Email is required</span>
-                                    <span v-if="!$v.form.nEmail.email">Email is invalid</span>
+                                    <span v-if="$v.form.nEmail.required.$invalid">Email is required</span>
+                                    <span v-if="$v.form.nEmail.email.$invalid">Email is invalid</span>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +71,8 @@
                     </span>
                 </form>
                 <div v-if="checkForm && $v.form.nEmail.$error" class="invalid-feedback">
-                    <span v-if="!$v.form.nEmail.required">Email is required</span>
-                    <span v-if="!$v.form.nEmail.email">Email is invalid</span>
+                    <span v-if="$v.form.nEmail.required.$invalid">Email is required</span>
+                    <span v-if="$v.form.nEmail.email.$invalid">Email is invalid</span>
                 </div>
             </div>
             <div v-else class="row">
@@ -90,8 +90,8 @@
                         </span>
                     </form>
                     <div v-if="checkForm && $v.form.nEmail.$error" class="invalid-feedback">
-                        <span v-if="!$v.form.nEmail.required">Email is required</span>
-                        <span v-if="!$v.form.nEmail.email">Email is invalid</span>
+                        <span v-if="$v.form.nEmail.required.$invalid">Email is required</span>
+                        <span v-if="$v.form.nEmail.email.$invalid">Email is invalid</span>
                     </div>
                 </div>
             </div>
@@ -99,73 +99,51 @@
     </div>
 </template>
 
-<script>
-import { required, email } from 'vuelidate/lib/validators'
+<script setup lang="ts">
+import { reactive, ref, onMounted } from 'vue';
+import { useVuelidate } from '@vuelidate/core';
+import { required, email } from '@vuelidate/validators';
 
-export default {
-    name: 'NewsletterModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        nTitle: String,
-        nSubTitle: String,
-        description: String,
-        placeholder: String,
-        image: String,
-        button: {
-            type: String,
-            default: 'Subscribe'
-        },
-        layout: {
-            type: Number,
-            default: 1
-        },
-        bgWhite: {
-            type: Boolean,
-            default: false
-        },
-        oneCol: {
-            type: Boolean,
-            default: false
-        },
-        alignLeft: {
-            type: Boolean,
-            default: false
-        },
-        positionCenter: {
-            type: Boolean,
-            default: false
-        }
-    },
-    data() {
-        return {
-            checkForm: false,
-            form: {
-                nEmail: ''
-            }
-        }
-    },
-    validations() {
-        return {
-            form: {
-                nEmail: { required, email }
-            }
-        }
-    },
-    methods: {
-        handleSubmit(e) {
-            this.checkForm = true
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    nTitle: String,
+    nSubTitle: String,
+    description: String,
+    placeholder: String,
+    image: String,
+    button: { type: String, default: 'Subscribe' },
+    layout: { type: Number, default: 1 },
+    bgWhite: { type: Boolean, default: false },
+    oneCol: { type: Boolean, default: false },
+    alignLeft: { type: Boolean, default: false },
+    positionCenter: { type: Boolean, default: false }
+})
 
-            // Stop if form is invalid
-            this.$v.$touch();
-            if (this.$v.$invalid) {
-                return
-            }
+const checkForm = ref(false);
+const form = reactive({ nEmail: '' });
+const rules = {
+    form: { nEmail: { required, email } }
+};
 
-            // Notify if form is valid
-            alert('You’re now subscribed to our newsletter!')
+const $v = useVuelidate(rules, { form });
+
+const handleSubmit = async () => {
+    if (process.client) {
+        const $ = window.$ || (await import('jquery')).default;
+
+        $v.value.form.$touch(); 
+        
+        checkForm.value = true; 
+        
+        const isFormCorrect = await $v.value.form.$validate();
+        if (!isFormCorrect) {
+            console.log("Form invalid:", $v.value.form.$errors);
+            return;
         }
+
+        alert('You’re now subscribed to our newsletter!');
     }
-}
+};
 </script>

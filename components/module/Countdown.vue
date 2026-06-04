@@ -55,10 +55,10 @@
                 <div class="col-md-6">
                     <div class="position-center">
                         <div class="countdown-img">
-                            <img width="720" height="393" :src="require('@/assets/img/' + image)" calt="">
+                            <img width="720" height="393" :src="image" calt="">
                             <div class="sub-img">
-                                <img class="animation-round" width="105" height="105" :src="require('@/assets/img/' + subImage1)" alt="">
-                                <img class="image-center" width="17" height="20" :src="require('@/assets/img/' + subImage2)" alt="">
+                                <img class="animation-round" width="105" height="105" :src="subImage1" alt="">
+                                <img class="image-center" width="17" height="20" :src="subImage2" alt="">
                             </div>
                         </div>
                     </div>

@@ -19,6 +19,27 @@
           <ModuleProduct title="Best Seller" :limit="6" view="slider" :layout="2" filter="bestSeller" />
         </div>
       </section>
+
+      <section class="section section-padding m-b-70">
+        <div class="section-container">
+          <!-- Block Banners -->
+          <ModuleBanner :banners="banners2" :layout="2" />
+        </div>
+      </section>
+
+      <section class="section section-padding background-1 section-mb-l">
+        <div class="section-container">
+          <!-- Block Video -->
+          <ModuleVideo :videos="videos" />
+        </div>
+      </section>
+
+      <section class="section section-padding m-b-70">
+        <div class="section-container">
+          <!-- Block Feature -->
+          <ModuleFeature :features="features" />
+        </div>
+      </section>
     </div>
   </div>
 </template>
@@ -35,7 +56,6 @@ const { data: banners1Data } = await useAsyncData('home-banners-1', () =>
 )
 const banners1 = computed(() => banners1Data.value?.body || [])
 
-/*
 // Data Banners2
 const { data: banners2Data } = await useAsyncData('home-banners-2', () => 
   queryContent('banners', 'banners_home1_2').findOne()
@@ -53,7 +73,6 @@ const { data: featuresData } = await useAsyncData('home-features', () =>
   queryContent('features', 'features').findOne()
 )
 const features = computed(() => featuresData.value?.body || [])
-*/
 
 definePageMeta({
   headerLayout: 1,
@@ -67,23 +86,4 @@ useHead({
     class: 'home'
   }
 })
-
-/*
-export default {
-  computed: {
-    banners1() {
-      return this.$store.state.banners.banners_home1_1
-    },
-    banners2() {
-      return this.$store.state.banners.banners_home1_2
-    },
-    videos() {
-      return this.$store.state.videos.videos_home1
-    },
-    features() {
-      return this.$store.state.features.features
-    }
-  }
-}
-*/
 </script>

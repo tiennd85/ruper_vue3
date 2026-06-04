@@ -20,33 +20,33 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'BlogTagModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String
-    },
-    data() {
-        return {
-            tag: this.$route.query.tag ? this.$route.query.tag : ''
-        }
-    },
-    computed: {
-        tags () {
-            let tags = []
-            let blogs = this.$store.state.blogs.allItems
-            blogs.forEach(function (blog) {
-                blog.tags.forEach(function (tag) {
-                    if (!tags.includes(tag)) {
-                        tags.push(tag)
-                    }
-                })
-            })
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useBlogStore } from '~/stores/blog'
 
-            return tags
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String
+})
+
+const route = useRoute()
+const blogStore = useBlogStore()
+
+const tag = computed(() => route.query.tag || '')
+
+const tags = computed(() => {
+    const blogs = blogStore.allItems
+
+    const tagSet = new Set<string>()
+
+    blogs.forEach(blog => {
+        if (blog.tags && Array.isArray(blog.tags)) {
+            blog.tags.forEach(t => tagSet.add(t))
         }
-    }
-}
+    })
+
+    return Array.from(tagSet)
+})
 </script>

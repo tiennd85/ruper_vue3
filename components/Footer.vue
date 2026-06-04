@@ -6,18 +6,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <ImageModule width="100" :image="require('@/assets/img/logo.png')" alt="Ruper – Furniture VueJs Template" :padding="false" />
+                <ModuleImage width="100" image="/img/logo.png" alt="Ruper – Furniture VueJs Template" :padding="false" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
                 
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <SocialModule />
+                  <ModuleSocial />
                 </div>
               </div>
             </div>
@@ -52,18 +52,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="About" :menus="menuFooter3" />
+                <ModuleMenu title="About" :menus="menuFooter3" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Help" :menus="menuFooter4" />
+                <ModuleMenu title="Help" :menus="menuFooter4" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" modClass="m-b-30" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" modClass="m-b-30" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -98,20 +98,20 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
               <div class="col-lg-3 col-md-6">
-                <TextModule title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
+                <ModuleText title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" /> 
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" /> 
 
-                <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -135,19 +135,19 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Help" :menus="menuFooter4" />
+                <ModuleMenu title="Help" :menus="menuFooter4" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Connect" :menus="menuFooter5" />
+                <ModuleMenu title="Connect" :menus="menuFooter5" />
               </div>
               <div class="col-lg-12 col-md-12 text-center">
-                <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <MenuModule :menus="menuFooter6" />
+                  <ModuleMenu :menus="menuFooter6" />
                 </div>
               </div>
             </div>
@@ -182,20 +182,20 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
               <div class="col-lg-3 col-md-6">
-                <TextModule title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
+                <ModuleText title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
                 
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -219,18 +219,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <ImageModule width="100" :image="require('@/assets/img/logo.png')" alt="Ruper – Furniture VueJs Template" :padding="false" />
+                <ModuleImage width="100" image="/img/logo.png" alt="Ruper – Furniture VueJs Template" :padding="false" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
                 
-                <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -249,7 +249,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <SocialModule />
+                  <ModuleSocial />
                 </div>
               </div>
             </div>
@@ -268,26 +268,24 @@
                 <div class="column-wrap">
                   <div class="row">
                     <div class="col-lg-6 md-b-20">
-                      <MenuModule title="Contact Us" :menus="menuFooter1" />
+                      <ModuleMenu title="Contact Us" :menus="menuFooter1" />
                     </div>
                     <div class="col-lg-6">
-                      <MenuModule title="Services" :menus="menuFooter2" />
+                      <ModuleMenu title="Services" :menus="menuFooter2" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 column-center">
                 <div class="column-wrap">
-                  <ImageModule width="100" :image="require('@/assets/img/logo.png')" modClass="m-b-20" alt="Ruper – Furniture VueJs Template" :padding="false" />
-                  
-                  
+                  <ModuleImage width="100" image="/img/logo.png" modClass="m-b-20" alt="Ruper – Furniture VueJs Template" :padding="false" />
                 </div>
               </div>
               <div class="col-lg-4 column-right">
                 <div class="column-wrap">
-                  <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                  <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
 
-                  <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -312,18 +310,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6 column-1">
-                <MenuModule title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
               <div class="col-lg-3 col-md-6 column-2">
-                <MenuModule title="Categories" :menus="menuFooter7" />
+                <ModuleMenu title="Categories" :menus="menuFooter7" />
               </div>
               <div class="col-lg-3 col-md-6 column-3">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6 column-4">
-                <MapModule title="Visit Our Store" address="London Eye, London, United Kingdom" />
+                <ModuleMap title="Visit Our Store" address="London Eye, London, United Kingdom" />
               </div>
             </div>
           </div>
@@ -342,7 +340,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -358,18 +356,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <ImageModule width="100" :image="require('@/assets/img/logo-white.png')" alt="Ruper – Furniture VueJs Template" :padding="false" />
+                <ModuleImage width="100" image="/img/logo-white.png" alt="Ruper – Furniture VueJs Template" :padding="false" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" />
               
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -388,7 +386,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <SocialModule />
+                  <ModuleSocial />
                 </div>
               </div>
             </div>
@@ -405,19 +403,19 @@
             <div class="row">
               <div class="col-lg-3 col-md-6">
                 <div class="block block-image">
-                  <ImageModule width="100" :image="require('@/assets/img/logo.png')" alt="Ruper – Furniture VueJs Template" :padding="false" />
+                  <ModuleImage width="100" image="/img/logo.png" alt="Ruper – Furniture VueJs Template" :padding="false" />
                 </div>
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
               
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -436,7 +434,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <SocialModule />
+                  <ModuleSocial />
                 </div>
               </div>
             </div>
@@ -452,19 +450,19 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Help" :menus="menuFooter4" />
+                <ModuleMenu title="Help" :menus="menuFooter4" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Connect" :menus="menuFooter5" />
+                <ModuleMenu title="Connect" :menus="menuFooter5" />
               </div>
               <div class="col-lg-12 col-md-12 text-center">
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -483,7 +481,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <MenuModule :menus="menuFooter6" />
+                  <ModuleMenu :menus="menuFooter6" />
                 </div>
               </div>
             </div>
@@ -499,18 +497,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="About" :menus="menuFooter3" />
+                <ModuleMenu title="About" :menus="menuFooter3" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Help" :menus="menuFooter4" />
+                <ModuleMenu title="Help" :menus="menuFooter4" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" modClass="m-b-30" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" modClass="m-b-30" />
               
-                <SocialModule />
+                <ModuleSocial />
               </div>
             </div>
           </div>
@@ -529,7 +527,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -545,20 +543,20 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
               <div class="col-lg-3 col-md-6">
-                <TextModule title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
+                <ModuleText title="Showroom" content="<p>1000 84th Street SW , Byron Center, MI 49315</p><p>AmericasMart Bldg. #1</p><p>Suite 5C-1, Atlanta, GA 30303</p>" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6">
-                <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" />
+                <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" :bgWhite="true" />
                 
-                <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
               </div>
             </div>
           </div>
@@ -585,26 +583,26 @@
                 <div class="column-wrap">
                   <div class="row">
                     <div class="col-lg-6 md-b-20">
-                      <MenuModule title="Contact Us" :menus="menuFooter1" />
+                      <ModuleMenu title="Contact Us" :menus="menuFooter1" />
                     </div>
                     <div class="col-lg-6">
-                      <MenuModule title="Services" :menus="menuFooter2" />
+                      <ModuleMenu title="Services" :menus="menuFooter2" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 column-center">
                 <div class="column-wrap">
-                  <ImageModule width="100" :image="require('@/assets/img/logo.png')" alt="Ruper – Furniture VueJs Template" :padding="false" modClass="m-b-20" />
+                  <ModuleImage width="100" image="/img/logo.png" alt="Ruper – Furniture VueJs Template" :padding="false" modClass="m-b-20" />
                   
-                  <SocialModule />
+                  <ModuleSocial />
                 </div>
               </div>
               <div class="col-lg-4 column-right">
                 <div class="column-wrap">
-                  <NewsletterModule title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
+                  <ModuleNewsletter title="Newsletter" description="Enter your email below to be the first to know about new collections and product launches." placeholder="Email address" />
 
-                  <ImageModule width="400" height="79" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="400" height="79" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -629,18 +627,18 @@
           <div class="block-widget-wrap">
             <div class="row">
               <div class="col-lg-3 col-md-6 column-1">
-                <MenuModule title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
+                <ModuleMenu title="Contact Us" :menus="menuFooter1" modClass="m-b-20" />
 
-                <SocialModule />
+                <ModuleSocial />
               </div>
               <div class="col-lg-3 col-md-6 column-2">
-                <MenuModule title="Categories" :menus="menuFooter7" />
+                <ModuleMenu title="Categories" :menus="menuFooter7" />
               </div>
               <div class="col-lg-3 col-md-6 column-3">
-                <MenuModule title="Services" :menus="menuFooter2" />
+                <ModuleMenu title="Services" :menus="menuFooter2" />
               </div>
               <div class="col-lg-3 col-md-6 column-4">
-                <MapModule title="Visit Our Store" address="London Eye, London, United Kingdom" />
+                <ModuleMap title="Visit Our Store" address="London Eye, London, United Kingdom" />
               </div>
             </div>
           </div>
@@ -659,7 +657,7 @@
               </div>
               <div class="col-md-6">
                 <div class="footer-right">
-                  <ImageModule width="309" height="32" :image="require('@/assets/img/payments.png')" alt="Payments" :padding="false" />
+                  <ModuleImage width="309" height="32" image="/img/payments.png" alt="Payments" :padding="false" />
                 </div>
               </div>
             </div>
@@ -670,64 +668,79 @@
   </footer>
 </template>
 
-<script>
-import MenuModule from '~/components/modules/MenuModule'
-import NewsletterModule from '~/components/modules/NewsletterModule'
-import ImageModule from '~/components/modules/ImageModule'
-import SocialModule from '~/components/modules/SocialModule'
-import TextModule from '~/components/modules/TextModule'
-import MapModule from '~/components/modules/MapModule'
+<script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+import { useMenuStore } from '~/stores/menu'
 
-export default {
-  name: 'Footer',
-  components: {
-    MenuModule,
-    NewsletterModule,
-    ImageModule,
-    SocialModule,
-    TextModule,
-    MapModule
-  },
-  props: {
-    footerLayout: {
-      type: Number,
-      default: 1
+const props = defineProps({
+  footerLayout: { type: Number, default: 1 }
+})
+
+// Footer 1 Data
+const { data: footer1Data } = await useAsyncData('menu-footer1', () => 
+  queryContent('menus', 'footer1').findOne()
+)
+const menuFooter1 = computed(() => footer1Data.value?.body || [])
+
+// Footer 2 Data
+const { data: footer2Data } = await useAsyncData('menu-footer2', () => 
+  queryContent('menus', 'footer2').findOne()
+)
+const menuFooter2 = computed(() => footer2Data.value?.body || [])
+
+// Footer 3 Data
+const { data: footer3Data } = await useAsyncData('menu-footer3', () => 
+  queryContent('menus', 'footer3').findOne()
+)
+const menuFooter3 = computed(() => footer3Data.value?.body || [])
+
+// Footer 4 Data
+const { data: footer4Data } = await useAsyncData('menu-footer4', () => 
+  queryContent('menus', 'footer4').findOne()
+)
+const menuFooter4 = computed(() => footer4Data.value?.body || [])
+
+// Footer 5 Data
+const { data: footer5Data } = await useAsyncData('menu-footer5', () => 
+  queryContent('menus', 'footer5').findOne()
+)
+const menuFooter5 = computed(() => footer5Data.value?.body || [])
+
+// Footer 6 Data
+const { data: footer6Data } = await useAsyncData('menu-footer6', () => 
+  queryContent('menus', 'footer6').findOne()
+)
+const menuFooter6 = computed(() => footer6Data.value?.body || [])
+
+// Footer 7 Data
+const { data: footer7Data } = await useAsyncData('menu-footer7', () => 
+  queryContent('menus', 'footer7').findOne()
+)
+const menuFooter7 = computed(() => footer7Data.value?.body || [])
+
+// Handle scroll
+const handleScroll = async () => {
+  if (process.client) {
+    const $ = window.$ || (await import('jquery')).default;
+
+    const backTopBtn = $('.back-top')
+    if ($(window).scrollTop()! > 100) {
+      backTopBtn.addClass('button-show')
+    } else {
+      backTopBtn.removeClass('button-show')
     }
-  },
-  computed: {
-    menuFooter1() {
-      return this.$store.state.menus.footer1
-    },
-    menuFooter2() {
-      return this.$store.state.menus.footer2
-    },
-    menuFooter3() {
-      return this.$store.state.menus.footer3
-    },
-    menuFooter4() {
-      return this.$store.state.menus.footer4
-    },
-    menuFooter5() {
-      return this.$store.state.menus.footer5
-    },
-    menuFooter6() {
-      return this.$store.state.menus.footer6
-    },
-    menuFooter7() {
-      return this.$store.state.menus.footer7
-    }
-  },
-  mounted () {
-    $(document).ready(function() {
-      $(window).scroll(function() {
-        // Show/Hide Back Top button
-        if ($(this).scrollTop() > 100) {
-          $('.back-top').addClass('button-show')
-        } else {
-          $('.back-top').removeClass('button-show')
-        }
-      });
-    });
   }
 }
+
+onMounted(async() => {
+  if (process.client) {
+    $(window).on('scroll', handleScroll)
+  }
+})
+
+onUnmounted(async() => {
+  if (process.client) {
+    $(window).off('scroll', handleScroll)
+  }
+})
 </script>

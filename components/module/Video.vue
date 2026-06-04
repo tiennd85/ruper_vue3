@@ -11,7 +11,7 @@
                         <div class="block-widget-wrap">
                             <div class="block-widget-video">
                                 <div class="video-thumb">
-                                    <img :width="videos[0].image.width" :height="videos[0].image.height" class="img-responsive" :src="require('@/assets/img/' + videos[0].image.src)" :alt="videos[0].image.alt">
+                                    <img :width="videos[0].image.width" :height="videos[0].image.height" class="img-responsive" :src="videos[0].image.src" :alt="videos[0].image.alt">
                                 </div>
                                 <div class="video-wrap">
                                     <div class="video" :data-src="videos[0].video.src" data-toggle="modal" data-target="#video-popup">
@@ -56,14 +56,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'VideoModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        videos: Array
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    videos: Array
+})
 </script>

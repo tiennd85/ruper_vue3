@@ -20,30 +20,32 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'BlogCatModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        limit: Number
-    },
-    computed: {
-        items() {
-            let blogs = this.$store.state.blogs.allItems
-            let cats = this.limit ? this.$store.state.blogs.categories.slice(0, this.limit) : this.$store.state.blogs.categories
-            if (cats.length) {
-                cats.forEach(function (cat) {
-                    let catBlogs = blogs.filter(blog => blog.category == cat.id)
-                    cat.count = catBlogs.length
-                })
-            }
-            return cats
-        },
-        currentCat() {
-            return this.$route.query.cat ? this.$route.query.cat : 0
-        }
-    }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { useBlogStore } from '~/stores/blog'
+
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    limit: Number
+})
+
+const blogStore = useBlogStore()
+const route = useRoute()
+
+const items = computed(() => {
+  const allBlogs = blogStore.allItems
+  const allCategories = blogStore.categories
+  
+  const categories = props.limit ? allCategories.slice(0, props.limit) : allCategories
+
+  return categories.map(cat => ({
+    ...cat,
+    count: allBlogs.filter(blog => blog.category === cat.id).length
+  }))
+})
+
+const currentCat = computed(() => route.query.cat || 0)
 </script>

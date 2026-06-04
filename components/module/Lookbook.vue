@@ -14,13 +14,13 @@
                             <div class="lookbook-container">
                                 <div class="lookbook-content">
                                     <div class="item">
-                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="require('@/assets/img/' + lookbooks[0].image.src)" :alt="lookbooks[0].image.alt">
+                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="lookbooks[0].image.src" :alt="lookbooks[0].image.alt">
                                         <div class="item-lookbook" v-for="(item, index) in lookbooks[0].items" :key="index" :style="'width:30px; height:30px; top:' + item.position.top + '; left:' + item.position.left">
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
                                                     <NuxtLink :to="item.content.link">
-                                                        <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
+                                                        <img width="1000" height="1000" :src="item.content.image" alt="">
                                                     </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
@@ -64,13 +64,13 @@
                             <div class="lookbook-container">
                                 <div class="lookbook-content">
                                     <div class="item">
-                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="require('@/assets/img/' + lookbooks[0].image.src)" :alt="lookbooks[0].image.alt">
+                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="lookbooks[0].image.src" :alt="lookbooks[0].image.alt">
                                         <div class="item-lookbook" v-for="(item, index) in lookbooks[0].items" :key="index" :style="'width:30px; height:30px; top:' + item.position.top + '; left:' + item.position.left">
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
                                                     <NuxtLink :to="item.content.link">
-                                                        <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
+                                                        <img width="1000" height="1000" :src="item.content.image" alt="">
                                                     </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
@@ -108,13 +108,13 @@
                                 </div>
                                 <div class="lookbook-content">
                                     <div class="item">
-                                        <img :width="lookbooks[1].image.width" :height="lookbooks[1].image.height" :src="require('@/assets/img/' + lookbooks[1].image.src)" :alt="lookbooks[1].image.alt">
+                                        <img :width="lookbooks[1].image.width" :height="lookbooks[1].image.height" :src="lookbooks[1].image.src" :alt="lookbooks[1].image.alt">
                                         <div class="item-lookbook" v-for="(item, index) in lookbooks[1].items" :key="index" :style="'width:30px; height:30px; top:' + item.position.top + '; left:' + item.position.left">
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
                                                     <NuxtLink :to="item.content.link">
-                                                        <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
+                                                        <img width="1000" height="1000" :src="item.content.image" alt="">
                                                     </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">
@@ -146,13 +146,13 @@
                         <div class="lookbook-container">
                             <div class="lookbook-content">
                                 <div v-if="lookbooks[0]" class="item">
-                                    <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="require('@/assets/img/' + lookbooks[0].image.src)" :alt="lookbooks[0].image.alt">
+                                    <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="lookbooks[0].image.src" :alt="lookbooks[0].image.alt">
                                     <div class="item-lookbook" v-for="(item, index) in lookbooks[0].items" :key="index" :style="'width:30px; height:30px; top:' + item.position.top + '; left:' + item.position.left">
                                         <span class="number-lookbook">{{ index + 1 }}</span>
                                         <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                             <div class="item-thumb">
                                                 <NuxtLink :to="item.content.link">
-                                                    <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
+                                                    <img width="1000" height="1000" :src="item.content.image" alt="">
                                                 </NuxtLink>
                                             </div>
                                             <div class="content-lookbook-bottom">
@@ -196,13 +196,13 @@
                             <div class="lookbook-container">
                                 <div class="lookbook-content">
                                     <div class="item">
-                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="require('@/assets/img/' + lookbooks[0].image.src)" :alt="lookbooks[0].image.alt">
+                                        <img :width="lookbooks[0].image.width" :height="lookbooks[0].image.height" :src="lookbooks[0].image.src" :alt="lookbooks[0].image.alt">
                                         <div class="item-lookbook" v-for="(item, index) in lookbooks[0].items" :key="index" :style="'width:30px; height:30px; top:' + item.position.top + '; left:' + item.position.left">
                                             <span class="number-lookbook">{{ index + 1 }}</span>
                                             <div class="content-lookbook" :style="'top:' + item.content.position.top + '; bottom:' + item.content.position.bottom + '; left:' + item.content.position.left + '; right:' + item.content.position.right">
                                                 <div class="item-thumb">
                                                     <NuxtLink :to="item.content.link">
-                                                        <img width="1000" height="1000" :src="require('@/assets/img/' + item.content.image)" alt="">
+                                                        <img width="1000" height="1000" :src="item.content.image" alt="">
                                                     </NuxtLink>
                                                 </div>
                                                 <div class="content-lookbook-bottom">

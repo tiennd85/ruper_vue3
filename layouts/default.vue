@@ -9,7 +9,7 @@
         </div>
       </div>
       
-      <!-- <Footer :footer-layout="fLayout" /> -->
+      <Footer :footer-layout="fLayout" />
     </div>
 
     <div class="back-top" @click="backTop">

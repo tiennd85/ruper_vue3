@@ -10,14 +10,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'MapModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        address: String
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    address: String
+})
 </script>

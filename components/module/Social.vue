@@ -7,7 +7,8 @@
         <div class="block-content">
             <ul class="social-link">
                 <li v-for="(social, index) in socials" :key="index">
-                    <NuxtLink v-if="social.link" :to="social.link" v-html="social.icon">
+                    <NuxtLink v-if="social.link" :to="social.link">
+                        <span v-html="social.icon"></span>
                     </NuxtLink>
                 </li>
             </ul>
@@ -15,18 +16,15 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'SocialModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String
-    },
-    computed: {
-        socials() {
-            return this.$store.state.socials.socials
-        }
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String
+})
+
+const { data: socialsData } = await useAsyncData('socials', () => 
+  queryContent('socials', 'socials').findOne()
+)
+const socials = computed(() => socialsData.value?.body || [])
 </script>

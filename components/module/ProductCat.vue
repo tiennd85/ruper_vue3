@@ -21,12 +21,12 @@
                             <div class="item-product-cat-content">
                                 <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                     <div class="item-image">
-                                        <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                        <img width="258" height="258" :src="item.image" :alt="item.title">
                                     </div>
                                 </NuxtLink>
                                 <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">  
                                     <div class="item-image">
-                                        <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                        <img width="258" height="258" :src="item.image" :alt="item.title">
                                     </div>
                                 </NuxtLink>
                                 <div class="product-cat-content-info">
@@ -49,7 +49,7 @@
                             <div class="cat-item">
                                 <div class="cat-image">
                                     <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
-                                        <img width="407" height="553" :src="require('@/assets/img/' + items[0].image)" :alt="items[0].title">
+                                        <img width="407" height="553" :src="items[0].image" :alt="items[0].title">
                                     </NuxtLink>
                                 </div>
                                 <div class="cat-title">
@@ -63,7 +63,7 @@
                             <div class="cat-item">
                                 <div class="cat-image">
                                     <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
-                                        <img width="407" height="249" :src="require('@/assets/img/' + items[1].image)" :alt="items[1].title">
+                                        <img width="407" height="249" :src="items[1].image" :alt="items[1].title">
                                     </NuxtLink>
                                 </div>
                                 <div class="cat-title">
@@ -75,7 +75,7 @@
                             <div class="cat-item">
                                 <div class="cat-image">
                                     <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
-                                        <img width="407" height="249" :src="require('@/assets/img/' + items[2].image)" :alt="items[2].title">
+                                        <img width="407" height="249" :src="items[2].image" :alt="items[2].title">
                                     </NuxtLink>
                                 </div>
                                 <div class="cat-title">
@@ -89,7 +89,7 @@
                             <div class="cat-item">
                                 <div class="cat-image">
                                     <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
-                                        <img width="407" height="553" :src="require('@/assets/img/' + items[3].image)" :alt="items[3].title">
+                                        <img width="407" height="553" :src="items[3].image" :alt="items[3].title">
                                     </NuxtLink>
                                 </div>
                                 <div class="cat-title">
@@ -105,7 +105,7 @@
                             <div class="item-product-cat-content">
                                 <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
                                     <div class="item-image">
-                                        <img width="330" height="300" :src="require('@/assets/img/' + item.image)" alt="item.title">
+                                        <img width="330" height="300" :src="item.image" alt="item.title">
                                     </div>
                                 </NuxtLink>        
                                 <div class="product-cat-content-info">
@@ -140,12 +140,12 @@
                                             <div class="item-product-cat-content">
                                                 <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
                                                     <div class="item-image">
-                                                        <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                                        <img width="258" height="258" :src="item.image" :alt="item.title">
                                                     </div>
                                                 </NuxtLink>
                                                 <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">  
                                                     <div class="item-image">
-                                                        <img width="258" height="258" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                                        <img width="258" height="258" :src="item.image" :alt="item.title">
                                                     </div>
                                                 </NuxtLink>
                                                 <div class="product-cat-content-info">
@@ -171,7 +171,7 @@
                                 <div class="cat-item">
                                     <div class="cat-image">
                                         <NuxtLink :to="{ path: '/products', query: { cat: item.id } }">
-                                            <img width="469" height="475" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                            <img width="469" height="475" :src="item.image" :alt="item.title">
                                         </NuxtLink>
                                     </div>
                                     <div class="cat-title">
@@ -189,7 +189,7 @@
                                 <div class="cat-item">
                                     <div class="cat-image">
                                         <NuxtLink :to="{ path: '/products', query: { cat: items[0].id } }">
-                                            <img width="407" height="553" :src="require('@/assets/img/' + items[0].image)" :alt="items[0].title">
+                                            <img width="407" height="553" :src="items[0].image" :alt="items[0].title">
                                         </NuxtLink>
                                     </div>
                                     <div class="cat-title">
@@ -203,7 +203,7 @@
                                 <div class="cat-item">
                                     <div class="cat-image">
                                         <NuxtLink :to="{ path: '/products', query: { cat: items[1].id } }">
-                                            <img width="407" height="249" :src="require('@/assets/img/' + items[1].image)" :alt="items[1].title">
+                                            <img width="407" height="249" :src="items[1].image" :alt="items[1].title">
                                         </NuxtLink>
                                     </div>
                                     <div class="cat-title">
@@ -215,7 +215,7 @@
                                 <div class="cat-item">
                                     <div class="cat-image">
                                         <NuxtLink :to="{ path: '/products', query: { cat: items[2].id } }">
-                                            <img width="407" height="249" :src="require('@/assets/img/' + items[2].image)" :alt="items[2].title">
+                                            <img width="407" height="249" :src="items[2].image" :alt="items[2].title">
                                         </NuxtLink>
                                     </div>
                                     <div class="cat-title">
@@ -229,7 +229,7 @@
                                 <div class="cat-item">
                                     <div class="cat-image">
                                         <NuxtLink :to="{ path: '/products', query: { cat: items[3].id } }">
-                                            <img width="407" height="553" :src="require('@/assets/img/' + items[3].image)" :alt="items[3].title">
+                                            <img width="407" height="553" :src="items[3].image" :alt="items[3].title">
                                         </NuxtLink>
                                     </div>
                                     <div class="cat-title">
@@ -246,10 +246,10 @@
                             <div class="cat-item">
                                 <div class="cat-image">
                                     <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
-                                        <img width="303" height="366" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                        <img width="303" height="366" :src="item.image" :alt="item.title">
                                     </NuxtLink>
                                     <NuxtLink v-else :to="{ path: '/products', query: { cat: item.id } }">
-                                        <img width="303" height="366" :src="require('@/assets/img/' + item.image)" :alt="item.title">
+                                        <img width="303" height="366" :src="item.image" :alt="item.title">
                                     </NuxtLink>  
                                 </div>
                                 <div class="cat-title">

@@ -27,7 +27,7 @@
             <ul v-else-if="filter == 'brand'" class="filter-items image">
                 <li v-for="(brand, index) in brands" :key="index" @click="filterItemsByBrand(brand.id)" :class="{'active' : brand.id == activeBrand}">
                     <span>
-                        <img :src="require('@/assets/img/' + brand.image)" alt="brand.title">
+                        <img :src="brand.image" alt="brand.title">
                     </span>
                 </li>
             </ul>
