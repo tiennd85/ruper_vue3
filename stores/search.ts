@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-import productsData from '~/content/products/products.json'
+import productsData from '~/content/products/products'
 
 export const useSearchStore = defineStore('search', {
   state: () => ({

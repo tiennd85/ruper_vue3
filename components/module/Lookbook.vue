@@ -235,21 +235,12 @@
 <script setup lang="ts">
 const { $helpers } = useNuxtApp();
 
-export default {
-    name: 'LookbookModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        lookbooks: Array,
-        layout: {
-            type: Number,
-            default: 1
-        },
-        background: {
-            type: Number,
-            default: 1
-        }
-    }
-}
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    lookbooks: Array,
+    layout: { type: Number, default: 1 },
+    background: { type: Number, default: 1 }
+})
 </script>

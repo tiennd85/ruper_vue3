@@ -13,17 +13,17 @@ import styles from '~/content/products/styles'
 
 export const useProductStore = defineStore('product', {
   state: () => ({
-    allItems: products.data,
-    items: products.data,
-    categories: categories.data,
-    categories2: categories2.data,
-    categories3: categories3.data,
-    categories4: categories4.data,
-    categories5: categories5.data,
-    categories6: categories6.data,
-    categories7: categories7.data,
-    brands: brands.data,
-    styles: styles.data
+    allItems: products,
+    items: products,
+    categories: categories,
+    categories2: categories2,
+    categories3: categories3,
+    categories4: categories4,
+    categories5: categories5,
+    categories6: categories6,
+    categories7: categories7,
+    brands: brands,
+    styles: styles
   }),
 
   getters: {

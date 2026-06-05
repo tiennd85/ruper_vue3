@@ -11,18 +11,37 @@
 
       <div class="block-content">
         <div v-if="navTab">
-          <ul :class="['nav nav-tabs layout-' + navTabLayout, { 'small-text': navTabSmallText }, { 'align-left': navTabAlignLeft }]" role="tablist">
-            <li v-for="(cat, index) in cats" :key="index" class="nav-item">
-              <a :class="['nav-link', { 'active': index == 0 }]" data-bs-toggle="tab" :href="'#cat-' + cat.id" role="tab">{{ cat.title }}</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <div v-for="(cat, index) in cats" :key="index" :class="['tab-pane fade', { 'active show': index == 0 }]" :id="'cat-' + cat.id" role="tabpanel">
-              <div class="products-list grid">
-                <div class="row">
-                  <div :class="cols == 2 ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'" v-for="(product, pIdx) in cat.products" :key="pIdx">
-                    <Product :product="product" :layout="layout" />
-                    <Quickview :product="product" />
+          <div v-if="cats?.length" class="nav-tabs-wrapper">
+            <ul :class="['nav nav-tabs layout-' + navTabLayout, { 'small-text': navTabSmallText }, { 'align-left': navTabAlignLeft }]" role="tablist">
+              <li v-for="cat in cats" :key="cat.id" class="nav-item">
+                <button 
+                  :class="['nav-link', { 'active': activeTabId === cat.id }]" 
+                  @click="activeTabId = cat.id"
+                  type="button"
+                  role="tab"
+                >
+                  {{ cat.title }}
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div 
+                v-for="cat in cats" 
+                :key="cat.id" 
+                v-show="activeTabId === cat.id"
+                class="tab-pane fade show active"
+                role="tabpanel"
+              >
+                <div class="products-list grid">
+                  <div class="row">
+                    <div 
+                      v-for="product in cat.products" 
+                      :key="product.id"
+                      :class="cols === '2' ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'"
+                    >
+                      <Product :product="product" :layout="layout" />
+                      <Quickview :product="product" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -101,13 +120,22 @@ const { data: catsData } = await useAsyncData('categories', () =>
 
 const cats = computed(() => {
   const categories = catsData.value?.body?.filter(cat => cat.tab === true) || []
-  if (categories.length) {
-    categories.forEach(cat => {
-      const catProducts = allItems.value.filter(p => p.category == cat.id)
-      cat.products = props.limit ? catProducts.slice(0, props.limit) : catProducts
-    })
+  
+  return categories.map(cat => {
+    const catProducts = allItems.value.filter(p => p.category == cat.id)
+    return {
+      ...cat,
+      products: props.limit ? catProducts.slice(0, props.limit) : catProducts
+    }
+  })
+})
+
+const activeTabId = ref(null)
+
+watchEffect(() => {
+  if (cats.value.length > 0 && activeTabId.value === null) {
+    activeTabId.value = cats.value[0].id
   }
-  return categories
 })
 
 const items = computed(() => {

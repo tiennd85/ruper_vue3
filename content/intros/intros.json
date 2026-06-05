@@ -1,0 +1,16 @@
+[    
+    {
+        "description": "Ruper is an online furniture store in Australia which looks to reinvent how furniture retail works.",
+        "image": {
+            "src": "/img/logo-intro.png",
+            "width": "105",
+            "height": "105",
+            "alt": "Logo"
+        },
+        "button": {
+            "class": "btn-underline center",
+            "link": "/blogs",
+            "text": "Our Stories"
+        }
+    }
+]

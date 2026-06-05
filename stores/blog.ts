@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
-import blogsData from '~/content/blogs/blogs.json';
-import categoriesData from '~/content/blogs/categories.json';
+import blogsData from '~/content/blogs/blogs';
+import categoriesData from '~/content/blogs/categories';
 
 interface Blog {
   id: number;
@@ -13,9 +13,9 @@ interface Blog {
 
 export const useBlogStore = defineStore('blog', {
   state: () => ({
-    allItems: blogsData.data as Blog[],
-    items: blogsData.data as Blog[],
-    categories: categoriesData.data as any[]
+    allItems: blogsData as Blog[],
+    items: blogsData as Blog[],
+    categories: categoriesData as any[]
   }),
   
   getters: {

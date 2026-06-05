@@ -7,14 +7,14 @@
         <div class="block-content">
             <div class="block-widget-wrap">
                 <div class="intro-image">
-                    <img :width="intro.image.width" :height="intro.image.height" class="animation-round" :src="intro.image.src" :alt="intro.image.alt">
+                    <img :width="intros[0].image.width" :height="intros[0].image.height" class="animation-round" :src="intros[0].image.src" :alt="intros[0].image.alt">
                 </div>
                 <div class="intro-text">
-                    {{ intro.description }}
+                    {{ intros[0].description }}
                 </div>
                 <div class="intro-button">
-                    <NuxtLink :to="intro.button.link" :class="intro.button.class">
-                        {{ intro.button.text }}
+                    <NuxtLink :to="intros[0].button.link" :class="intros[0].button.class">
+                        {{ intros[0].button.text }}
                     </NuxtLink>
                 </div>
             </div>
@@ -22,14 +22,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'IntroModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        intro: Object
-    }
-}
+<script setup lang="ts">
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    intros: Array
+})
 </script>

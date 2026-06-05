@@ -16,7 +16,8 @@
                     </ul>
                 </div>
                 <div v-else-if="view == 'slider'" class="product-cats-list slick-wrap">
-                    <slick class="slick-sliders content-category" ref="slick" :options="slickOptions">
+                    <i @click="slickPrev" class="slick-arrow fa fa-angle-left"></i>
+                    <div class="slick-sliders content-category" ref="sliderElement">
                         <div v-for="(item, index) in items" :key="index" class="item item-product-cat">
                             <div class="item-product-cat-content">
                                 <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
@@ -41,7 +42,8 @@
                                 </div>
                             </div>
                         </div>
-                    </slick>
+                    </div>
+                    <i @click="slickNext" class="slick-arrow fa fa-angle-right"></i>
                 </div>
                 <div v-else>
                     <div v-if="layout == '3'" class="row">
@@ -135,7 +137,8 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="product-cats-list slick-wrap">
-                                    <slick class="slick-sliders content-category" ref="slick" :options="slickOptions2" @init="handleInit">
+                                    <i @click="slickPrev2" class="slick-arrow fa fa-angle-left"></i>
+                                    <div class="slick-sliders content-category" ref="sliderElement2">
                                         <div v-for="(item, index) in items" :key="index" class="item item-product-cat">
                                             <div class="item-product-cat-content">
                                                 <NuxtLink v-if="type == 'style'" :to="{ path: '/products', query: { style: item.id } }">
@@ -160,7 +163,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </slick>
+                                    </div>
+                                    <i @click="slickNext2" class="slick-arrow fa fa-angle-right"></i>
                                 </div>
                             </div>
                         </div>
@@ -269,151 +273,122 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'ProductCatModule',
-    props: {
-        title: String,
-        subTitle: String,
-        introTitle: String,
-        introDesc: String,
-        introBtnTitle: String,
-        introBtnLink: String,
-        modClass: String,
-        layout: {
-            type: Number,
-            default: 1
-        },
-        source: {
-            type: Number,
-            default: 1
-        },
-        type: {
-            type: String,
-            default: 'category'
-        },
-        limit: Number,
-        view: String,
-        roundBorder: {
-            type: Boolean,
-            default: false
-        },
-        padding: {
-            type: Boolean,
-            default: true
-        }
-    },
-    data() {
-        return {
-            slickOptions: {
-                slidesToShow: 5,
-                autoplay: false,
-                infinite: true,
-                arrows: true,
-                dots: false,
-                draggable: true,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-                nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [
-                    { breakpoint: 1441, settings: { slidesToShow: 5, slidesToScroll: 5 } }, 
-                    { breakpoint: 1200, settings: { slidesToShow: 4, slidesToScroll: 4 } }, 
-                    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
-                    { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } }, 
-                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
-                ]
-            },
-            slickOptions2: {
-                slidesToShow: 3,
-                autoplay: false,
-                infinite: true,
-                arrows: true,
-                dots: false,
-                draggable: true,
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-                nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-                responsive: [
-                    { breakpoint: 1441, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
-                    { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
-                    { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } }, 
-                    { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } }, 
-                    { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
-                ]
-            }
-        }
-    },
-    computed: {
-        items() {
-            let products = this.$store.state.products.allItems
-            
-            if (this.type == 'style') {
-                let styles = this.limit ? this.$store.state.products.styles.slice(0, this.limit) : this.$store.state.products.styles
-                return styles
-            } else {
-                let cats = [];
-                if (this.source == '1') {
-                    cats = this.limit ? this.$store.state.products.categories.slice(0, this.limit) : this.$store.state.products.categories
-                } else if (this.source == '2') {
-                    cats = this.limit ? this.$store.state.products.categories2.slice(0, this.limit) : this.$store.state.products.categories2
-                } else if (this.source == '3') {
-                    cats = this.limit ? this.$store.state.products.categories3.slice(0, this.limit) : this.$store.state.products.categories3
-                } else if (this.source == '4') {
-                    cats = this.limit ? this.$store.state.products.categories4.slice(0, this.limit) : this.$store.state.products.categories4
-                } else if (this.source == '5') {
-                    cats = this.limit ? this.$store.state.products.categories5.slice(0, this.limit) : this.$store.state.products.categories5
-                } else if (this.source == '6') {
-                    cats = this.limit ? this.$store.state.products.categories6.slice(0, this.limit) : this.$store.state.products.categories6
-                } else if (this.source == '7') {
-                    cats = this.limit ? this.$store.state.products.categories7.slice(0, this.limit) : this.$store.state.products.categories7
-                }
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useProductStore } from '~/stores/product'
 
-                if (cats.length) {
-                    cats.forEach(function (cat) {
-                        let catProducts = products.filter(product => product.category == cat.id)
-                        cat.count = catProducts.length
-                    })
-                }
-                return cats
-            }
-        },
-        currentCat() {
-            return this.$route.query.cat ? this.$route.query.cat : 0
-        }
-    },
-    methods: {
-        // Slick
-        handleInit(event, slick) {
-            // Move nav outsite
-            const $element = window.$(this.$refs.slick.$el);
-            if (window.$('.slick-arrow', $element).length > 0) {
-                if (window.$('.fa-angle-left', $element).length > 0) {
-                    var $prev = window.$('.fa-angle-left', $element).clone();
-                    window.$('.fa-angle-left', $element).remove();
-                    if ($element.parent().find('.fa-angle-left').length == 0) {
-                        $prev.prependTo($element.parent());
-                    }
-                    $prev.click(function() {
-                        $element.slick('slickPrev');
-                    });
-                }
-                if (window.$('.fa-angle-right', $element).length > 0) {
-                    var $next = window.$('.fa-angle-right', $element).clone();
-                    window.$('.fa-angle-right', $element).remove();
-                    if ($element.parent().find('.fa-angle-right').length == 0) {
-                        $next.appendTo($element.parent());
-                    }
-                    $next.click(function() {
-                        $element.slick('slickNext');
-                    })
-                }
-            } else {
-                window.$('.fa-angle-left', $element.parent()).remove();
-                window.$('.fa-angle-right', $element.parent()).remove();
-            }
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    introTitle: String,
+    introDesc: String,
+    introBtnTitle: String,
+    introBtnLink: String,
+    modClass: String,
+    layout: { type: Number, default: 1 },
+    source: { type: Number, default: 1 },
+    type: { type: String, default: 'category' },
+    limit: Number,
+    view: String,
+    roundBorder: { type: Boolean, default: false },
+    padding: { type: Boolean, default: true }
+})
+
+const productStore = useProductStore()
+const route = useRoute()
+
+const items = computed(() => {
+    const allProducts = productStore.allItems
+
+    if (props.type === 'style') {
+        const styles = productStore.styles
+        return props.limit ? styles.slice(0, props.limit) : styles
+    }
+
+    const categoryKey = props.source == '1' ? 'categories' : `categories${props.source}`
+    const rawCats = productStore[categoryKey as keyof typeof productStore] || []
+
+    const cats = props.limit ? rawCats.slice(0, props.limit) : rawCats
+
+    return cats.map(cat => ({
+        ...cat,
+        count: allProducts.filter(p => p.category === cat.id).length
+    }))
+})
+
+const currentCat = computed(() => route.query.cat || 0)
+
+const sliderElement = ref(null)
+const slickPrev = () => {
+    $(sliderElement.value).slick('slickPrev')
+}
+const slickNext = () => {
+    $(sliderElement.value).slick('slickNext')
+}
+
+const sliderElement2 = ref(null)
+const slickPrev2 = () => {
+    $(sliderElement2.value).slick('slickPrev')
+}
+const slickNext2 = () => {
+    $(sliderElement2.value).slick('slickNext')
+}
+
+onMounted(async() => {
+    await nextTick()
+
+    if (process.client && sliderElement.value) {
+        const $ = window.$ || (await import('jquery')).default;
+        await import('slick-carousel')
+    
+        $(sliderElement.value).slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: false,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            draggable: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+            responsive: [
+                { breakpoint: 1200, settings: { slidesToShow: 4, slidesToScroll: 1 } }, 
+                { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }, 
+                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } }, 
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+            ]
+        })
+
+        $(sliderElement2.value).slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: false,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            draggable: true,
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+            nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+            responsive: [
+                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } }, 
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+            ]
+        })
+    }
+})
+
+onBeforeUnmount(() => {
+    if (process.client && sliderElement.value) {
+        const $slider = $(sliderElement.value);
+
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
         }
     }
-}
+})
 </script>

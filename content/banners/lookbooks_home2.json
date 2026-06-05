@@ -30,7 +30,7 @@
                     "title": "Pillar Dining Table Round",
                     "price": "140.00",
                     "salePrice": "100.00",
-                    "image": "product/4.jpg",
+                    "image": "/img/product/4.jpg",
                     "link": "/product/2"
                 }
             },
@@ -49,7 +49,7 @@
                     "title": "Mags Sofa 2.5 Seater",
                     "price": "210.00",
                     "salePrice": "210.00",
-                    "image": "product/7.jpg",
+                    "image": "/img/product/7.jpg",
                     "link": "/product/3"
                 }
             }
