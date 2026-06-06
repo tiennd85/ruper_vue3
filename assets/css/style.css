@@ -486,7 +486,7 @@ span.select2-selection.select2-selection--single {
   background-color: #F1EEE8;
 }
 .section.newsletter-background {
-  background-image: url(../img/banner/newsletter-bg.jpg);
+  background-image: url('/img/banner/newsletter-bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -494,7 +494,7 @@ span.select2-selection.select2-selection--single {
   padding-bottom: 110px;
 }
 .section.contact-background {
-  background-image: url(../img/banner/contact-bg.jpg);
+  background-image: url('/img/banner/contact-bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2588,7 +2588,7 @@ ul.slick-dots li.slick-active button {
   background: #fff;
 }
 .site-header .header-page-link > .ruper-topcart {
-  margin-left: 20px;
+  margin-left: 22px;
 }
 .ruper-topcart.dropdown .mini-cart {
   position: relative;
@@ -3381,11 +3381,12 @@ ul.slick-dots li.slick-active button {
 .block-sliders {
   position: relative;
 }
-.block-sliders .slick-sliders .slick-list .slick-slide {
-  padding: 0;
-}
 .block-sliders .slick-sliders .slick-list {
   margin: 0;
+  line-height: 0;
+}
+.block-sliders .slick-sliders .slick-list .slick-slide {
+  padding: 0;
 }
 .block-sliders .item-content {
   position: relative;
@@ -3440,6 +3441,7 @@ ul.slick-dots li.slick-active button {
   font-size: 80px;
   font-weight: 300;
   margin: 0px 0px 10px -5px;
+  line-height: 1.2;
 }
 .block-sliders.color-white .item-content .item-info .title-slider {
   color: #fff;
@@ -3447,6 +3449,7 @@ ul.slick-dots li.slick-active button {
 .block-sliders .item-content .item-info .subtitle-slider {
   color: #000000;
   font-size: 18px;
+  line-height: 1.8;
   font-weight: 500;
   letter-spacing: 3px;
   margin-bottom: 5px;
@@ -3458,6 +3461,7 @@ ul.slick-dots li.slick-active button {
   color: #000000;
   font-size: 20px;
   margin-bottom: 30px;
+  line-height: 1.8;
 }
 .block-sliders.color-white .item-content .item-info .description-slider {
   color: #fff;
@@ -3705,7 +3709,6 @@ ul.slick-dots li.slick-active button {
 }
 .block-sliders.layout-6 .item-content .item-info .subtitle-slider {
   letter-spacing: 2px;
-  margin-bottom: 0;
 }
 .block-sliders.layout-7 .item-content .item-info {
   padding: 0% 21.5% 3% 0%;
@@ -4128,7 +4131,7 @@ ul.slick-dots li.slick-active button {
   margin-bottom: 25px;
 }
 .block-banners.background-img {
-  background-image: url(../img/banner/banner-bg.jpg);
+  background-image: url('/img/banner/banner-bg.jpg');
   background-position: center left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -4356,18 +4359,18 @@ ul.slick-dots li.slick-active button {
   font-size: 15px;
   border: 0;
   background: #fff;
-  top: 60%;
+  top: calc(50% - 110px);
   -webkit-transform: none;
   transform: none;
   margin-top: 0;
 }
 .block-banners.slider .slick-arrow.fa-angle-left {
   left: 20.5% !important;
-  margin-left: -5px;
+  margin-left: 12px;
 }
 .block-banners.slider .slick-arrow.fa-angle-right {
   right: 20.5% !important;
-  margin-right: -5px;
+  margin-right: 12px;
 }
 .block-banners.slider .slick-arrow:hover {
   background: #000;
@@ -5754,6 +5757,7 @@ ul.slick-dots li.slick-active button {
   display: flex;
 }
 .block-newsletter.layout-3.one-col .invalid-feedback {
+  margin-left: 0;
   margin-right: auto;
 }
 .block-newsletter.layout-3.one-col .newsletter-form {
@@ -6036,7 +6040,7 @@ ul.slick-dots li.slick-active button {
  * 5.16. Block Parallax
  */
 .block-parallax {
-  background-image: url(../img/banner/parallax.jpg);
+  background-image: url('/img/banner/parallax.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6994,13 +6998,13 @@ ul.slick-dots li.slick-active button {
   min-width: 54px;
   min-height: 54px;
   background-color: #eee;
-  background-image: url(../img/remove-dark.svg);
+  background-image: url('/img/remove-dark.svg');
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
 .compare-popup .compare-popup-inner .compare-table .compare-table-settings {
-  background-image: url(../img/checkbox-dark.svg);
+  background-image: url('/img/checkbox-dark.svg');
   background-size: 16px 16px;
   background-repeat: no-repeat;
   background-position: center left;

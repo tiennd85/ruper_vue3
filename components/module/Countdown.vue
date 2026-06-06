@@ -68,54 +68,54 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'CountdownModule',
-    props: {
-        title: String,
-        subTitle: String,
-        modClass: String,
-        countdownTitle: String,
-        productTitle: String,
-        productPrice: String,
-        productId: String,
-        image: String,
-        subImage1: String,
-        subImage2: String,
-        endDate: String
-    },
-    data() {
-        return {
-            days: null,
-            hours: null,
-            minutes: null,
-            seconds: null,
-        }
-    },
-    methods: {
-        updateRemaining(distance) {
-            this.days = Math.floor(distance / (1000 * 60 * 60 * 24))
-            this.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-            this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-            this.seconds = Math.floor((distance % (1000 * 60)) / 1000)
-        },    
-        tick() {
-            const currentTime = new Date()
-            const endDate = new Date(this.endDate);
-            const distance = Math.max(endDate - currentTime, 0)
-            this.updateRemaining(distance)
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 
-            if (distance === 0) {
-                clearInterval(this.timer)
-            }
-        },
-    },
-    mounted () {
-        this.tick()
-        this.timer = setInterval(this.tick.bind(this), 1000)
-    },
-    destroy () {
-        clearInterval(this.timer)
+const props = defineProps({
+    title: String,
+    subTitle: String,
+    modClass: String,
+    countdownTitle: String,
+    productTitle: String,
+    productPrice: String,
+    productId: String,
+    image: String,
+    subImage1: String,
+    subImage2: String,
+    endDate: String
+})
+
+const days = ref(0)
+const hours = ref(0)
+const minutes = ref(0)
+const seconds = ref(0)
+let timer: ReturnType<typeof setInterval>
+
+const updateRemaining = (distance: number) => {
+    days.value = Math.floor(distance / (1000 * 60 * 60 * 24))
+    hours.value = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    minutes.value = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+    seconds.value = Math.floor((distance % (1000 * 60)) / 1000)
+}
+
+const tick = () => {
+    const currentTime = new Date().getTime()
+    const endDate = new Date(props.endDate).getTime()
+    const distance = Math.max(endDate - currentTime, 0)
+
+    updateRemaining(distance)
+
+    if (distance === 0) {
+        clearInterval(timer)
     }
 }
+
+onMounted(() => {
+    tick()
+    timer = setInterval(tick, 1000)
+})
+
+onUnmounted(() => {
+    clearInterval(timer)
+})
 </script>

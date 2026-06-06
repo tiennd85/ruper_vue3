@@ -509,16 +509,16 @@
             <div class="row">
               <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 header-left">
                 <div class="menu-full">
-                  <div class="menu-toggle">
+                  <div class="menu-toggle" @click="openMenu">
                     <div class="menu-lines">
                       <span class="line-general line-1"></span>
                       <span class="line-general line-2"></span>
                       <span class="line-general line-3"></span>
                     </div>
                   </div>
-                  <div class="site-navigation">
+                  <div :class="['site-navigation', { 'active': isMenuActive }]">
                     <div class="close-menu-wrap">
-                      <div class="close-menu-full"></div>
+                      <div class="close-menu-full" @click="closeMenu"></div>
                     </div>
                     <nav id="main-navigation">
                       <MainMenu :currentMenu="currentMenu" :positionMenu="positionMenu" />
@@ -1074,6 +1074,16 @@ const props = defineProps({
   currentMenu: { type: String, default: '' },
   positionMenu: { type: String, default: 'center' }
 })
+
+const isMenuActive = ref(false)
+// Open menu
+const openMenu = () => {
+  isMenuActive.value = true
+}
+// Close menu
+const closeMenu = () => {
+  isMenuActive.value = false
+}
 
 // Topbar Menu Data
 const { data: menuTopBarData } = await useAsyncData('menu-topbar', () => 

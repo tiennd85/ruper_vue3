@@ -37,7 +37,7 @@
                     <div 
                       v-for="product in cat.products" 
                       :key="product.id"
-                      :class="cols === '2' ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'"
+                      :class="cols == '2' ? 'col-xl-6 col-lg-6 col-md-6 col-sm-12' : 'col-xl-3 col-lg-4 col-md-4 col-sm-6'"
                     >
                       <Product :product="product" :layout="layout" />
                       <Quickview :product="product" />
