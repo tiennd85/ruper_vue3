@@ -4732,7 +4732,7 @@ ul.slick-dots li.slick-active button {
   -o-border-radius: 50%;
   background: #fff;
   font-size: 11px;
-  top: 40%;
+  top: calc(50% - 20px);
 }
 .block-product-cats.layout-5.slider i.slick-arrow.fa-angle-left {
   left: -18px;
@@ -5757,8 +5757,10 @@ ul.slick-dots li.slick-active button {
   display: flex;
 }
 .block-newsletter.layout-3.one-col .invalid-feedback {
-  margin-left: 0;
   margin-right: auto;
+}
+.block-newsletter.layout-3.one-col.align-left .invalid-feedback {
+  margin-left: 0;
 }
 .block-newsletter.layout-3.one-col .newsletter-form {
   margin-right: auto;

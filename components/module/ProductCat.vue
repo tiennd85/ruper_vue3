@@ -301,7 +301,7 @@ const route = useRoute()
 const items = computed(() => {
     const allProducts = productStore.allItems
 
-    if (props.type === 'style') {
+    if (props.type == 'style') {
         const styles = productStore.styles
         return props.limit ? styles.slice(0, props.limit) : styles
     }
@@ -313,7 +313,7 @@ const items = computed(() => {
 
     return cats.map(cat => ({
         ...cat,
-        count: allProducts.filter(p => p.category === cat.id).length
+        count: allProducts.filter(p => p.category == cat.id).length
     }))
 })
 
@@ -361,7 +361,12 @@ onMounted(async() => {
                 { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
             ]
         })
+    }
 
+    if (process.client && sliderElement2.value) {
+        const $ = window.$ || (await import('jquery')).default;
+        await import('slick-carousel')
+    
         $(sliderElement2.value).slick({
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -385,6 +390,14 @@ onMounted(async() => {
 onBeforeUnmount(() => {
     if (process.client && sliderElement.value) {
         const $slider = $(sliderElement.value);
+
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
+        }
+    }
+
+    if (process.client && sliderElement2.value) {
+        const $slider = $(sliderElement2.value);
 
         if ($slider.hasClass('slick-initialized')) {
             $slider.slick('unslick');

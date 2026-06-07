@@ -6,11 +6,11 @@
         </div>
         <div class="block-content">
             <div class="content">
-                <h4 class="subtitle">{{ parallax.subtitle }}</h4>
-                <h2 class="title">{{ parallax.title }}</h2>
-                <div class="description">{{ parallax.description }}</div>
-                <NuxtLink :class="parallax.button.class" :to="parallax.button.link">
-                    {{ parallax.button.text }}
+                <h4 class="subtitle">{{ parallaxs[0].subtitle }}</h4>
+                <h2 class="title">{{ parallaxs[0].title }}</h2>
+                <div class="description">{{ parallaxs[0].description }}</div>
+                <NuxtLink :class="parallaxs[0].button.class" :to="parallaxs[0].button.link">
+                    {{ parallaxs[0].button.text }}
                 </NuxtLink>
             </div>
         </div>
@@ -21,7 +21,7 @@
 const props = defineProps({
     title: String,
     subTitle: String,
-    parallax: Object,
+    parallaxs: Array,
     modClass: String
 })
 </script>
