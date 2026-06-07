@@ -8,7 +8,7 @@
           </h1>
         </div>
         <div class="breadcrumbs">
-          <!-- <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb> -->
+          <Breadcrumb :breadcrumbItems="breadcrumbItems" />
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@ const { $helpers } = useNuxtApp();
 const title = 'Wishlist'
 const breadcrumbItems = [
   { text: 'Home', to: '/' },
-  { text: 'Wishlist', to: '' }
+  { text: 'Wishlist', active: true }
 ]
 
 const cartStore = useCartStore()
