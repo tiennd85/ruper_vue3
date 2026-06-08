@@ -10240,12 +10240,19 @@ ul.slick-dots li.slick-active button {
   border-bottom: none;
 }
 .page-my-account .my-account-navigation ul li a, 
+.page-my-account .my-account-navigation ul li button,
 .page-my-account .my-account-navigation ul li span {
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   font-weight: 500;
   padding: 0;
   border: none !important;
+  background: none !important;
+  color: #495057;
+}
+.page-my-account .my-account-navigation ul li a.active,
+.page-my-account .my-account-navigation ul li button.active {
+  color: #000;
 }
 .page-my-account .my-account-navigation ul li a:hover,
 .page-my-account .my-account-navigation ul li a:focus,
