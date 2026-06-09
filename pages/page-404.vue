@@ -26,19 +26,13 @@
 </template>
 
 <script setup lang="ts">
-const title = 'Page 404';
-const breadcrumbItems = [
-  { text: 'Home', to: '/' },
-  { text: 'Page 404', active: true }
-]
-
 definePageMeta({
   currentMenu: 'pages'
 })
 
 useHead({
   bodyAttrs: {
-    class: 'contact'
+    class: 'page-404'
   }
 })
 </script>

@@ -60,12 +60,11 @@
           <div class="slick-sliders products-list grid" ref="sliderElement">
             <div class="item-product" v-for="(item, index) in items" :key="index">
               <Product :product="item" :layout="layout" />
+              <Quickview :product="item" />
             </div>
           </div>
           <i @click="slickNext" class="slick-arrow fa fa-angle-right"></i>
-          <div class="item-product" v-for="(item, index) in items" :key="index">
-            <Quickview :product="item" />
-          </div>
+          
           <div v-if="viewAll" class="btn-all">
             <NuxtLink class="button-outline" to="/products">VIEW ALL</NuxtLink>
           </div>

@@ -1,67 +1,69 @@
 <template>
-    <div class="modal fade quickview" :id="'product-modal-' + product.id" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="quickview-popup">
-                        <div class="quickview-container">
-                            <span @click="closeModal(product.id)" class="quickview-close"></span>
-                            <div class="product single-product product-type-simple">
-                                <div class="product-detail">
-                                    <div class="row">
-                                        <div class="img-quickview">
-                                            <div class="product-images-slider">
-                                                <div id="quickview-slick-carousel">
-                                                    <div class="images">
-                                                        <div class="scroll-image">
-                                                            <div class="slick-wrap">
-                                                                <div class="slick-sliders image-additional" ref="sliderElement">
-                                                                    <img v-for="(image, i) in product.images" :key="i" width="900" height="900" :src="image" :alt="product.title">
+    <Teleport to="body">
+        <div class="modal fade quickview" :id="'product-modal-' + product.id" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="quickview-popup">
+                            <div class="quickview-container">
+                                <span @click="closeModal(product.id)" class="quickview-close"></span>
+                                <div class="product single-product product-type-simple">
+                                    <div class="product-detail">
+                                        <div class="row">
+                                            <div class="img-quickview">
+                                                <div class="product-images-slider">
+                                                    <div id="quickview-slick-carousel">
+                                                        <div class="images">
+                                                            <div class="scroll-image">
+                                                                <div class="slick-wrap">
+                                                                    <div class="slick-sliders image-additional" ref="sliderElement">
+                                                                        <img v-for="(image, i) in product.images" :key="i" width="900" height="900" :src="image" :alt="product.title">
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="quickview-single-info">
-                                            <div class="product-content-detail entry-summary">
-                                                <h1 class="product-title entry-title">{{ product.title }}</h1>
-                                                <Rating :product="product" :showCount="true" />
-                                                <div class="price-single">
-                                                    <div v-if="product.price > product.salePrice" class="price">
-                                                        <del aria-hidden="true"><span>{{ $helpers.productPrice(product.price) }}</span></del>
-                                                        <ins><span>{{ $helpers.productPrice(product.salePrice) }}</span></ins>
-                                                    </div>
-                                                    <div v-else class="price">
-                                                        {{ $helpers.productPrice(product.salePrice) }}
-                                                    </div>
-                                                </div>
-                                                <div class="description">
-                                                    <p>{{ product.shortDescription }}</p>
-                                                </div>
-                                                <div class="cart">
-                                                    <div class="quantity-button">
-                                                        <div class="quantity">
-                                                            <button @click="plusQuantity" type="button" class="plus">+</button>
-                                                            <input type="number" :value="addCartNum" class="input-text qty text" title="Qty" size="4" inputmode="numeric" autocomplete="off">
-                                                            <button @click="minusQuantity" type="button" class="minus">-</button>
+                                            <div class="quickview-single-info">
+                                                <div class="product-content-detail entry-summary">
+                                                    <h1 class="product-title entry-title">{{ product.title }}</h1>
+                                                    <Rating :product="product" :showCount="true" />
+                                                    <div class="price-single">
+                                                        <div v-if="product.price > product.salePrice" class="price">
+                                                            <del aria-hidden="true"><span>{{ $helpers.productPrice(product.price) }}</span></del>
+                                                            <ins><span>{{ $helpers.productPrice(product.salePrice) }}</span></ins>
                                                         </div>
-                                                        <button type="submit" @click="addCartItem(product, $event)" class="single-add-to-cart-button button alt">Add to cart</button>
+                                                        <div v-else class="price">
+                                                            {{ $helpers.productPrice(product.salePrice) }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="description">
+                                                        <p>{{ product.shortDescription }}</p>
+                                                    </div>
+                                                    <div class="cart">
+                                                        <div class="quantity-button">
+                                                            <div class="quantity">
+                                                                <button @click="plusQuantity" type="button" class="plus">+</button>
+                                                                <input type="number" :value="addCartNum" class="input-text qty text" title="Qty" size="4" inputmode="numeric" autocomplete="off">
+                                                                <button @click="minusQuantity" type="button" class="minus">-</button>
+                                                            </div>
+                                                            <button type="submit" @click="addCartItem(product, $event)" class="single-add-to-cart-button button alt">Add to cart</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div> 
+                                <div class="clearfix"></div>
+                            </div> 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </Teleport>
 </template>
 
 <script setup lang="ts">
