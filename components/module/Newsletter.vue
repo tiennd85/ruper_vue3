@@ -121,12 +121,16 @@ const props = defineProps({
     positionCenter: { type: Boolean, default: false }
 })
 
+// Validate form
 const checkForm = ref(false);
-const form = reactive({ nEmail: '' });
+const form = reactive({ 
+    nEmail: '' 
+});
 const rules = {
-    form: { nEmail: { required, email } }
+    form: { 
+        nEmail: { required, email } 
+    }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {

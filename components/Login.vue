@@ -70,17 +70,27 @@ const props = defineProps({
     icon: { type: Boolean, default: false }
 });
 
+// Validate form
 const checkFormLogin = ref(false);
 const checkFormRegister = ref(false);
-
-const formLogin = reactive({ username: '', password: '' });
-const formRegister = reactive({ username: '', password: '' });
-
+const formLogin = reactive({ 
+    username: '', 
+    password: '' 
+});
+const formRegister = reactive({ 
+    username: '', 
+    password: '' 
+});
 const rules = {
-    formLogin: { username: { required }, password: { required } },
-    formRegister: { username: { required }, password: { required } }
+    formLogin: { 
+        username: { required }, 
+        password: { required } 
+    },
+    formRegister: { 
+        username: { required }, 
+        password: { required } 
+    }
 };
-
 const $v = useVuelidate(rules, { formLogin, formRegister });
 
 onMounted(async () => {

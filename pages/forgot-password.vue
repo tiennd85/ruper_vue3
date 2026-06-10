@@ -49,14 +49,16 @@ const breadcrumbItems = [
   { text: 'Forgot Password', active: true }
 ]
 
+// Validate form
 const checkForm = ref(false);
-
-const form = reactive({ email: '' });
-
+const form = reactive({ 
+  email: '' 
+});
 const rules = {
-  form: { email: { required, email } }
+  form: { 
+    email: { required, email } 
+  }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {

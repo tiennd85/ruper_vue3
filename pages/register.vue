@@ -60,14 +60,18 @@ const breadcrumbItems = [
   { text: 'Register', active: true }
 ]
 
+// Validate form
 const checkForm = ref(false);
-
-const form = reactive({ username: '', password: '' });
-
+const form = reactive({ 
+  username: '', 
+  password: '' 
+});
 const rules = {
-  form: { username: { required }, password: { required } }
+  form: { 
+    username: { required }, 
+    password: { required } 
+  }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {

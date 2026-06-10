@@ -8,7 +8,7 @@
           </h1>
         </div>
         <div class="breadcrumbs">
-          <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
+          <Breadcrumb :breadcrumbItems="breadcrumbItems" />
         </div>
       </div>
     </div>
@@ -20,26 +20,30 @@
               <div class="row">
                 <div class="product-images col-lg-5 col-md-12 col-12">
                   <div class="scroll-image main-image">
-                    <slick class="image-additional slick-carousel" ref="slick" :options="slickMainOptions" @init="handleInit">
+                    <i @click="slickPrev" class="slick-arrow fa fa-angle-left"></i>
+                    <div class="image-additional slick-carousel" ref="sliderElement">
                       <div v-for="(image, index) in product.images" :key="index" class="img-item">
                         <inner-image-zoom
-                          :src="require('@/assets/img/' + image)"
+                          :src="image"
                           :id="index"
-                          :zoomSrc="require('@/assets/img/' + image)"
+                          :zoomSrc="image"
                           moveType="drag"
                           className="product-image-zoom"
                         />
                       </div>
-                    </slick>
+                    </div>
+                    <i @click="slickNext" class="slick-arrow fa fa-angle-right"></i>
                   </div>
                   <div class="content-thumbnail-scroll slick-vertical slick-wrap">
-                    <slick class="image-thumbnail slick-carousel" ref="slick" :options="slickThumbnailOptions" @init="handleInit">
+                    <i @click="slickPrev2" class="slick-arrow fa fa-angle-left"></i>
+                    <div class="image-thumbnail slick-carousel" ref="sliderElement2">
                       <div v-for="(image, index) in product.images" :key="index" class="img-item">
                         <span class="img-thumbnail-scroll">
-                          <img width="600" height="600" :src="require('@/assets/img/' + image)" :alt="product.title">
+                          <img width="600" height="600" :src="image" :alt="product.title">
                         </span>
                       </div>
-                    </slick>
+                    </div>
+                    <i @click="slickNext2" class="slick-arrow fa fa-angle-right"></i>
                   </div>
                 </div>
 
@@ -163,7 +167,7 @@
                           <li v-for="(review, index) in product.reviews" :key="index" class="review">
                             <div class="content-comment-container">
                               <div class="comment-container">
-                                <img :src="require('@/assets/img/user.jpg')" class="avatar" height="60" width="60" alt="">
+                                <img src="/img/user.jpg" class="avatar" height="60" width="60" alt="">
                                 <div class="comment-text">
                                   <div class="rating small">
                                     <div :class="'star star-' + review.rating"></div>
@@ -242,22 +246,91 @@
 <script setup lang="ts">
 import { reactive, ref, onMounted } from 'vue';
 import { useVuelidate } from '@vuelidate/core';
-import { required } from '@vuelidate/validators';
+import { required, email } from '@vuelidate/validators';
+import { useProductStore } from '~/stores/product'
+import { useCartStore } from '~/stores/cart'
+import { useWishlistStore } from '~/stores/wishlist'
+import { useCompareStore } from '~/stores/compare'
 
-const title = 'Login';
+const title = 'Product Single';
 const breadcrumbItems = [
   { text: 'Home', to: '/' },
-  { text: 'Login', active: true }
+  { text: 'Shop', to: '/products' },
+  { text: 'Product Single', active: true }
 ]
 
+const route = useRoute()
+const router = useRouter()
+
+// Stores
+const productStore = useProductStore()
+const cartStore = useCartStore()
+const wishlistStore = useWishlistStore()
+const compareStore = useCompareStore()
+
+// State
+const quantity = ref(1)
+const isLoadingCart = ref(false)
+const isLoadingWishlist = ref(false)
+
+// Computed
+const product = computed(() => productStore.getProductById(route.params.id as string))
+const category = computed(() => productStore.getCategoryById(product.value?.category))
+const wishlistItems = computed(() => wishlistStore.wishlistItems)
+
+// Methods
+const updateQuantity = (event: Event) => {
+  quantity.value = parseInt((event.target as HTMLInputElement).value) || 1
+}
+
+const minusQuantity = () => { if (quantity.value > 1) quantity.value-- }
+const plusQuantity = () => { quantity.value++ }
+
+// Actions wrapper
+const addCartItem = async (p: any) => {
+  isLoadingCart.value = true
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  
+  for (let i = 0; i < quantity.value; i++) {
+    cartStore.addCartItem(p)
+  }
+  
+  isLoadingCart.value = false
+  
+  alert('Product was added to cart successfully!')
+}
+
+const addWishlistItem = async (p: any) => {
+  isLoadingWishlist.value = true
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  wishlistStore.addWishlistItem(p)
+  isLoadingWishlist.value = false
+}
+
+const addCompareItem = async (p: any) => {
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  compareStore.addCompareItem(p)
+}
+
+const quickBuy = async (p: any) => {
+  await addCartItem(p)
+  router.push('/cart')
+}
+
+// Validate form
 const checkForm = ref(false);
-
-const form = reactive({ username: '', password: '' });
-
+const form = reactive({ 
+  comment: '', 
+  name: '', 
+  email: '' 
+});
 const rules = {
-  form: { username: { required }, password: { required } }
+  form: { 
+    comment: { required }, 
+    name: { required }, 
+    email: { required, email } 
+  }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {
@@ -274,252 +347,89 @@ const handleSubmit = async () => {
       return;
     }
 
-    navigateTo('/my-account');
+    alert('Thank you for the review!')
   }
 };
 
+// Slick Element
+const sliderElement = ref(null)
+const slickPrev = () => {
+  $(sliderElement.value).slick('slickPrev')
+}
+const slickNext = () => {
+  $(sliderElement.value).slick('slickNext')
+}
+
+const sliderElement2 = ref(null)
+const slickPrev2 = () => {
+  $(sliderElement2.value).slick('slickPrev')
+}
+const slickNext2 = () => {
+  $(sliderElement2.value).slick('slickNext')
+}
+
+onMounted(async() => {
+  await nextTick()
+
+  if (process.client && sliderElement.value) {
+    const $ = window.$ || (await import('jquery')).default;
+    await import('slick-carousel')
+
+    $(sliderElement.value).slick({
+      asNavFor: '.image-thumbnail',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false,
+      prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+      nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
+    })
+  }
+
+  if (process.client && sliderElement2.value) {
+    const $ = window.$ || (await import('jquery')).default;
+    await import('slick-carousel')
+
+    $(sliderElement2.value).slick({
+      asNavFor: '.image-additional',
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      swipeToSlide: true,
+      focusOnSelect: true,
+      arrows: true,
+      dots: false,
+      draggable: true,
+      prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
+      nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
+    })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (process.client && sliderElement.value) {
+    const $slider = $(sliderElement.value);
+
+    if ($slider.hasClass('slick-initialized')) {
+      $slider.slick('unslick');
+    }
+  }
+
+  if (process.client && sliderElement2.value) {
+    const $slider = $(sliderElement2.value);
+
+    if ($slider.hasClass('slick-initialized')) {
+      $slider.slick('unslick');
+    }
+  }
+})
+
 definePageMeta({
-  currentMenu: 'pages'
+  currentMenu: 'shop'
 })
 
 useHead({
   bodyAttrs: {
-    class: 'login'
+    class: 'shop'
   }
 })
-</script>
-
-
-
-
-<script>
-import $ from 'jquery'
-import { mapGetters } from 'vuex'
-import { required, email } from 'vuelidate/lib/validators'
-
-import ProductModule from '~/components/modules/ProductModule'
-
-export default {
-  name: 'ProductSingle',
-  components: {
-    ProductModule
-  },
-  data() {
-    return {
-      title: 'Product Single',
-      breadcrumbItems: [
-        {
-          text: 'Home',
-          to: '/',
-        },
-        {
-          text: 'Shop',
-          to: '/products',
-        },
-        {
-          text: 'Product Single',
-          to: '',
-        },
-      ],
-      quantity: 1,
-      slickMainOptions: {
-        asNavFor: '.image-thumbnail',
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        dots: false,
-        prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-        nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>'
-      },
-      slickThumbnailOptions: {
-        asNavFor: '.image-additional',
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        swipeToSlide: true,
-        focusOnSelect: true,
-        arrows: true,
-        dots: false,
-        draggable: true,
-        prevArrow: '<i class="slick-arrow fa fa-angle-left"></i>',
-        nextArrow: '<i class="slick-arrow fa fa-angle-right"></i>',
-      },
-      form: {
-        comment: '',
-        name: '',
-        email: ''
-      },
-      checkForm: false
-    }
-  },
-  validations() {
-    return {
-      form: {
-        comment: { required },
-        name: { required },
-        email: { required, email }
-      }
-    }
-  },
-  computed: { 
-    ...mapGetters({
-      cartItems: 'cart/cartItems',
-      wishlistItems: 'wishlist/wishlistItems'
-    }),
-    product: function () {
-      return this.$store.getters['products/getProductById'](
-        this.$route.params.id
-      );
-    },
-    category: function () {
-      return this.$store.getters['products/getCategoryById'](
-        this.product.category
-      );
-    }
-  },
-  mounted() {
-    // Class of body tag
-    $('body').removeClass()
-    $('body').addClass('shop')
-
-    // Current menu
-    this.$nuxt.$emit('currentMenu', 'shop')
-  },
-  methods: {
-    minusQuantity() {
-      if (this.quantity > 1) {
-        this.quantity--
-      }
-    },
-    plusQuantity() {
-      this.quantity++
-    },
-    updateQuantity(event) {
-      this.quantity = event.target.value
-    },
-
-    // Add product to cart
-    addCartItem: function(product, event) {
-      const t = this
-      const btn_atc = $(event.target)
-      btn_atc.addClass('loading')
-      const quantity = this.quantity
-      
-      setTimeout(function() {
-        // Add item to cart
-        for (var i = 1; i <= quantity; i++) {
-          t.$store.dispatch('cart/addCartItem', product)
-        }
-
-        btn_atc.removeClass('loading')
-        
-        // Display message
-        $('body').append('<div class="cart-product-added"><div class="added-message">Product was added to cart successfully!</div>')
-        setTimeout(function() {
-          $('.cart-product-added').remove()
-        }, 1000)
-      }, 1000)
-    },
-
-    // Add product to wishlist
-    addWishlistItem: function(product, event) {
-      const t = this
-      const btn_atc = $(event.target)
-      btn_atc.addClass('adding')
-      
-      setTimeout(function() {
-        // Add item to wishlist
-        t.$store.dispatch('wishlist/addWishlistItem', product)
-
-        btn_atc.removeClass('adding')
-        
-        // Display message
-        $('body').append('<div class="cart-product-added"><div class="added-message">Product was added to wishlist successfully!</div>')
-        setTimeout(function() {
-          $('.cart-product-added').remove()
-        }, 1000)
-      }, 1000)
-    },
-
-    // Add product to compare
-    addCompareItem: function(product, event) {
-      const t = this
-      const btn_atc = $(event.target)
-      btn_atc.addClass('adding')
-      
-      setTimeout(function() {
-        // Add item to compare
-        t.$store.dispatch('compare/addCompareItem', product)
-
-        btn_atc.removeClass('adding')
-        
-        // Show compare popup
-        t.$bvModal.show('products-compare')
-      }, 1000)
-    },
-
-    // Quick Buy
-    quickBuy: function(product, event) {
-      const t = this
-      const btn_atc = $(event.target)
-      btn_atc.addClass('loading')
-      const quantity = this.quantity
-
-      setTimeout(function() {
-        // Add item to cart
-        for (var i = 1; i <= quantity; i++) {
-          t.$store.dispatch('cart/addCartItem', product)
-        }
-
-        btn_atc.removeClass('loading')
-          
-        t.$router.push('/cart')
-      }, 1000)
-    },
-
-    // Slick
-    handleInit(event, slick) {
-      // Move nav outsite
-      const $element = $(this.$refs.slick.$el);
-      if ($('.slick-arrow', $element).length > 0) {
-        if ($('.fa-angle-left', $element).length > 0) {
-          var $prev = $('.fa-angle-left', $element).clone();
-          $('.fa-angle-left', $element).remove();
-          if ($element.parent().find('.fa-angle-left').length == 0) {
-            $prev.prependTo($element.parent());
-          }
-          $prev.click(function() {
-            $element.slick('slickPrev');
-          });
-        }
-        if ($('.fa-angle-right', $element).length > 0) {
-          var $next = $('.fa-angle-right', $element).clone();
-          $('.fa-angle-right', $element).remove();
-          if ($element.parent().find('.fa-angle-right').length == 0) {
-            $next.appendTo($element.parent());
-          }
-          $next.click(function() {
-            $element.slick('slickNext');
-          })
-        }
-      } else {
-        $('.fa-angle-left', $element.parent()).remove();
-        $('.fa-angle-right', $element.parent()).remove();
-      }
-    },
-
-    // Handle submit form
-    handleSubmit(e) {
-      this.checkForm = true
-
-      // Stop if form is invalid
-      this.$v.$touch();
-      if (this.$v.$invalid) {
-        return
-      }
-
-      // Notify if form is valid
-      alert('Thank you for the review!')
-    }
-  }
-}
 </script>

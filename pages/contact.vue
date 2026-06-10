@@ -100,14 +100,20 @@ const breadcrumbItems = [
   { text: 'Contact Us', active: true }
 ]
 
+// Validate form
 const checkForm = ref(false);
-
-const form = reactive({ name: '', email: '', message: '' });
-
+const form = reactive({ 
+  name: '', 
+  email: '', 
+  message: '' 
+});
 const rules = {
-  form: { name: { required }, email: { required, email }, message: { required } }
+  form: { 
+    name: { required }, 
+    email: { required, email }, 
+    message: { required } 
+  }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {

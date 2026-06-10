@@ -52,8 +52,8 @@
 import { useVuelidate } from '@vuelidate/core';
 import { required, email } from '@vuelidate/validators';
 
+// Validate form
 const checkForm = ref(false);
-
 const form = reactive({ 
     firstName: 'Rosie', 
     lastName: 'Packer', 
@@ -63,7 +63,6 @@ const form = reactive({
     password1: '', 
     password2: '' 
 });
-
 const rules = {
     form: { 
         firstName: { required }, 
@@ -72,7 +71,6 @@ const rules = {
         email: { required, email } 
     }
 };
-
 const $v = useVuelidate(rules, { form });
 
 const handleSubmit = async () => {
