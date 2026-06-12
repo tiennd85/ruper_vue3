@@ -17,52 +17,52 @@
                                                     <th width="250">
                                                         <span class="compare-table-settings">Settings</span>
                                                     </th>
-                                                    <th v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <NuxtLink :to="'/product/' + item.id">
-                                                            {{ item.title }}
+                                                    <th v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        <NuxtLink :to="'/product/' + product.id">
+                                                            {{ product.title }}
                                                         </NuxtLink>
-                                                        <span @click="removeCompareItem(item)" class="remove"><i class="icon_close"></i></span>
+                                                        <span @click="removeCompareItem(product)" class="remove"><i class="icon_close"></i></span>
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr class="tr-image">
                                                     <td class="td-label">Image</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <NuxtLink :to="'/product/' + item.id">
-                                                            <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        <NuxtLink :to="'/product/' + product.id">
+                                                            <img v-if="product.images[0]" width="600" height="600" :src="product.images[0]" :alt="product.title">
                                                         </NuxtLink>
                                                     </td>
                                                 </tr>
                                                 <tr class="tr-sku">
                                                     <td class="td-label">SKU</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        {{ item.sku }}
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        {{ product.sku }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tr-rating">
                                                     <td class="td-label">Rating</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <Rating :product="item" />
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        <Rating :product="product" />
                                                     </td>
                                                 </tr>
                                                 <tr class="tr-price">
                                                     <td class="td-label">Price</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <div v-if="item.price > item.salePrice" class="price">
-                                                            <del aria-hidden="true"><span>{{ $helpers.productPrice(item.price) }}</span></del> 
-                                                            <ins><span>{{ $helpers.productPrice(item.salePrice) }}</span></ins>
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        <div v-if="product.price > product.salePrice" class="price">
+                                                            <del aria-hidden="true"><span>{{ $helpers.productPrice(product.price) }}</span></del> 
+                                                            <ins><span>{{ $helpers.productPrice(product.salePrice) }}</span></ins>
                                                         </div>
                                                         <div v-else class="price">
-                                                            {{ $helpers.productPrice(item.salePrice) }}
+                                                            {{ $helpers.productPrice(product.salePrice) }}
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr class="tr-add-to-cart">
                                                     <td class="td-label">Add to cart</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        <div v-if="!cartStore.cartItems.includes(item)" data-title="Add to cart">
-                                                            <button @click="addCartItem(item, $event)" class="button">
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        <div v-if="!cartStore.cartItems.some(item => item.id === product.id)" data-title="Add to cart">
+                                                            <button @click="addCartItem(product, $event)" class="button">
                                                                 Add to cart
                                                             </button>
                                                         </div>
@@ -75,13 +75,13 @@
                                                 </tr>
                                                 <tr class="tr-description">
                                                     <td class="td-label">Description</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index">
-                                                        {{ item.shortDescription }}
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index">
+                                                        {{ product.shortDescription }}
                                                     </td>
                                                 </tr>
                                                 <tr class="tr-content">
                                                     <td class="td-label">Content</td>
-                                                    <td v-for="(item, index) in compareStore.compareItems" :key="index" v-html="item.description">
+                                                    <td v-for="(product, index) in compareStore.compareItems" :key="index" v-html="product.description">
                                                     </td>
                                                 </tr>
                                             </tbody>

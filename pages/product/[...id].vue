@@ -23,13 +23,15 @@
                     <i @click="slickPrev" class="slick-arrow fa fa-angle-left"></i>
                     <div class="image-additional slick-carousel" ref="sliderElement">
                       <div v-for="(image, index) in product.images" :key="index" class="img-item">
-                        <inner-image-zoom
-                          :src="image"
-                          :id="index"
-                          :zoomSrc="image"
-                          moveType="drag"
-                          className="product-image-zoom"
-                        />
+                        <ClientOnly>
+                          <InnerImageZoom 
+                            :src="image"
+                            :id="index"
+                            :zoomSrc="image"
+                            moveType="drag"
+                            className="product-image-zoom"
+                          />
+                        </ClientOnly>
                       </div>
                     </div>
                     <i @click="slickNext" class="slick-arrow fa fa-angle-right"></i>
@@ -94,18 +96,18 @@
                         <button @click="minusQuantity()" type="button" class="minus">-</button>
                       </div>
                       <div class="btn-add-to-cart">
-                        <nuxt-link event="" to="#" @click.native="addCartItem(product, $event)" class="product-btn button">
+                        <button @click.native="addCartItem(product, $event)" :class="['product-btn button', { 'loading': isLoadingCart }]">
                           Add to cart
-                        </nuxt-link>
+                        </button>
                       </div>
                     </div>
                     <div class="btn-quick-buy" data-title="Wishlist">
-                      <nuxt-link event="" to="#" @click.native="quickBuy(product, $event)" class="product-btn">
+                      <button @click.native="quickBuy(product, $event)" :class="['product-btn', { 'loading': isLoadingQuickBuy }]">
                         Buy It Now
-                      </nuxt-link>
+                      </button>
                     </div>
                     <div class="btn-wishlist" data-title="Wishlist">
-                      <button v-if="!wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
+                      <button v-if="!wishlistItems.some(item => item.id === product.id)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
                       <button v-else class="product-btn added">Wishlist added</button>
                     </div>
                     <div class="btn-compare" data-title="Compare">
@@ -204,17 +206,17 @@
                             </div>
                             <div class="comment-form-comment">
                               <textarea name="comment" v-model="form.comment" placeholder="Your Reviews *" cols="45" rows="8" :class="{ 'is-invalid': checkForm && $v.form.comment.$error }"></textarea>
-                              <div v-if="checkForm && !$v.form.comment.required" class="invalid-feedback">Content is required</div>
+                              <div v-if="$v.form.comment.required.$invalid" class="invalid-feedback">Content is required</div>
                             </div>
                             <div class="content-info-reviews">
                               <div class="comment-form-author">
                                 <input type="text" v-model="form.name" name="name" placeholder="Name *" size="30" :class="{ 'is-invalid': checkForm && $v.form.name.$error }">
-                                <div v-if="checkForm && !$v.form.name.required" class="invalid-feedback">Name is required</div>
+                                <div v-if="$v.form.name.required.$invalid" class="invalid-feedback">Name is required</div>
                               </div>
                               <div class="comment-form-email">
                                 <input type="email" v-model="form.email" name="email" placeholder="Email *" size="30" :class="{ 'is-invalid': checkForm && $v.form.email.$error }">
-                                <div v-if="checkForm && !$v.form.email.required" class="invalid-feedback">Email is required</div>
-                                <div v-if="checkForm && !$v.form.email.email" class="invalid-feedback">Email is invalid</div>
+                                <div v-if="$v.form.email.required.$invalid" class="invalid-feedback">Email is required</div>
+                                <div v-if="$v.form.email.email.$invalid" class="invalid-feedback">Email is invalid</div>
                               </div>
                               <div class="form-submit">
                                 <input type="submit" id="submit" class="submit" value="Submit">
@@ -234,7 +236,7 @@
         <div class="product-related">
           <div class="section-padding">
             <div class="section-container p-l-r">
-              <ProductModule title="Related Products" :limit="8" view="slider" filter="related" :category="product.category" />
+              <ModuleProduct title="Related Products" :limit="8" view="slider" filter="related" :category="product.category" />
             </div>
           </div>
         </div>
@@ -251,6 +253,8 @@ import { useProductStore } from '~/stores/product'
 import { useCartStore } from '~/stores/cart'
 import { useWishlistStore } from '~/stores/wishlist'
 import { useCompareStore } from '~/stores/compare'
+import InnerImageZoom from 'vue-inner-image-zoom'
+import 'vue-inner-image-zoom/lib/styles.min.css'
 
 const title = 'Product Single';
 const breadcrumbItems = [
@@ -271,12 +275,21 @@ const compareStore = useCompareStore()
 // State
 const quantity = ref(1)
 const isLoadingCart = ref(false)
-const isLoadingWishlist = ref(false)
+const isLoadingQuickBuy = ref(false)
 
 // Computed
 const product = computed(() => productStore.getProductById(route.params.id as string))
 const category = computed(() => productStore.getCategoryById(product.value?.category))
 const wishlistItems = computed(() => wishlistStore.wishlistItems)
+
+// Show notification
+const showNotification = (message: string) => {
+  const toast = document.createElement('div')
+  toast.className = 'cart-product-added'
+  toast.innerHTML = `<div class="added-message">${message}</div>`
+  document.body.appendChild(toast)
+  setTimeout(() => toast.remove(), 1000)
+}
 
 // Methods
 const updateQuantity = (event: Event) => {
@@ -297,23 +310,35 @@ const addCartItem = async (p: any) => {
   
   isLoadingCart.value = false
   
-  alert('Product was added to cart successfully!')
+  showNotification('Product was added to cart successfully!')
 }
 
 const addWishlistItem = async (p: any) => {
-  isLoadingWishlist.value = true
   await new Promise(resolve => setTimeout(resolve, 1000))
   wishlistStore.addWishlistItem(p)
-  isLoadingWishlist.value = false
+  
+  showNotification('Product was added to wishlist successfully!')
 }
 
 const addCompareItem = async (p: any) => {
   await new Promise(resolve => setTimeout(resolve, 1000))
   compareStore.addCompareItem(p)
+
+  if (process.client) {
+    $('#products-compare').modal('show')
+  }
 }
 
 const quickBuy = async (p: any) => {
-  await addCartItem(p)
+  isLoadingQuickBuy.value = true
+  await new Promise(resolve => setTimeout(resolve, 1000))
+
+  for (let i = 0; i < quantity.value; i++) {
+    cartStore.addCartItem(p)
+  }
+
+  isLoadingQuickBuy.value = false
+
   router.push('/cart')
 }
 
@@ -371,12 +396,15 @@ const slickNext2 = () => {
 onMounted(async() => {
   await nextTick()
 
+  const $sliderMain = $(sliderElement.value);
+  const $sliderThumb = $(sliderElement2.value);
+
   if (process.client && sliderElement.value) {
     const $ = window.$ || (await import('jquery')).default;
     await import('slick-carousel')
 
-    $(sliderElement.value).slick({
-      asNavFor: '.image-thumbnail',
+    $sliderMain.slick({
+      asNavFor: $sliderThumb,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
@@ -390,8 +418,8 @@ onMounted(async() => {
     const $ = window.$ || (await import('jquery')).default;
     await import('slick-carousel')
 
-    $(sliderElement2.value).slick({
-      asNavFor: '.image-additional',
+    $sliderThumb.slick({
+      asNavFor: $sliderMain,
       slidesToShow: 4,
       slidesToScroll: 4,
       swipeToSlide: true,

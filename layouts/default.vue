@@ -41,4 +41,11 @@ const backTop = () => {
     }, 15);
   }
 }
+
+watch(() => route.path, () => {
+  document.body.classList.remove('modal-open');
+  
+  const backdrops = document.querySelectorAll('.modal-backdrop');
+  backdrops.forEach(el => el.remove());
+});
 </script>

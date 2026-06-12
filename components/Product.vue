@@ -32,8 +32,8 @@
                 </NuxtLink>
             </div>
             <div class="product-button">
-                <div v-if="layout == 1" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="product-btn button">
+                <div v-if="layout == 1" class="btn-add-to-cart" :data-title="!cartStore.cartItems.some(item => item.id === product.id) ? 'Add to cart' : 'View cart'">
+                    <button v-if="!cartStore.cartItems.some(item => item.id === product.id)" @click="addCartItem(product, $event)" class="product-btn button">
                         Add to cart
                     </button>
                     <NuxtLink  v-else to="/cart" class="added-to-cart product-btn button">
@@ -41,7 +41,7 @@
                     </NuxtLink>
                 </div>
                 <div class="btn-wishlist" data-title="Wishlist">
-                    <button v-if="!wishlistStore.wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
+                    <button v-if="!wishlistStore.wishlistItems.some(item => item.id === product.id)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
                     <button v-else class="product-btn added">Wishlist added</button>
                 </div>
                 <div class="btn-compare" data-title="Compare">
@@ -68,11 +68,11 @@
                 <div v-else class="price">
                     {{ $helpers.productPrice(product.salePrice) }}
                 </div>
-                <div v-if="layout == 2" class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                    <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="button">
+                <div v-if="layout == 2" class="btn-add-to-cart" :data-title="!cartStore.cartItems.some(item => item.id === product.id) ? 'Add to cart' : 'View cart'">
+                    <button v-if="!cartStore.cartItems.some(item => item.id === product.id)" @click="addCartItem(product, $event)" class="button">
                         Add to cart
                     </button>
-                    <NuxtLink  v-else to="/cart" class="added-to-cart product-btn">
+                    <NuxtLink  v-else to="/cart" class="added-to-cart product-btn button">
                         View cart
                     </NuxtLink>
                 </div>
@@ -116,8 +116,8 @@
                         {{ $helpers.productPrice(product.salePrice) }}
                     </div>
                     <div class="product-button">
-                        <div class="btn-add-to-cart" :data-title="!cartStore.cartItems.includes(product) ? 'Add to cart' : 'View cart'">
-                            <button v-if="!cartStore.cartItems.includes(product)" @click="addCartItem(product, $event)" class="product-btn button">
+                        <div class="btn-add-to-cart" :data-title="!cartStore.cartItems.some(item => item.id === product.id) ? 'Add to cart' : 'View cart'">
+                            <button v-if="!cartStore.cartItems.some(item => item.id === product.id)" @click="addCartItem(product, $event)" class="product-btn button">
                                 Add to cart
                             </button>
                             <NuxtLink v-else to="/cart" class="added-to-cart product-btn button">
@@ -125,7 +125,7 @@
                             </NuxtLink>
                         </div>
                         <div class="btn-wishlist" data-title="Wishlist">
-                            <button v-if="!wishlistStore.wishlistItems.includes(product)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
+                            <button v-if="!wishlistStore.wishlistItems.some(item => item.id === product.id)" @click="addWishlistItem(product, $event)" class="product-btn">Add to wishlist</button>
                             <button v-else class="product-btn added">Wishlist added</button>
                         </div>
                         <div class="btn-compare" data-title="Compare">

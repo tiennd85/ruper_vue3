@@ -21,6 +21,7 @@
     "popper.js": "^1.16.1",
     "slick-carousel": "^1.8.1",
     "vue": "^3.4.0",
+    "vue-inner-image-zoom": "^3.0.2",
     "vue-router": "^4.3.0",
     "vuex": "^4.1.0"
   },

@@ -18,34 +18,34 @@
           <div v-if="wishlistItems.length" class="shop-wishlist"> 
             <table class="wishlist-items">                            
               <tbody>
-                <tr class="wishlist-item" v-for="(item, index) in wishlistItems" :key="index">
-                  <td class="wishlist-item-remove"><span @click="removeWishlistItem(item)"></span></td>
+                <tr class="wishlist-item" v-for="(product, index) in wishlistItems" :key="index">
+                  <td class="wishlist-item-remove"><span @click="removeWishlistItem(product)"></span></td>
                   <td class="wishlist-item-image">
-                    <NuxtLink :to="'/product/' + item.id">
-                      <img v-if="item.images[0]" width="600" height="600" :src="item.images[0]" :alt="item.title">
+                    <NuxtLink :to="'/product/' + product.id">
+                      <img v-if="product.images[0]" width="600" height="600" :src="product.images[0]" :alt="product.title">
                     </NuxtLink>
                   </td>
                   <td class="wishlist-item-info">
                     <div class="wishlist-item-name">
-                      <NuxtLink :to="'/product/' + item.id">
-                        {{ item.title }}
+                      <NuxtLink :to="'/product/' + product.id">
+                        {{ product.title }}
                       </NuxtLink>
                     </div>
                     <div class="wishlist-item-price">
-                      <div v-if="item.price > item.salePrice" class="price">
-                        <del aria-hidden="true"><span>{{ $helpers.productPrice(item.price) }}</span></del> 
-                        <ins><span>{{ $helpers.productPrice(item.salePrice) }}</span></ins>
+                      <div v-if="product.price > product.salePrice" class="price">
+                        <del aria-hidden="true"><span>{{ $helpers.productPrice(product.price) }}</span></del> 
+                        <ins><span>{{ $helpers.productPrice(product.salePrice) }}</span></ins>
                       </div>
                       <div v-else class="price">
-                        {{ $helpers.productPrice(item.salePrice) }}
+                        {{ $helpers.productPrice(product.salePrice) }}
                       </div>
                     </div>
-                    <div class="wishlist-item-time">{{ item.time }}</div>
+                    <div class="wishlist-item-time">{{ product.time }}</div>
                   </td>
                   <td class="wishlist-item-actions">
                     <div class="wishlist-item-add">
                       <div class="btn-add-to-cart" data-title="Add to cart">
-                        <button v-if="!cartItems.includes(item)" @click="addCartItem(item, $event)" class="product-btn button">
+                        <button v-if="!cartItems.some(item => item.id === product.id)" @click="addCartItem(product, $event)" class="product-btn button">
                           Add to cart
                         </button>
                         <NuxtLink v-else to="/cart" class="added-to-cart product-btn">
@@ -93,26 +93,6 @@ const wishlistStore = useWishlistStore()
 const { cartItems } = storeToRefs(cartStore)
 const { wishlistItems } = storeToRefs(wishlistStore)
 
-definePageMeta({
-  currentMenu: 'shop'
-})
-
-useHead({
-  bodyAttrs: {
-    class: 'shop'
-  }
-})
-
-onMounted(async () => {
-  if (process.client) {
-    const $ = window.$ || (await import('jquery')).default;
-    
-    // Close the wishlist popup
-    $('.dropdown.top-cart').removeClass('show')
-    $('.dropdown.top-cart .dropdown-menu').removeClass('show')
-  }
-})
-
 const addCartItem = async (product, event) => {
   if (process.client) {
     const $ = window.$ || (await import('jquery')).default;
@@ -138,4 +118,24 @@ const addCartItem = async (product, event) => {
 const removeWishlistItem = async (product) => {
   wishlistStore.removeWishlistItem(product)
 }
+
+onMounted(async () => {
+  if (process.client) {
+    const $ = window.$ || (await import('jquery')).default;
+    
+    // Close the cart popup
+    $('.dropdown.top-cart').removeClass('show')
+    $('.dropdown.top-cart .dropdown-menu').removeClass('show')
+  }
+})
+
+definePageMeta({
+  currentMenu: 'shop'
+})
+
+useHead({
+  bodyAttrs: {
+    class: 'shop'
+  }
+})
 </script>
