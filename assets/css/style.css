@@ -1337,6 +1337,7 @@ ul.slick-dots li.slick-active button {
   width: 40px;
   height: 40px;
   line-height: normal;
+  background: none;
   text-indent: 1px;
   text-align: center;
   vertical-align: middle;
@@ -9858,6 +9859,7 @@ ul.slick-dots li.slick-active button {
 }
 .post-details .post-content-entry .tags-links label {
   margin: 0;
+  margin-right: 3px;
   color: #000;
 }
 .post-details .post-content-entry .tags-links a {
@@ -9865,7 +9867,7 @@ ul.slick-dots li.slick-active button {
   color: #868686;
   font-weight: 500;
   line-height: 40px;
-  margin: 2.5px;
+  margin: 2px 4px;
   border: 1px solid #e5e5e5;
   display: inline-block;
   padding: 0 20px;
@@ -9882,7 +9884,7 @@ ul.slick-dots li.slick-active button {
   margin-top: 20px;
 }
 .post-details .post-content-entry .entry-social-share label {
-  margin: 0 3px 0 0;
+  margin: 0 6px 0 0;
   color: #000;
 }
 .post-details .post-content-entry .entry-social-share .social-share {
@@ -9892,7 +9894,7 @@ ul.slick-dots li.slick-active button {
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin-right: 5px;
+  margin-right: 8px;
   text-align: center;
   line-height: 50px;
   border: 1px solid #e5e5e5;
