@@ -193,7 +193,7 @@
                               <span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
                             </p>
                             <div class="comment-form-rating">
-                              <label for="rating">Your rating</label>
+                              <label>Your rating</label>
                               <p class="stars">
                                 <span>
                                   <nuxt-link to="#" class="star-1">1</nuxt-link>

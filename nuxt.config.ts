@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@pinia/nuxt'],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  experimental: {
+    inlineSSRStyles: process.env.NODE_ENV !== 'production' 
+  },
   vite: {
     plugins: [
     ],

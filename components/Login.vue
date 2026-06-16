@@ -22,7 +22,7 @@
                                 <div class="rememberme-lost">
                                     <div class="rememberme">
                                         <input name="rememberme" type="checkbox" id="rememberme" value="forever"/>
-                                        <label for="rememberme" class="inline">Remember me</label>
+                                        <label class="inline">Remember me</label>
                                     </div>
                                     <div class="lost_password">
                                         <NuxtLink to="/forgot-password">Lost your password?</NuxtLink>

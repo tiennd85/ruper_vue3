@@ -29,7 +29,7 @@
                           <div v-if="checkForm && $v.form.username.$error" class="invalid-feedback">Username is required</div>
                         </div>
                         <div class="password">
-                          <label for="password">Password <span class="required">*</span></label>
+                          <label>Password <span class="required">*</span></label>
                           <input type="password" name="password" v-model="form.password" :class="['input-text', { 'is-invalid': checkForm && $v.form.password.$error }]">
                           <div v-if="checkForm && $v.form.password.$error" class="invalid-feedback">Password is required</div>
                         </div>

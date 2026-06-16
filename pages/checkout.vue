@@ -67,7 +67,7 @@
                           </span>
                         </p>
                         <p class="form-row address-field form-row-wide">
-                          <label for="billing_city" class="">City <span class="required" title="required">*</span></label>
+                          <label class="">City <span class="required" title="required">*</span></label>
                           <span class="input-wrapper">
                             <input type="text" v-model="form.bCity" name="billing_city" :class="['input-text', { 'is-invalid': checkForm && $v.form.bCity.$error }]" />
                             <div v-if="checkForm && $v.form.bCity.$error" class="invalid-feedback">City is required</div>
@@ -143,7 +143,7 @@
                         </span>
                       </p>
                       <p class="form-row address-field form-row-wide">
-                        <label for="shipping_city" class="">City <span class="required" title="required">*</span></label>
+                        <label class="">City <span class="required" title="required">*</span></label>
                         <span class="input-wrapper">
                           <input type="text" v-model="form.sCity" name="shipping_city" :class="['input-text', { 'is-invalid': checkForm && $v.form.sCity.$error }]" />
                           <div v-if="checkForm && $v.form.sCity.$error" class="invalid-feedback">City is required</div>
